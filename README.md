@@ -13,12 +13,12 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 - Platform : 64 bit
 
 #### Programming Language
-- Language Name : Kotlin
-- Version : 1.3.72
+- Language Name : Java
+- Version : 11.0.8
 
 #### IDE (Integrated Development Environment)
 - IDE Name : Android Studio
-- Version : 4.0
+- Version : 4.0.1
 
 #### Java Build Tools
 - Java Build Tools : Gradle
