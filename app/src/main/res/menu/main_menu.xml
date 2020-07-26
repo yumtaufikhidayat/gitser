@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="@string/tvSearch"
+        android:icon="@drawable/ic_outline_search_white"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"/>
+
+    <item
+        android:id="@+id/nav_favorite"
+        android:title="@string/tvFavorite"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="@string/tvProfile"
+        app:showAsAction="never"/>
+
+</menu>

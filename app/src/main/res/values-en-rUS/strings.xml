@@ -1,30 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Gitser</string>
     <string name="tvUsername">Username</string>
     <string name="tvName">Name</string>
-    <string name="tvLocation">Lokasi</string>
-    <string name="tvHello">Halo,</string>
+    <string name="tvLocation">Location</string>
+    <string name="tvHello">Hello,</string>
     <string name="tvTaufik">Taufik Hidayat</string>
     <string name="tvTaufikUsername">yumtaufikhidayat</string>
     <string name="tvTaufikCompany">PT Rute Lintas Indonesia</string>
     <string name="tvTaufikLocation">Jakarta Pusat, DKI Jakarta</string>
-    <string name="tvFollowing">Mengikuti</string>
+    <string name="tvFollowing">Following</string>
     <string name="tvFollowingNumber">4</string>
-    <string name="tvFollowers">Diikuti</string>
+    <string name="tvFollowers">Followers</string>
     <string name="tvFollowerNumber">4</string>
-    <string name="tvStarred">Berbintang</string>
+    <string name="tvStarred">Starred</string>
     <string name="tvStarredNumber">58</string>
-    <string name="tvCompany">Perusahaan</string>
-    <string name="tvCompanyName">Nama perusahaan</string>
-    <string name="tvRepository">Repositori</string>
+    <string name="tvCompany">Company</string>
+    <string name="tvCompanyName">Company name</string>
+    <string name="tvRepository">Repository</string>
     <string name="tvRepositoryNumber">100</string>
-    <string name="tvSearch">Cari</string>
-    <string name="tvSearchDots">Cari…</string>
-    <string name="tvDetailProfile">Detail Profil</string>
-    <string name="tvSettings">Pengaturan</string>
-    <string name="tvFavorite">Favorit</string>
-    <string name="tvProfile">Profil</string>
-    <string name="tvLanguage">Bahasa</string>
+    <string name="tvSearch">Search</string>
+    <string name="tvSearchDots">Search…</string>
+    <string name="tvDetailProfile">Detail Profile</string>
+    <string name="tvSettings">Settings</string>
+    <string name="tvFavorite">Favorite</string>
+    <string name="tvProfile">Profile</string>
+    <string name="tvLanguage">Language</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
@@ -118,5 +119,4 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>
