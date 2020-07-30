@@ -18,8 +18,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_error.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,26 +170,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="266" y="122" width="824" height="482" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596100634539" />
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1596102795837">
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1596145127822">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596102795837" />
-    <state width="1324" height="275" key="GridCell.Tab.0.bottom" timestamp="1596103345979">
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596145127822" />
+    <state width="1324" height="275" key="GridCell.Tab.0.bottom" timestamp="1596145561359">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="275" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596103345979" />
-    <state width="1324" height="275" key="GridCell.Tab.0.center" timestamp="1596103345979">
+    <state width="1324" height="275" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596145561359" />
+    <state width="1324" height="275" key="GridCell.Tab.0.center" timestamp="1596145561357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="275" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596103345979" />
-    <state width="1324" height="275" key="GridCell.Tab.0.left" timestamp="1596103345979">
+    <state width="1324" height="275" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596145561357" />
+    <state width="1324" height="275" key="GridCell.Tab.0.left" timestamp="1596145561357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="275" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596103345979" />
-    <state width="1324" height="275" key="GridCell.Tab.0.right" timestamp="1596103345979">
+    <state width="1324" height="275" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596145561357" />
+    <state width="1324" height="275" key="GridCell.Tab.0.right" timestamp="1596145561358">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="275" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596103345979" />
+    <state width="1324" height="275" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596145561358" />
     <state x="484" y="145" width="387" height="436" key="chooseDestDirectoryDialog" timestamp="1596102255353">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -221,6 +221,26 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/SearchRepository.java</url>
           <line>57</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/SearchActivity.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

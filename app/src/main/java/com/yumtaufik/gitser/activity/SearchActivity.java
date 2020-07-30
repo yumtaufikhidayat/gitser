@@ -113,39 +113,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                errorLayout.setVisibility(View.GONE);
-                swipeRefreshSearch.setRefreshing(true);
-
-                LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(SearchActivity.this);
-                rvSearchUser.setLayoutManager(mLinearLayoutManager);
-                rvSearchUser.setHasFixedSize(true);
-                rvSearchUser.setItemAnimator(new DefaultItemAnimator());
-                rvSearchUser.setNestedScrollingEnabled(false);
-
-                adapter = new SearchAdapter();
-                rvSearchUser.setAdapter(adapter);
-
-                if (isNetworkAvailable()) {
-
-                    if (!query.isEmpty()) {
-                        viewModel.getSearchByUsername(query).observe(SearchActivity.this, new Observer<List<SearchItems>>() {
-                            @Override
-                            public void onChanged(List<SearchItems> searchItems) {
-                                if (searchItems.size() > 0) {
-                                    adapter.setDataItems(searchItems);
-                                    swipeRefreshSearch.setRefreshing(false);
-                                } else {
-                                    swipeRefreshSearch.setRefreshing(false);
-                                    showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
-                                }
-                                errorLayout.setVisibility(View.GONE);
-                            }
-                        });
-                    }
-                } else {
-                    showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
-                    swipeRefreshSearch.setRefreshing(false);
-                }
+                setSearchUser(query);
 
                 return true;
             }
@@ -159,6 +127,42 @@ public class SearchActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     //----Ends----
+
+    private void setSearchUser(String query) {
+        errorLayout.setVisibility(View.GONE);
+        swipeRefreshSearch.setRefreshing(true);
+
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(SearchActivity.this);
+        rvSearchUser.setLayoutManager(mLinearLayoutManager);
+        rvSearchUser.setHasFixedSize(true);
+        rvSearchUser.setItemAnimator(new DefaultItemAnimator());
+        rvSearchUser.setNestedScrollingEnabled(false);
+
+        adapter = new SearchAdapter();
+        rvSearchUser.setAdapter(adapter);
+
+        if (isNetworkAvailable()) {
+
+            if (!query.isEmpty()) {
+                viewModel.getSearchByUsername(query).observe(SearchActivity.this, new Observer<List<SearchItems>>() {
+                    @Override
+                    public void onChanged(List<SearchItems> searchItems) {
+                        if (searchItems.size() > 0) {
+                            adapter.setDataItems(searchItems);
+                            swipeRefreshSearch.setRefreshing(false);
+                        } else {
+                            swipeRefreshSearch.setRefreshing(false);
+                            showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
+                        }
+                        errorLayout.setVisibility(View.GONE);
+                    }
+                });
+            }
+        } else {
+            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+            swipeRefreshSearch.setRefreshing(false);
+        }
+    }
 
     //----Method to show error connection----
     private void showErrorMessage(Integer image, Integer title, Integer message) {
