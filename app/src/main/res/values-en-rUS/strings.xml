@@ -26,6 +26,12 @@
     <string name="tvFavorite">Favorite</string>
     <string name="tvProfile">Profile</string>
     <string name="tvLanguage">Language</string>
+    <string name="tvOops">Oops, no connection…</string>
+    <string name="tvCheckYourConnection">Check your connection and try again.</string>
+    <string name="tvNoResult">Oops, no result…</string>
+    <string name="tvNoResultDesc">We will inform you\nif available</string>
+    <string name="tvStartSearch">Start searching</string>
+    <string name="tvStartSearchDesc">Tap search icon to search by username</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
