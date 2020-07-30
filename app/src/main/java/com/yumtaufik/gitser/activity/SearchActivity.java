@@ -137,8 +137,8 @@ public class SearchActivity extends AppCompatActivity {
                                 } else {
                                     swipeRefreshSearch.setRefreshing(false);
                                     showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
-                                    errorLayout.setVisibility(View.GONE);
                                 }
+                                errorLayout.setVisibility(View.GONE);
                             }
                         });
                     }
@@ -177,7 +177,7 @@ public class SearchActivity extends AppCompatActivity {
         swipeRefreshSearch.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //
+                swipeRefreshSearch.setRefreshing(false);
             }
         });
     }
