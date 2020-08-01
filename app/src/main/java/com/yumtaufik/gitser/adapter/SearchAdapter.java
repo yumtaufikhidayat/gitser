@@ -1,5 +1,6 @@
 package com.yumtaufik.gitser.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.activity.DetailProfileActivity;
 import com.yumtaufik.gitser.model.search.SearchItems;
 
 import java.util.ArrayList;
@@ -39,7 +41,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        SearchItems searchItems = resultItems.get(position);
+        final SearchItems searchItems = resultItems.get(position);
 
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
@@ -51,6 +53,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         holder.cardSearchUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailProfileActivity.class);
+                intent.putExtra(DetailProfileActivity.EXTRA_DETAIL_PROFILE, searchItems);
+                holder.itemView.getContext().startActivity(intent);
                 Toast.makeText(holder.itemView.getContext(), "Kamu memilih " + holder.tvUsernameSearch.getText(), Toast.LENGTH_SHORT).show();
             }
         });

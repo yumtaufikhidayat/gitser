@@ -3,7 +3,7 @@
     <color name="colorPrimary">#ea474a</color>
     <color name="colorPrimaryDark">#cf2a2d</color>
     <color name="colorAccent">#1e344b</color>
-
     <color name="colorSemiBlack">#D0757474</color>
     <color name="colorGrey">#ECECEC</color>
+    <color name="colorLayerBack">#cf2a2d</color>
 </resources>

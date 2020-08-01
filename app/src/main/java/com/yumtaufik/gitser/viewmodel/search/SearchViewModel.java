@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.viewmodel;
+package com.yumtaufik.gitser.viewmodel.search;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;

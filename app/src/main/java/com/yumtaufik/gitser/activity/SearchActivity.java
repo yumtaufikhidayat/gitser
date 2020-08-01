@@ -1,6 +1,7 @@
 package com.yumtaufik.gitser.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -26,7 +27,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.SearchAdapter;
 import com.yumtaufik.gitser.model.search.SearchItems;
-import com.yumtaufik.gitser.viewmodel.SearchViewModel;
+import com.yumtaufik.gitser.viewmodel.search.SearchViewModel;
 
 import java.util.List;
 
@@ -94,7 +95,7 @@ public class SearchActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_profile:
-                //To profile activity
+                startActivity(new Intent(SearchActivity.this, ProfileActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

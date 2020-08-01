@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Gitser</string>
     <string name="tvUsername">Username</string>
-    <string name="tvName">Name</string>
+    <string name="tvName">Nama</string>
     <string name="tvLocation">Lokasi</string>
     <string name="tvHello">Halo,</string>
     <string name="tvTaufik">Taufik Hidayat</string>

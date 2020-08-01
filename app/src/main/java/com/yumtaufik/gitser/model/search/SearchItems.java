@@ -1,8 +1,11 @@
 package com.yumtaufik.gitser.model.search;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class SearchItems {
+public class SearchItems implements Parcelable {
 	@SerializedName("gists_url")
 	private String gistsUrl;
 	@SerializedName("repos_url")
@@ -41,6 +44,40 @@ public class SearchItems {
 	private String nodeId;
 	@SerializedName("organizations_url")
 	private String organizationsUrl;
+
+	protected SearchItems(Parcel in) {
+		gistsUrl = in.readString();
+		reposUrl = in.readString();
+		followingUrl = in.readString();
+		starredUrl = in.readString();
+		login = in.readString();
+		followersUrl = in.readString();
+		type = in.readString();
+		url = in.readString();
+		subscriptionsUrl = in.readString();
+		score = in.readDouble();
+		receivedEventsUrl = in.readString();
+		avatarUrl = in.readString();
+		eventsUrl = in.readString();
+		htmlUrl = in.readString();
+		siteAdmin = in.readByte() != 0;
+		id = in.readInt();
+		gravatarId = in.readString();
+		nodeId = in.readString();
+		organizationsUrl = in.readString();
+	}
+
+	public static final Creator<SearchItems> CREATOR = new Creator<SearchItems>() {
+		@Override
+		public SearchItems createFromParcel(Parcel in) {
+			return new SearchItems(in);
+		}
+
+		@Override
+		public SearchItems[] newArray(int size) {
+			return new SearchItems[size];
+		}
+	};
 
 	public void setGistsUrl(String gistsUrl){
 		this.gistsUrl = gistsUrl;
@@ -192,5 +229,33 @@ public class SearchItems {
 
 	public String getOrganizationsUrl(){
 		return organizationsUrl;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(gistsUrl);
+		dest.writeString(reposUrl);
+		dest.writeString(followingUrl);
+		dest.writeString(starredUrl);
+		dest.writeString(login);
+		dest.writeString(followersUrl);
+		dest.writeString(type);
+		dest.writeString(url);
+		dest.writeString(subscriptionsUrl);
+		dest.writeDouble(score);
+		dest.writeString(receivedEventsUrl);
+		dest.writeString(avatarUrl);
+		dest.writeString(eventsUrl);
+		dest.writeString(htmlUrl);
+		dest.writeByte((byte) (siteAdmin ? 1 : 0));
+		dest.writeInt(id);
+		dest.writeString(gravatarId);
+		dest.writeString(nodeId);
+		dest.writeString(organizationsUrl);
 	}
 }

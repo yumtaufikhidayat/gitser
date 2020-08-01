@@ -7,6 +7,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="RedWhiteActivityTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="android:textColorHint">@color/colorSemiBlack</item>
+        <item name="android:editTextColor">@android:color/black</item>
+    </style>
+
     <style name="HeaderBar">
         <item name="android:background">#FFFFFF</item>
     </style>
