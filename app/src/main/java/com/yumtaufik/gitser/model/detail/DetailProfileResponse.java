@@ -4,69 +4,69 @@ import com.google.gson.annotations.SerializedName;
 
 public class DetailProfileResponse{
 	@SerializedName("gists_url")
-	private String gistsUrl;
+	private String gistsUrl = null;
 	@SerializedName("repos_url")
-	private String reposUrl;
+	private String reposUrl = null;
 	@SerializedName("following_url")
-	private String followingUrl;
+	private String followingUrl = null;
 	@SerializedName("twitter_username")
-	private Object twitterUsername;
+	private Object twitterUsername = null;
 	@SerializedName("bio")
-	private String bio;
+	private String bio = null;
 	@SerializedName("created_at")
-	private String createdAt;
+	private String createdAt = null;
 	@SerializedName("login")
-	private String login;
+	private String login = null;
 	@SerializedName("type")
-	private String type;
+	private String type = null;
 	@SerializedName("blog")
-	private String blog;
+	private String blog = null;
 	@SerializedName("subscriptions_url")
-	private String subscriptionsUrl;
+	private String subscriptionsUrl = null;
 	@SerializedName("updated_at")
-	private String updatedAt;
+	private String updatedAt = null;
 	@SerializedName("site_admin")
-	private boolean siteAdmin;
+	private boolean siteAdmin = false;
 	@SerializedName("company")
-	private String company;
+	private String company = null;
 	@SerializedName("id")
 	private int id;
 	@SerializedName("public_repos")
 	private int publicRepos;
 	@SerializedName("gravatar_id")
-	private String gravatarId;
+	private String gravatarId = null;
 	@SerializedName("email")
-	private Object email;
+	private Object email = null;
 	@SerializedName("organizations_url")
-	private String organizationsUrl;
+	private String organizationsUrl = null;
 	@SerializedName("hireable")
-	private Object hireable;
+	private Object hireable = null;
 	@SerializedName("starred_url")
-	private String starredUrl;
+	private String starredUrl = null;
 	@SerializedName("followers_url")
-	private String followersUrl;
+	private String followersUrl = null;
 	@SerializedName("public_gists")
 	private int publicGists;
 	@SerializedName("url")
-	private String url;
+	private String url = null;
 	@SerializedName("received_events_url")
-	private String receivedEventsUrl;
+	private String receivedEventsUrl = null;
 	@SerializedName("followers")
 	private int followers;
 	@SerializedName("avatar_url")
-	private String avatarUrl;
+	private String avatarUrl = null;
 	@SerializedName("events_url")
-	private String eventsUrl;
+	private String eventsUrl = null;
 	@SerializedName("html_url")
-	private String htmlUrl;
+	private String htmlUrl = null;
 	@SerializedName("following")
 	private int following;
 	@SerializedName("name")
-	private String name;
+	private String name = null;
 	@SerializedName("location")
-	private String location;
+	private String location = null;
 	@SerializedName("node_id")
-	private String nodeId;
+	private String nodeId = null;
 
 	public String getGistsUrl() {
 		return gistsUrl;

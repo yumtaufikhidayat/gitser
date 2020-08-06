@@ -13,14 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.MainActivity"></activity>
         <activity
             android:name=".activity.ProfileActivity"
-            android:theme="@style/RedWhiteActivityTheme"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/RedWhiteActivityTheme" />
         <activity
             android:name=".activity.DetailProfileActivity"
-            android:theme="@style/RedWhiteActivityTheme"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/RedWhiteActivityTheme" />
         <activity
             android:name=".activity.SearchActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />

@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -18,15 +19,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.DetailProfilePagerAdapter;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
-
-import java.util.List;
 
 public class DetailProfileActivity extends AppCompatActivity {
 
@@ -47,7 +45,6 @@ public class DetailProfileActivity extends AppCompatActivity {
     TextView tvErrorTitle, tvErrorMessage;
 
     DetailProfileViewModel profileViewModel;
-    DetailProfileResponse detailProfileResponse;
     SearchItems searchItems;
 
     @Override
@@ -73,7 +70,6 @@ public class DetailProfileActivity extends AppCompatActivity {
     private void setInit() {
 
         searchItems = getIntent().getParcelableExtra(EXTRA_DETAIL_PROFILE);
-        detailProfileResponse = new DetailProfileResponse();
 
         imgUserProfile = findViewById(R.id.imgUserSearch);
         tvNameUserProfile = findViewById(R.id.tvNameUserProfile);
@@ -139,11 +135,15 @@ public class DetailProfileActivity extends AppCompatActivity {
             profileViewModel.getDetailProfileByUsername(username).observe(this, new Observer<DetailProfileResponse>() {
                 @Override
                 public void onChanged(DetailProfileResponse detailProfileResponse) {
-                    tvNameUserProfile.setText(detailProfileResponse.getName());
+                    if (detailProfileResponse != null) {
+                        tvNameUserProfile.setText(detailProfileResponse.getName());
 //                    tvUsernameUserProfile.setText(detailProfileResponse.getLogin());
 //                    tvFollowingUserProfile.setText(detailProfileResponse.getFollowing());
 //                    tvFollowersUserProfile.setText(detailProfileResponse.getFollowers());
 //                    tvRepositoryUserProfile.setText(detailProfileResponse.getPublicRepos());
+                    } else {
+                        Log.i("onChangedFailed", "onChanged: ");
+                    }
                 }
             });
         }

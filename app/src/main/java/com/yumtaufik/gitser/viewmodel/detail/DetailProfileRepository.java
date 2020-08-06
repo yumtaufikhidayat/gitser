@@ -36,7 +36,7 @@ public class DetailProfileRepository extends ViewModel {
             @Override
             @EverythingIsNonNull
             public void onFailure(Call<DetailProfileResponse> call, Throwable t) {
-
+                Log.e("onFailureDetail", "onFailure: " + t.getLocalizedMessage());
             }
         });
 
