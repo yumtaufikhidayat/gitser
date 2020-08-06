@@ -9,6 +9,9 @@
     android:background="@android:color/white"
     tools:context=".activity.DetailProfileActivity">
 
+    <include layout="@layout/toolbar_detail"
+        android:id="@+id/toolbarDetail"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -30,6 +31,8 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE";
 
+    Toolbar toolbarDetail;
+    
     ImageView imgUserProfile;
     TextView tvNameUserProfile,
             tvUsernameUserProfile,
@@ -71,6 +74,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         searchItems = getIntent().getParcelableExtra(EXTRA_DETAIL_PROFILE);
 
+        toolbarDetail = findViewById(R.id.toolbarDetail);
         imgUserProfile = findViewById(R.id.imgUserSearch);
         tvNameUserProfile = findViewById(R.id.tvNameUserProfile);
         tvUsernameUserProfile = findViewById(R.id.tvUsernameUserProfile);
@@ -103,10 +107,12 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     //----Methods to set action bar----
     private void setGetSupportActionBar() {
+        setSupportActionBar(toolbarDetail);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#cf2a2d\">" + searchItems.getLogin() + "</font>")));
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_red);
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + searchItems.getLogin() + "</font>")));
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             getSupportActionBar().setElevation(0);
         }
     }

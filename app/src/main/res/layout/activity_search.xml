@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.SearchActivity">
 
-    <include layout="@layout/toolbar_search"
+    <include layout="@layout/toolbar_main"
         android:id="@+id/toolbarSearchMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
