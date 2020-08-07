@@ -1,5 +1,7 @@
 package com.yumtaufik.gitser.viewmodel.main;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.yumtaufik.gitser.api.ApiClient;
@@ -26,7 +28,22 @@ public class MainRepository {
             @Override
             @EverythingIsNonNull
             public void onResponse(Call<List<MainResponse>> call, Response<List<MainResponse>> response) {
-                mutableLiveDataAllusers.setValue((ArrayList<MainResponse>) response.body());
+                if (response.isSuccessful()) {
+                    mutableLiveDataAllusers.setValue((ArrayList<MainResponse>) response.body());
+                } else {
+                    switch (response.code()) {
+                        case 404:
+                            Log.e("Main404", "error404: " + response.errorBody());
+                            break;
+
+                        case 500:
+                            Log.e("Main500", "error500: " + response.errorBody());
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
             }
 
             @Override
