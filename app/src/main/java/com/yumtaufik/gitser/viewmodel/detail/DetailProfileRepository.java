@@ -22,7 +22,7 @@ public class DetailProfileRepository extends ViewModel {
     MutableLiveData<DetailProfileResponse> detailProfileByUsername(String username) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<DetailProfileResponse> getResponse = apiInterface.detailProfile(username);
+        Call<DetailProfileResponse> getResponse = apiInterface.getDetailProfile(username);
         getResponse.enqueue(new Callback<DetailProfileResponse>() {
             @Override
             @EverythingIsNonNull

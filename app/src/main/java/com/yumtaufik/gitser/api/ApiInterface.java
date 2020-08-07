@@ -1,7 +1,10 @@
 package com.yumtaufik.gitser.api;
 
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
+import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.model.search.SearchResponse;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -10,11 +13,16 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
+
     @Headers("Authorization: token " + Api.GITHUB_TOKEN)
-    @GET(Api.SEARCH_USERS)
+    @GET(Api.USERS_URL)
+    Call<List<MainResponse>> getAllUsers();
+
+    @Headers("Authorization: token " + Api.GITHUB_TOKEN)
+    @GET(Api.SEARCH_USERS_URL)
     Call<SearchResponse> searchUserByUsername(@Query("q") String searchUser);
 
     @Headers("Authorization: token " + Api.GITHUB_TOKEN)
-    @GET(Api.DETAIL_PROFILE)
-    Call<DetailProfileResponse> detailProfile(@Path("username") String username);
+    @GET(Api.DETAIL_PROFILE_URL)
+    Call<DetailProfileResponse> getDetailProfile(@Path("username") String username);
 }

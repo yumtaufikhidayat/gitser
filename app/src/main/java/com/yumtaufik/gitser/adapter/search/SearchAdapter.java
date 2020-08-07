@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.adapter;
+package com.yumtaufik.gitser.adapter.search;
 
 import android.content.Intent;
 import android.view.LayoutInflater;

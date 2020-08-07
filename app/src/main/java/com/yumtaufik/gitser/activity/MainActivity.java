@@ -17,14 +17,24 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.adapter.main.MainAdapter;
+import com.yumtaufik.gitser.model.main.MainResponse;
+import com.yumtaufik.gitser.viewmodel.main.MainViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbarMain;
+    MainAdapter adapter;
     SwipeRefreshLayout swipeRefreshMain;
     RecyclerView rvMain;
 
@@ -42,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         setWindowNotificationBg();
 
         setGetSupportActionBar();
+
+        setViewModel();
 
         swipeRefreshLayoutOnRefreshListener();
     }
@@ -99,6 +111,40 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     //----Ends----
+
+    private void setViewModel() {
+
+        swipeRefreshMain.setRefreshing(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        rvMain.setLayoutManager(layoutManager);
+        rvMain.setHasFixedSize(true);
+        rvMain.setItemAnimator(new DefaultItemAnimator());
+        rvMain.setNestedScrollingEnabled(false);
+
+        adapter = new MainAdapter();
+        rvMain.setAdapter(adapter);
+
+        MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        if (isNetworkAvailable()) {
+            mainViewModel.getAllUsers().observe(this, new Observer<List<MainResponse>>() {
+                @Override
+                public void onChanged(List<MainResponse> mainResponses) {
+                    if (mainResponses.size() > 0) {
+                        adapter.setDataMain(mainResponses);
+                        swipeRefreshMain.setRefreshing(false);
+                    } else {
+                        showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
+                        swipeRefreshMain.setRefreshing(false);
+                        errorLayout.setVisibility(View.GONE);
+                    }
+                }
+            });
+        } else {
+            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+            swipeRefreshMain.setRefreshing(false);
+        }
+    }
 
     //----Method to show error connection----
     private void showErrorMessage(Integer image, Integer title, Integer message) {
