@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshMain.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                swipeRefreshMain.setRefreshing(false);
+                setViewModel();
             }
         });
     }

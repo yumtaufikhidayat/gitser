@@ -31,6 +31,7 @@
     <string name="tvNoResultDesc">Kami akan memberitahumu\njika sudah tersedia</string>
     <string name="tvStartSearch">Mulai mencari</string>
     <string name="tvStartSearchDesc">Ketuk ikon Cari untuk mencari username</string>
+    <string name="tvRefresh">Tarik ke bawah untuk me-refresh</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
