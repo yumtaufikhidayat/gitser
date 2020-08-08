@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -165,7 +166,7 @@ public class DetailProfileActivity extends AppCompatActivity {
                         Glide.with(DetailProfileActivity.this)
                                 .asBitmap()
                                 .load(photo)
-                                .placeholder(R.drawable.ic_launcher_background)
+                                .placeholder(R.color.colorPrimaryDark)
                                 .into(imgUserProfile);
 
                         tvNameUserProfile.setText(name);
@@ -173,7 +174,12 @@ public class DetailProfileActivity extends AppCompatActivity {
                         tvFollowingUserProfile.setText(String.valueOf(following));
                         tvFollowersUserProfile.setText(String.valueOf(followers));
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
+
                         tvBioUserProfile.setText(bio);
+                        tvBioUserProfile.setMarqueeRepeatLimit(5);
+                        tvBioUserProfile.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                        tvBioUserProfile.setSelected(true);
+
                         tvLocationUserProfile.setText(location);
                         tvCompanyUserProfile.setText(company);
                         tvLinkUserProfile.setText(link);

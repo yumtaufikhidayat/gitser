@@ -43,7 +43,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
                 .load(mainResponse.getAvatarUrl())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.color.colorPrimaryDark)
                 .into(holder.imgUser);
 
         holder.tvUsername.setText(mainResponse.getLogin());

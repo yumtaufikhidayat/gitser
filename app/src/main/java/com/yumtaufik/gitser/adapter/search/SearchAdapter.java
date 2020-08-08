@@ -45,7 +45,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
                 .load(searchItems.getAvatarUrl())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.color.colorPrimaryDark)
                 .into(holder.imgUserSearch);
 
         holder.tvUsernameSearch.setText(searchItems.getLogin());

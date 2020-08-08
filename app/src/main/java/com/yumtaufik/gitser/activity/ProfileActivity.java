@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -164,7 +165,7 @@ public class ProfileActivity extends AppCompatActivity {
                         Glide.with(ProfileActivity.this)
                                 .asBitmap()
                                 .load(photo)
-                                .placeholder(R.drawable.ic_launcher_background)
+                                .placeholder(R.color.colorPrimaryDark)
                                 .into(imgProfile);
 
                         tvName.setText(name);
@@ -172,7 +173,12 @@ public class ProfileActivity extends AppCompatActivity {
                         tvFollowing.setText(String.valueOf(following));
                         tvFollowers.setText(String.valueOf(followers));
                         tvRepository.setText(String.valueOf(repos));
+
                         tvBio.setText(bio);
+                        tvBio.setMarqueeRepeatLimit(5);
+                        tvBio.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                        tvBio.setSelected(true);
+
                         tvLocation.setText(location);
                         tvCompany.setText(company);
                         tvLink.setText(link);

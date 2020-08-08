@@ -34,14 +34,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="10dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/imgProfile"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background"
+                        android:src="@color/colorPrimaryDark"
                         app:civ_border_width="2.5dp"
                         app:civ_border_color="@color/colorPrimaryDark"
                         app:layout_constraintTop_toTopOf="parent"
@@ -85,8 +85,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:orientation="horizontal"
             android:gravity="center"
             android:background="@drawable/second_layer">
@@ -190,7 +190,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="18dp">
+            android:layout_margin="10dp">
 
             <ImageView
                 android:id="@+id/imgBio"
@@ -207,7 +207,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:maxLines="1"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@android:color/black"
                 android:text="@string/tvBio"
