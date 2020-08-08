@@ -10,7 +10,25 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="" />
+    <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/main/MainAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/main/MainAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/model/main/MainResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/model/main/MainResponse.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,19 +90,22 @@
     <option name="MODULE_TAB" value="Properties" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-1700131653">
+      <recent name="com.yumtaufik.gitser.activity" />
+    </key>
+    <key name="android.template.1126797184">
+      <recent name="com.yumtaufik.gitser.activity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/color" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/menu" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/color" />
-    </key>
     <key name="android.template.-55815100">
-      <recent name="com.yumtaufik.gitser.activity" />
-    </key>
-    <key name="android.template.1126797184">
       <recent name="com.yumtaufik.gitser.activity" />
     </key>
     <key name="android.template.-845137647">
@@ -169,10 +190,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="203" y="99" width="950" height="528" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1596253681277" />
-    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1596769503062">
+    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1596878477184">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596769503062" />
+    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596878477184" />
     <state x="416" y="114" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596245405927">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -189,30 +210,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="266" y="122" width="824" height="482" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596176564904" />
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1596855448508">
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1596878965600">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596855448508" />
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596878965600" />
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl" timestamp="1596246267571">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596246267571" />
-    <state width="1324" height="293" key="GridCell.Tab.0.bottom" timestamp="1596855613668">
+    <state width="1324" height="293" key="GridCell.Tab.0.bottom" timestamp="1596879106462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596855613668" />
-    <state width="1324" height="293" key="GridCell.Tab.0.center" timestamp="1596855613667">
+    <state width="1324" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596879106462" />
+    <state width="1324" height="293" key="GridCell.Tab.0.center" timestamp="1596879106462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596855613667" />
-    <state width="1324" height="293" key="GridCell.Tab.0.left" timestamp="1596855613666">
+    <state width="1324" height="293" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596879106462" />
+    <state width="1324" height="293" key="GridCell.Tab.0.left" timestamp="1596879106461">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596855613666" />
-    <state width="1324" height="293" key="GridCell.Tab.0.right" timestamp="1596855613667">
+    <state width="1324" height="293" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596879106461" />
+    <state width="1324" height="293" key="GridCell.Tab.0.right" timestamp="1596879106462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596855613667" />
+    <state width="1324" height="293" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596879106462" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1596767901321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -225,10 +246,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1596864000339" />
-    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596855622755">
+    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596879115640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1596855622755" />
+    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1596879115640" />
     <state x="0" y="0" width="682" height="728" key="dock-window-1" timestamp="1596770019844">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -237,6 +258,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" width="682" height="728" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1596771233371" />
+    <state x="0" y="0" width="682" height="728" key="dock-window-3" timestamp="1596878187257">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="682" height="728" key="dock-window-3/0.0.1366.728@0.0.1366.728" timestamp="1596878187257" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1596768039277">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -259,6 +284,26 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/detail/DetailProfileViewModel.java</url>
           <line>12</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/main/MainAdapter.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

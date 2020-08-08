@@ -1,11 +1,11 @@
 package com.yumtaufik.gitser.adapter.main;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.activity.DetailMainActivity;
 import com.yumtaufik.gitser.model.main.MainResponse;
 
 import java.util.ArrayList;
@@ -50,10 +51,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.cardMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Kamu memilih " + holder.tvUsername.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(holder.itemView.getContext(), DetailMainActivity.class);
+                intent.putExtra(DetailMainActivity.EXTRA_DETAIL_PROFILE_MAIN, mainResponse);
+                holder.itemView.getContext().startActivity(intent);
             }
         });
-        
     }
 
     @Override
