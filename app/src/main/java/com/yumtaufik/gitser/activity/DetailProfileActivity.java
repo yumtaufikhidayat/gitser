@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.DetailProfilePagerAdapter;
@@ -75,7 +76,7 @@ public class DetailProfileActivity extends AppCompatActivity {
         searchItems = getIntent().getParcelableExtra(EXTRA_DETAIL_PROFILE);
 
         toolbarDetail = findViewById(R.id.toolbarDetail);
-        imgUserProfile = findViewById(R.id.imgUserSearch);
+        imgUserProfile = findViewById(R.id.imgUserProfile);
         tvNameUserProfile = findViewById(R.id.tvNameUserProfile);
         tvUsernameUserProfile = findViewById(R.id.tvUsernameUserProfile);
         tvFollowingUserProfile = findViewById(R.id.tvFollowingUserProfile);
@@ -89,8 +90,6 @@ public class DetailProfileActivity extends AppCompatActivity {
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
-
-        profileViewModel = new ViewModelProvider(this).get(DetailProfileViewModel.class);
     }
 
     //----Method to set notification bar----
@@ -138,15 +137,30 @@ public class DetailProfileActivity extends AppCompatActivity {
         errorLayout.setVisibility(View.GONE);
 
         if (isNetworkAvailable()) {
+            profileViewModel = new ViewModelProvider(this).get(DetailProfileViewModel.class);
             profileViewModel.getDetailProfileByUsername(username).observe(this, new Observer<DetailProfileResponse>() {
                 @Override
                 public void onChanged(DetailProfileResponse detailProfileResponse) {
                     if (detailProfileResponse != null) {
-                        tvNameUserProfile.setText(detailProfileResponse.getName());
-//                    tvUsernameUserProfile.setText(detailProfileResponse.getLogin());
-//                    tvFollowingUserProfile.setText(detailProfileResponse.getFollowing());
-//                    tvFollowersUserProfile.setText(detailProfileResponse.getFollowers());
-//                    tvRepositoryUserProfile.setText(detailProfileResponse.getPublicRepos());
+
+                        String photo = detailProfileResponse.getAvatarUrl();
+                        String name = detailProfileResponse.getName();
+                        String username = detailProfileResponse.getLogin();
+                        Integer following = detailProfileResponse.getFollowing();
+                        Integer followers = detailProfileResponse.getFollowers();
+                        Integer repos = detailProfileResponse.getPublicRepos();
+
+                        Glide.with(DetailProfileActivity.this)
+                                .asBitmap()
+                                .load(photo)
+                                .placeholder(R.drawable.ic_launcher_background)
+                                .into(imgUserProfile);
+
+                        tvNameUserProfile.setText(name);
+                        tvUsernameUserProfile.setText(username);
+                        tvFollowingUserProfile.setText(String.valueOf(following));
+                        tvFollowersUserProfile.setText(String.valueOf(followers));
+                        tvRepositoryUserProfile.setText(String.valueOf(repos));
                     } else {
                         Log.i("onChangedFailed", "onChanged: ");
                     }

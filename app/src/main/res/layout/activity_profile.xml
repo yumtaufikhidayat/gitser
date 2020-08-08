@@ -31,7 +31,7 @@
                 android:layout_marginBottom="25dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgUserProfile"
+                    android:id="@+id/imgProfile"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
@@ -52,9 +52,9 @@
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:text="@string/tvName"
-                    app:layout_constraintStart_toStartOf="@id/imgUserProfile"
-                    app:layout_constraintEnd_toEndOf="@id/imgUserProfile"
-                    app:layout_constraintTop_toBottomOf="@id/imgUserProfile"
+                    app:layout_constraintStart_toStartOf="@id/imgProfile"
+                    app:layout_constraintEnd_toEndOf="@id/imgProfile"
+                    app:layout_constraintTop_toBottomOf="@id/imgProfile"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
@@ -212,5 +212,7 @@
         android:id="@+id/viewPagerDetailProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <include layout="@layout/layout_error"/>
 
 </LinearLayout>

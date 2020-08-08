@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -56,7 +55,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
                 Intent intent = new Intent(holder.itemView.getContext(), DetailProfileActivity.class);
                 intent.putExtra(DetailProfileActivity.EXTRA_DETAIL_PROFILE, searchItems);
                 holder.itemView.getContext().startActivity(intent);
-                Toast.makeText(holder.itemView.getContext(), "Kamu memilih " + holder.tvUsernameSearch.getText(), Toast.LENGTH_SHORT).show();
             }
         });
     }

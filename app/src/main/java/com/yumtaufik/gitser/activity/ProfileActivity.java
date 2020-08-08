@@ -2,22 +2,49 @@ package com.yumtaufik.gitser.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
+import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
 public class ProfileActivity extends AppCompatActivity {
 
     Toolbar toolbarProfile;
+
+    ImageView imgProfile;
+
+    TextView tvName,
+            tvUsername,
+            tvFollowing,
+            tvFollowers,
+            tvRepository;
+
+    ConstraintLayout errorLayout;
+    ImageView imgErrorImage;
+    TextView tvErrorTitle, tvErrorMessage;
+
+    DetailProfileViewModel profileViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +56,26 @@ public class ProfileActivity extends AppCompatActivity {
         setWindowNotificationBg();
 
         setGetSupportActionBar();
+
+        setViewModel();
     }
 
     private void setInit() {
+
         toolbarProfile = findViewById(R.id.toolbarProfile);
+
+        imgProfile = findViewById(R.id.imgProfile);
+
+        tvName = findViewById(R.id.tvName);
+        tvUsername = findViewById(R.id.tvUsername);
+        tvFollowing = findViewById(R.id.tvFollowing);
+        tvFollowers = findViewById(R.id.tvFollowers);
+        tvRepository = findViewById(R.id.tvRepository);
+
+        errorLayout = findViewById(R.id.errorLayout);
+        imgErrorImage = findViewById(R.id.imgErrorImage);
+        tvErrorTitle = findViewById(R.id.tvErrorTitle);
+        tvErrorMessage = findViewById(R.id.tvErrorMessage);
     }
 
     //----Method to set notification bar----
@@ -87,4 +130,71 @@ public class ProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
+
+    private void setViewModel() {
+
+        errorLayout.setVisibility(View.GONE);
+
+        if (isNetworkAvailable()) {
+            profileViewModel = new ViewModelProvider(this).get(DetailProfileViewModel.class);
+            profileViewModel.getDetailProfileByUsername("yumtaufikhidayat").observe(this, new Observer<DetailProfileResponse>() {
+                @Override
+                public void onChanged(DetailProfileResponse detailProfileResponse) {
+                    if (detailProfileResponse != null) {
+
+                        String photo = detailProfileResponse.getAvatarUrl();
+                        String name = detailProfileResponse.getName();
+                        String username = detailProfileResponse.getLogin();
+                        Integer following = detailProfileResponse.getFollowing();
+                        Integer followers = detailProfileResponse.getFollowers();
+                        Integer repos = detailProfileResponse.getPublicRepos();
+
+                        Glide.with(ProfileActivity.this)
+                                .asBitmap()
+                                .load(photo)
+                                .placeholder(R.drawable.ic_launcher_background)
+                                .into(imgProfile);
+
+                        tvName.setText(name);
+                        tvUsername.setText(username);
+                        tvFollowing.setText(String.valueOf(following));
+                        tvFollowers.setText(String.valueOf(followers));
+                        tvRepository.setText(String.valueOf(repos));
+                    } else {
+                        Log.i("onChangedFailed", "onChanged: ");
+                    }
+                }
+            });
+        } else {
+            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+        }
+    }
+
+    //----Method to show error connection----
+    private void showErrorMessage(Integer image, Integer title, Integer message) {
+        if (errorLayout.getVisibility() == View.GONE) {
+            errorLayout.setVisibility(View.VISIBLE);
+        }
+
+        imgErrorImage.setImageResource(image);
+        tvErrorTitle.setText(title);
+        tvErrorMessage.setText(message);
+    }
+    //----Ends----
+
+    //----Methods to check network connection---
+    private boolean isNetworkAvailable() {
+        try {
+            ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = null;
+
+            if (manager != null) {
+                networkInfo = manager.getActiveNetworkInfo();
+            }
+            return networkInfo != null && networkInfo.isConnected();
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+    //---Ends----
 }

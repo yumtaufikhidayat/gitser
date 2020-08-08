@@ -16,7 +16,6 @@ import retrofit2.internal.EverythingIsNonNull;
 
 public class DetailProfileRepository extends ViewModel {
 
-    DetailProfileResponse profileResponse;
     private final MutableLiveData<DetailProfileResponse> mutableLiveDataDetailProfile = new MutableLiveData<>();
 
     MutableLiveData<DetailProfileResponse> detailProfileByUsername(String username) {
@@ -27,9 +26,23 @@ public class DetailProfileRepository extends ViewModel {
             @Override
             @EverythingIsNonNull
             public void onResponse(Call<DetailProfileResponse> call, Response<DetailProfileResponse> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body() != null) {
+                    DetailProfileResponse profileResponse = response.body();
                     mutableLiveDataDetailProfile.setValue(profileResponse);
                     Log.i("onResponse", "onResponse: ");
+                } else {
+                    switch (response.code()) {
+                        case 404:
+                            Log.e("404", "error404: " + response.errorBody());
+                            break;
+
+                        case 500:
+                            Log.e("500", "error500: " + response.errorBody());
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
             }
 
