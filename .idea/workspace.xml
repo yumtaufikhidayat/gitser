@@ -15,15 +15,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/detail/DetailProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/detail/DetailProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/model/detail/DetailProfileResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/model/detail/DetailProfileResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,22 +207,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596246267571" />
-    <state width="1324" height="293" key="GridCell.Tab.0.bottom" timestamp="1596855401159">
+    <state width="1324" height="293" key="GridCell.Tab.0.bottom" timestamp="1596855613668">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596855401159" />
-    <state width="1324" height="293" key="GridCell.Tab.0.center" timestamp="1596855401158">
+    <state width="1324" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596855613668" />
+    <state width="1324" height="293" key="GridCell.Tab.0.center" timestamp="1596855613667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596855401158" />
-    <state width="1324" height="293" key="GridCell.Tab.0.left" timestamp="1596855401158">
+    <state width="1324" height="293" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596855613667" />
+    <state width="1324" height="293" key="GridCell.Tab.0.left" timestamp="1596855613666">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596855401158" />
-    <state width="1324" height="293" key="GridCell.Tab.0.right" timestamp="1596855448649">
+    <state width="1324" height="293" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596855613666" />
+    <state width="1324" height="293" key="GridCell.Tab.0.right" timestamp="1596855613667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="293" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596855448649" />
+    <state width="1324" height="293" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596855613667" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1596767901321">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -239,10 +235,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1596254567886" />
-    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596855077303">
+    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596855622755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1596855077303" />
+    <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1596855622755" />
     <state x="0" y="0" width="682" height="728" key="dock-window-1" timestamp="1596770019844">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -289,22 +285,22 @@
           <line>149</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java</url>
           <line>162</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/detail/DetailProfileRepository.java</url>
           <line>30</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/detail/DetailProfileViewModel.java</url>
           <line>12</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+        <line-breakpoint suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java</url>
           <line>161</line>
           <option name="timeStamp" value="47" />
