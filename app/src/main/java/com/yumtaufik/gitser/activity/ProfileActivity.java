@@ -38,7 +38,11 @@ public class ProfileActivity extends AppCompatActivity {
             tvUsername,
             tvFollowing,
             tvFollowers,
-            tvRepository;
+            tvRepository,
+            tvBio,
+            tvLocation,
+            tvCompany,
+            tvLink;
 
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
@@ -71,6 +75,10 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowing = findViewById(R.id.tvFollowing);
         tvFollowers = findViewById(R.id.tvFollowers);
         tvRepository = findViewById(R.id.tvRepository);
+        tvBio = findViewById(R.id.tvBio);
+        tvLocation = findViewById(R.id.tvLocation);
+        tvCompany = findViewById(R.id.tvCompany);
+        tvLink = findViewById(R.id.tvLink);
 
         errorLayout = findViewById(R.id.errorLayout);
         imgErrorImage = findViewById(R.id.imgErrorImage);
@@ -148,6 +156,10 @@ public class ProfileActivity extends AppCompatActivity {
                         Integer following = detailProfileResponse.getFollowing();
                         Integer followers = detailProfileResponse.getFollowers();
                         Integer repos = detailProfileResponse.getPublicRepos();
+                        String bio = detailProfileResponse.getBio();
+                        String location = detailProfileResponse.getLocation();
+                        String company = detailProfileResponse.getCompany();
+                        String link = detailProfileResponse.getBlog();
 
                         Glide.with(ProfileActivity.this)
                                 .asBitmap()
@@ -160,6 +172,11 @@ public class ProfileActivity extends AppCompatActivity {
                         tvFollowing.setText(String.valueOf(following));
                         tvFollowers.setText(String.valueOf(followers));
                         tvRepository.setText(String.valueOf(repos));
+                        tvBio.setText(bio);
+                        tvLocation.setText(location);
+                        tvCompany.setText(company);
+                        tvLink.setText(link);
+
                     } else {
                         Log.i("onChangedFailed", "onChanged: ");
                     }

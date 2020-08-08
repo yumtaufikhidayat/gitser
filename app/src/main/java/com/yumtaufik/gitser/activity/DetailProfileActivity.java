@@ -39,7 +39,11 @@ public class DetailProfileActivity extends AppCompatActivity {
             tvUsernameUserProfile,
             tvFollowingUserProfile,
             tvFollowersUserProfile,
-            tvRepositoryUserProfile;
+            tvRepositoryUserProfile,
+            tvBioUserProfile,
+            tvLocationUserProfile,
+            tvCompanyUserProfile,
+            tvLinkUserProfile;
 
     TabLayout tabLayoutDetailProfile;
     ViewPager viewPagerDetailProfile;
@@ -82,6 +86,10 @@ public class DetailProfileActivity extends AppCompatActivity {
         tvFollowingUserProfile = findViewById(R.id.tvFollowingUserProfile);
         tvFollowersUserProfile = findViewById(R.id.tvFollowersUserProfile);
         tvRepositoryUserProfile = findViewById(R.id.tvRepositoryUserProfile);
+        tvBioUserProfile = findViewById(R.id.tvBioUserProfile);
+        tvLocationUserProfile = findViewById(R.id.tvLocationUserProfile);
+        tvCompanyUserProfile = findViewById(R.id.tvCompanyUserProfile);
+        tvLinkUserProfile = findViewById(R.id.tvLinkUserProfile);
 
         tabLayoutDetailProfile = findViewById(R.id.tabLayoutDetailProfile);
         viewPagerDetailProfile = findViewById(R.id.viewPagerDetailProfile);
@@ -149,6 +157,10 @@ public class DetailProfileActivity extends AppCompatActivity {
                         Integer following = detailProfileResponse.getFollowing();
                         Integer followers = detailProfileResponse.getFollowers();
                         Integer repos = detailProfileResponse.getPublicRepos();
+                        String bio = detailProfileResponse.getBio();
+                        String location = detailProfileResponse.getLocation();
+                        String company = detailProfileResponse.getCompany();
+                        String link = detailProfileResponse.getBlog();
 
                         Glide.with(DetailProfileActivity.this)
                                 .asBitmap()
@@ -161,13 +173,32 @@ public class DetailProfileActivity extends AppCompatActivity {
                         tvFollowingUserProfile.setText(String.valueOf(following));
                         tvFollowersUserProfile.setText(String.valueOf(followers));
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
+                        tvBioUserProfile.setText(bio);
+                        tvLocationUserProfile.setText(location);
+                        tvCompanyUserProfile.setText(company);
+                        tvLinkUserProfile.setText(link);
+
                     } else {
                         Log.i("onChangedFailed", "onChanged: ");
                     }
                 }
             });
+        } else {
+            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
         }
     }
+
+    //----Method to show error connection----
+    private void showErrorMessage(Integer image, Integer title, Integer message) {
+        if (errorLayout.getVisibility() == View.GONE) {
+            errorLayout.setVisibility(View.VISIBLE);
+        }
+
+        imgErrorImage.setImageResource(image);
+        tvErrorTitle.setText(title);
+        tvErrorMessage.setText(message);
+    }
+    //----Ends----
 
     //----Methods to check network connection---
     private boolean isNetworkAvailable() {
