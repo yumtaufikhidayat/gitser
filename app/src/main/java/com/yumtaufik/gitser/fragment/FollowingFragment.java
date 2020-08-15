@@ -14,8 +14,19 @@ import com.yumtaufik.gitser.R;
 
 public class FollowingFragment extends Fragment {
 
+    public static final String EXTRA_FOLLOWING_FRAGMENT = "com.yumtaufik.gitser.fragment.EXTRA_FOLLOWING_FRAGMENT";
+
+    String username;
+
     public FollowingFragment() {
         // Required empty public constructor
+    }
+
+    public void newInstance(String username) {
+        FollowingFragment followingFragment = new FollowingFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(EXTRA_FOLLOWING_FRAGMENT, username);
+        followingFragment.setArguments(bundle);
     }
 
     @Override
@@ -28,5 +39,9 @@ public class FollowingFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if (getArguments() != null) {
+            username = getArguments().getString(EXTRA_FOLLOWING_FRAGMENT);
+        }
     }
 }

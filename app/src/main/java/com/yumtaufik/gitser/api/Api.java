@@ -7,4 +7,6 @@ public class Api {
     static final String USERS_URL = "users";
     static final String SEARCH_USERS_URL = "search/users?";
     static final String DETAIL_PROFILE_URL = "users/{username}";
+    static final String FOLLOWING_URL = "users/{username}/following";
+    static final String FOLLOWERS_URL = "users/{username}/followers";
 }

@@ -1,5 +1,6 @@
 package com.yumtaufik.gitser.api;
 
+import com.yumtaufik.gitser.model.followingfollowers.FollowingFollowersResponse;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.model.search.SearchResponse;
@@ -25,4 +26,8 @@ public interface ApiInterface {
     @Headers("Authorization: token " + Api.GITHUB_TOKEN)
     @GET(Api.DETAIL_PROFILE_URL)
     Call<DetailProfileResponse> getDetailProfile(@Path("username") String username);
+
+    @Headers("Authorization: token " + Api.GITHUB_TOKEN)
+    @GET(Api.FOLLOWING_URL)
+    Call<List<FollowingFollowersResponse>> getProfileFollowingFollowers(@Path("username") String username);
 }

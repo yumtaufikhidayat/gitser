@@ -14,8 +14,17 @@ import com.yumtaufik.gitser.R;
 
 public class FollowersFragment extends Fragment {
 
+    public static final String EXTRA_FOLLOWERS_FRAGMENT = "com.yumtaufik.gitser.fragment.EXTRA_FOLLOWERS_FRAGMENT";
+
     public FollowersFragment() {
         // Required empty public constructor
+    }
+
+    public void newInstance(String username) {
+        FollowersFragment followersFragment = new FollowersFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(EXTRA_FOLLOWERS_FRAGMENT, username);
+        followersFragment.setArguments(bundle);
     }
 
     @Override

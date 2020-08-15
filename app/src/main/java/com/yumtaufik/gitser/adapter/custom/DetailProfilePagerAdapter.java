@@ -10,11 +10,13 @@ import com.yumtaufik.gitser.fragment.FollowingFragment;
 
 public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
 
-    private final int numbOftabs;
+    private final int numbOfTabs;
+    String username;
 
-    public DetailProfilePagerAdapter(@NonNull FragmentManager fm, int numbOftabs) {
+    public DetailProfilePagerAdapter(@NonNull FragmentManager fm, int numbOfTabs, String username) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        this.numbOftabs = numbOftabs;
+        this.numbOfTabs = numbOfTabs;
+        this.username = username;
     }
 
     @NonNull
@@ -22,10 +24,14 @@ public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new FollowingFragment();
+                FollowingFragment followingFragment = new FollowingFragment();
+                followingFragment.newInstance(username);
+                return followingFragment;
 
             case 1:
-                return new FollowersFragment();
+                FollowersFragment followersFragment = new FollowersFragment();
+                followersFragment.newInstance(username);
+                return followersFragment;
 
             default:
                 return null;
@@ -34,6 +40,6 @@ public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return numbOftabs;
+        return numbOfTabs;
     }
 }

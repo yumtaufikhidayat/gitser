@@ -55,6 +55,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     DetailProfileViewModel profileViewModel;
     SearchItems searchItems;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +64,17 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         setInit();
 
+        setParcelableData();
+
         setWindowNotificationBg();
 
         setGetSupportActionBar();
 
-        DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(getSupportFragmentManager(), tabLayoutDetailProfile.getTabCount());
+        DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(
+                getSupportFragmentManager(),
+                tabLayoutDetailProfile.getTabCount(),
+                username
+        );
         viewPagerDetailProfile.setAdapter(profilePagerAdapter);
 
         addOnTabSelected();
@@ -99,6 +106,10 @@ public class DetailProfileActivity extends AppCompatActivity {
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
+    }
+
+    private void setParcelableData() {
+        username = searchItems.getLogin();
     }
 
     //----Method to set notification bar----
@@ -140,8 +151,6 @@ public class DetailProfileActivity extends AppCompatActivity {
     //----Ends-----
 
     private void setViewModel() {
-
-        String username = searchItems.getLogin();
 
         errorLayout.setVisibility(View.GONE);
 

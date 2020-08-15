@@ -51,7 +51,7 @@ public class DetailProfileResponse{
 	private String url;
 	@SerializedName("received_events_url")
 	private String receivedEventsUrl;
-	@SerializedName("followers")
+	@SerializedName("FollowingFollowersViewModel")
 	private int followers;
 	@SerializedName("avatar_url")
 	private String avatarUrl;

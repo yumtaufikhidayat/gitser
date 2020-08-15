@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.viewmodel.main;
+package com.yumtaufik.gitser.viewmodel.followingfollowers;
 
 import android.util.Log;
 
@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.yumtaufik.gitser.api.ApiClient;
 import com.yumtaufik.gitser.api.ApiInterface;
-import com.yumtaufik.gitser.model.main.MainResponse;
+import com.yumtaufik.gitser.model.followingfollowers.FollowingFollowersResponse;
 
 import java.util.List;
 
@@ -15,21 +15,21 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.internal.EverythingIsNonNull;
 
-public class MainRepository {
+public class FollowingFollowersRepository {
 
-    private final MutableLiveData<List<MainResponse>> mutableLiveDataAllUsers = new MutableLiveData<>();
+    private final MutableLiveData<List<FollowingFollowersResponse>> mutableLiveDataFollowingFollowers = new MutableLiveData<>();
 
-    MutableLiveData<List<MainResponse>> getAllUsers() {
+    MutableLiveData<List<FollowingFollowersResponse>> getProfileFollowing(String username) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        Call<List<MainResponse>> getResponse = apiInterface.getAllUsers();
-        getResponse.enqueue(new Callback<List<MainResponse>>() {
+        Call<List<FollowingFollowersResponse>> getResponse = apiInterface.getProfileFollowingFollowers(username);
+        getResponse.enqueue(new Callback<List<FollowingFollowersResponse>>() {
             @Override
             @EverythingIsNonNull
-            public void onResponse(Call<List<MainResponse>> call, Response<List<MainResponse>> response) {
+            public void onResponse(Call<List<FollowingFollowersResponse>> call, Response<List<FollowingFollowersResponse>> response) {
                 if (response.isSuccessful()) {
-                    mutableLiveDataAllUsers.setValue(response.body());
+                    mutableLiveDataFollowingFollowers.setValue(response.body());
                 } else {
                     switch (response.code()) {
                         case 404:
@@ -48,11 +48,11 @@ public class MainRepository {
 
             @Override
             @EverythingIsNonNull
-            public void onFailure(Call<List<MainResponse>> call, Throwable t) {
-                Log.e("allUsersError", "onFailure: " + t.getLocalizedMessage());
+            public void onFailure(Call<List<FollowingFollowersResponse>> call, Throwable t) {
+                Log.e("followingError", "onFailure: " + t.getLocalizedMessage());
             }
         });
 
-        return mutableLiveDataAllUsers;
+        return mutableLiveDataFollowingFollowers;
     }
 }
