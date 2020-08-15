@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.viewmodel.followingfollowers;
+package com.yumtaufik.gitser.viewmodel.following;
 
 import android.util.Log;
 
@@ -15,15 +15,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.internal.EverythingIsNonNull;
 
-public class FollowingFollowersRepository {
+public class FollowingRepository {
 
     private final MutableLiveData<List<FollowingFollowersResponse>> mutableLiveDataFollowingFollowers = new MutableLiveData<>();
 
-    MutableLiveData<List<FollowingFollowersResponse>> getProfileFollowing(String username) {
+    MutableLiveData<List<FollowingFollowersResponse>> getProfileFollowingFollowers(String username) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        Call<List<FollowingFollowersResponse>> getResponse = apiInterface.getProfileFollowingFollowers(username);
+        Call<List<FollowingFollowersResponse>> getResponse = apiInterface.getProfileFollowing(username);
         getResponse.enqueue(new Callback<List<FollowingFollowersResponse>>() {
             @Override
             @EverythingIsNonNull

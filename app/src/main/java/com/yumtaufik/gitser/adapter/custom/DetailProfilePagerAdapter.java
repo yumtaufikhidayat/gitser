@@ -24,14 +24,10 @@ public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                FollowingFragment followingFragment = new FollowingFragment();
-                followingFragment.newInstance(username);
-                return followingFragment;
+                return FollowingFragment.newInstance(username);
 
             case 1:
-                FollowersFragment followersFragment = new FollowersFragment();
-                followersFragment.newInstance(username);
-                return followersFragment;
+                return FollowersFragment.newInstance(username);
 
             default:
                 return null;

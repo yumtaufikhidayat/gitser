@@ -16,7 +16,7 @@ import com.yumtaufik.gitser.model.followingfollowers.FollowingFollowersResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FollowingAdapter extends RecyclerView.Adapter<FollowingAdapter.MyViewHolder> {
+public class FollowingFollowersAdapter extends RecyclerView.Adapter<FollowingFollowersAdapter.MyViewHolder> {
 
     private List<FollowingFollowersResponse> followingFollowersResponseList = new ArrayList<>();
 

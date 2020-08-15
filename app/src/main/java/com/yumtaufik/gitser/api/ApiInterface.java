@@ -29,5 +29,7 @@ public interface ApiInterface {
 
     @Headers("Authorization: token " + Api.GITHUB_TOKEN)
     @GET(Api.FOLLOWING_URL)
-    Call<List<FollowingFollowersResponse>> getProfileFollowingFollowers(@Path("username") String username);
+    Call<List<FollowingFollowersResponse>> getProfileFollowing(
+            @Path(value = "username", encoded = true) String username
+    );
 }
