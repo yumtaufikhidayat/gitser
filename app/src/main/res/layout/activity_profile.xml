@@ -211,7 +211,7 @@
                 android:scrollHorizontally="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@android:color/black"
-                android:text="@string/tvBio"
+                android:text=""
                 app:layout_constraintStart_toEndOf="@id/imgBio"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/tvLocation"/>
@@ -236,7 +236,7 @@
                 android:maxLines="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@android:color/black"
-                android:text="@string/tvLocation"
+                android:text=""
                 app:layout_constraintStart_toEndOf="@id/imgLocation"
                 app:layout_constraintTop_toBottomOf="@id/tvBio"
                 app:layout_constraintBottom_toTopOf="@id/tvCompany"/>
@@ -261,7 +261,7 @@
                 android:maxLines="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@android:color/black"
-                android:text="@string/tvCompany"
+                android:text=""
                 app:layout_constraintStart_toEndOf="@id/imgCompany"
                 app:layout_constraintTop_toBottomOf="@id/tvLocation"
                 app:layout_constraintBottom_toTopOf="@id/tvLink"/>
@@ -286,7 +286,7 @@
                 android:maxLines="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@android:color/black"
-                android:text="@string/tvLink"
+                android:text=""
                 app:layout_constraintStart_toEndOf="@id/imgLink"
                 app:layout_constraintTop_toBottomOf="@id/tvCompany"
                 app:layout_constraintBottom_toBottomOf="parent"/>

@@ -98,11 +98,11 @@ public class FollowingFragment extends Fragment {
 
         FollowingViewModel viewModel = new ViewModelProvider(this).get(FollowingViewModel.class);
         if (isNetworkAvailable()) {
-            viewModel.getProfileFollowingFollowers(username).observe(getViewLifecycleOwner(), new Observer<List<FollowingFollowersResponse>>() {
+            viewModel.getProfileFollowing(username).observe(getViewLifecycleOwner(), new Observer<List<FollowingFollowersResponse>>() {
                 @Override
                 public void onChanged(List<FollowingFollowersResponse> followingFollowersResponses) {
                     if (followingFollowersResponses.size() > 0) {
-                        adapter.setDataFollowing(followingFollowersResponses);
+                        adapter.setDataFollowingFollowers(followingFollowersResponses);
                     } else {
                         showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
                         errorLayout.setVisibility(View.GONE);

@@ -73,8 +73,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             super(itemView);
 
             cardMain = itemView.findViewById(R.id.cardSearchUser);
-            imgUser = itemView.findViewById(R.id.imgUserSearch);
-            tvUsername = itemView.findViewById(R.id.tvUsernameSearch);
+            imgUser = itemView.findViewById(R.id.imgUser);
+            tvUsername = itemView.findViewById(R.id.tvUsername);
         }
     }
 }

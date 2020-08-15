@@ -62,7 +62,7 @@
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textStyle="bold"
                             android:textColor="@android:color/black"
-                            android:text="@string/tvName"
+                            android:text=""
                             app:layout_constraintStart_toStartOf="@id/imgUserProfile"
                             app:layout_constraintEnd_toEndOf="@id/imgUserProfile"
                             app:layout_constraintTop_toBottomOf="@id/imgUserProfile"
@@ -75,7 +75,7 @@
                             android:maxLines="1"
                             android:ellipsize="end"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:text="@string/tvUsername"
+                            android:text=""
                             app:layout_constraintStart_toStartOf="@id/tvNameUserProfile"
                             app:layout_constraintEnd_toEndOf="@id/tvNameUserProfile"
                             app:layout_constraintTop_toBottomOf="@id/tvNameUserProfile"
@@ -216,7 +216,7 @@
                     android:scrollHorizontally="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvBio"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgBio"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/tvLocationUserProfile"/>
@@ -241,7 +241,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvLocation"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgLocation"
                     app:layout_constraintTop_toBottomOf="@id/tvBioUserProfile"
                     app:layout_constraintBottom_toTopOf="@id/tvCompanyUserProfile"/>
@@ -266,7 +266,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvCompany"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgCompany"
                     app:layout_constraintTop_toBottomOf="@id/tvLocationUserProfile"
                     app:layout_constraintBottom_toTopOf="@id/tvLinkUserProfile"/>
@@ -291,7 +291,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvLink"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgLink"
                     app:layout_constraintTop_toBottomOf="@id/tvCompanyUserProfile"
                     app:layout_constraintBottom_toBottomOf="parent"/>

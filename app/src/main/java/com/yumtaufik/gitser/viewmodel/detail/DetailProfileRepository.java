@@ -29,7 +29,7 @@ public class DetailProfileRepository extends ViewModel {
                 if (response.isSuccessful() && response.body() != null) {
                     DetailProfileResponse profileResponse = response.body();
                     mutableLiveDataDetailProfile.setValue(profileResponse);
-                    Log.i("onResponse", "onResponse: ");
+                    Log.i("onResponse", "onResponse: " + profileResponse);
                 } else {
                     switch (response.code()) {
                         case 404:

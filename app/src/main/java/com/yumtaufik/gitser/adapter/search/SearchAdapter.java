@@ -74,8 +74,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
             super(itemView);
 
             cardSearchUser = itemView.findViewById(R.id.cardSearchUser);
-            imgUserSearch = itemView.findViewById(R.id.imgUserSearch);
-            tvUsernameSearch = itemView.findViewById(R.id.tvUsernameSearch);
+            imgUserSearch = itemView.findViewById(R.id.imgUser);
+            tvUsernameSearch = itemView.findViewById(R.id.tvUsername);
         }
     }
 }

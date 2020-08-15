@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.viewmodel.following;
+package com.yumtaufik.gitser.viewmodel.followers;
 
 import android.util.Log;
 
@@ -15,21 +15,21 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.internal.EverythingIsNonNull;
 
-public class FollowingRepository {
+public class FollowersRepository {
 
-    private final MutableLiveData<List<FollowingFollowersResponse>> mutableLiveDataFollowingFollowers = new MutableLiveData<>();
+    private final MutableLiveData<List<FollowingFollowersResponse>> mutableLiveDataFollowers = new MutableLiveData<>();
 
-    MutableLiveData<List<FollowingFollowersResponse>> getProfileFollowing(String username) {
+    MutableLiveData<List<FollowingFollowersResponse>> getProfileFollowers(String username) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        Call<List<FollowingFollowersResponse>> getResponse = apiInterface.getProfileFollowing(username);
+        Call<List<FollowingFollowersResponse>> getResponse = apiInterface.getProfileFollowers(username);
         getResponse.enqueue(new Callback<List<FollowingFollowersResponse>>() {
             @Override
             @EverythingIsNonNull
             public void onResponse(Call<List<FollowingFollowersResponse>> call, Response<List<FollowingFollowersResponse>> response) {
                 if (response.isSuccessful()) {
-                    mutableLiveDataFollowingFollowers.setValue(response.body());
+                    mutableLiveDataFollowers.setValue(response.body());
                 } else {
                     switch (response.code()) {
                         case 404:
@@ -49,10 +49,10 @@ public class FollowingRepository {
             @Override
             @EverythingIsNonNull
             public void onFailure(Call<List<FollowingFollowersResponse>> call, Throwable t) {
-                Log.e("followingError", "onFailure: " + t.getLocalizedMessage());
+                Log.e("followersError", "onFailure: " + t.getLocalizedMessage());
             }
         });
 
-        return mutableLiveDataFollowingFollowers;
+        return mutableLiveDataFollowers;
     }
 }

@@ -11,7 +11,7 @@ public class FollowingViewModel extends ViewModel {
 
     private final FollowingRepository followingRepository = new FollowingRepository();
 
-    public LiveData<List<FollowingFollowersResponse>> getProfileFollowingFollowers(String username) {
-        return followingRepository.getProfileFollowingFollowers(username);
+    public LiveData<List<FollowingFollowersResponse>> getProfileFollowing(String username) {
+        return followingRepository.getProfileFollowing(username);
     }
 }

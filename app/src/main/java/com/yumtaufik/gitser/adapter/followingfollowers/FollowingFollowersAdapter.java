@@ -20,7 +20,7 @@ public class FollowingFollowersAdapter extends RecyclerView.Adapter<FollowingFol
 
     private List<FollowingFollowersResponse> followingFollowersResponseList = new ArrayList<>();
 
-    public void setDataFollowing(List<FollowingFollowersResponse> followingFollowersResponseList) {
+    public void setDataFollowingFollowers(List<FollowingFollowersResponse> followingFollowersResponseList) {
         this.followingFollowersResponseList.clear();
         this.followingFollowersResponseList.addAll(followingFollowersResponseList);
         notifyDataSetChanged();
@@ -60,8 +60,8 @@ public class FollowingFollowersAdapter extends RecyclerView.Adapter<FollowingFol
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imgUser = itemView.findViewById(R.id.imgUserSearch);
-            tvUsername = itemView.findViewById(R.id.tvUsernameSearch);
+            imgUser = itemView.findViewById(R.id.imgUser);
+            tvUsername = itemView.findViewById(R.id.tvUsername);
         }
     }
 }

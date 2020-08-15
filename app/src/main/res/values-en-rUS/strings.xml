@@ -3,7 +3,6 @@
     <string name="app_name">Gitser</string>
     <string name="tvUsername">Username</string>
     <string name="tvName">Name</string>
-    <string name="tvLocation">Location</string>
     <string name="tvHello">Hello,</string>
     <string name="tvTaufik">Taufik Hidayat</string>
     <string name="tvTaufikUsername">yumtaufikhidayat</string>
@@ -13,10 +12,6 @@
     <string name="tvFollowingNumber">0</string>
     <string name="tvFollowers">Followers</string>
     <string name="tvFollowerNumber">0</string>
-    <string name="tvBio">Bio</string>
-    <string name="tvLink">Link</string>
-    <string name="tvCompany">Company</string>
-    <string name="tvCompanyName">Company name</string>
     <string name="tvRepository">Repository</string>
     <string name="tvRepositoryNumber">0</string>
     <string name="tvSearch">Search</string>

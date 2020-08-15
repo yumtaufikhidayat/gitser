@@ -32,4 +32,10 @@ public interface ApiInterface {
     Call<List<FollowingFollowersResponse>> getProfileFollowing(
             @Path(value = "username", encoded = true) String username
     );
+
+    @Headers("Authorization: token " + Api.GITHUB_TOKEN)
+    @GET(Api.FOLLOWERS_URL)
+    Call<List<FollowingFollowersResponse>> getProfileFollowers(
+            @Path(value = "username", encoded = true) String username
+    );
 }

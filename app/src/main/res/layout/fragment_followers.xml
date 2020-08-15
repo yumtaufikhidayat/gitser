@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FollowersFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFollowers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_users"/>
+
+    <include layout="@layout/layout_error"/>
 
 </FrameLayout>

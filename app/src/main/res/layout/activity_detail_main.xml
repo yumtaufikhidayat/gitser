@@ -216,7 +216,7 @@
                     android:scrollHorizontally="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvBio"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgBio"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/tvLocationMain"/>
@@ -241,7 +241,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvLocation"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgLocation"
                     app:layout_constraintTop_toBottomOf="@id/tvBioMain"
                     app:layout_constraintBottom_toTopOf="@id/tvCompanyMain"/>
@@ -266,7 +266,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvCompany"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgCompany"
                     app:layout_constraintTop_toBottomOf="@id/tvLocationMain"
                     app:layout_constraintBottom_toTopOf="@id/tvLinkMain"/>
@@ -291,7 +291,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text="@string/tvLink"
+                    android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgLink"
                     app:layout_constraintTop_toBottomOf="@id/tvCompanyMain"
                     app:layout_constraintBottom_toBottomOf="parent"/>
