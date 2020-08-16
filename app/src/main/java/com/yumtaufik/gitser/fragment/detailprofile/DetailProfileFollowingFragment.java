@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.fragment;
+package com.yumtaufik.gitser.fragment.detailprofile;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -28,12 +28,12 @@ import com.yumtaufik.gitser.viewmodel.following.FollowingViewModel;
 
 import java.util.List;
 
-public class FollowingFragment extends Fragment {
+public class DetailProfileFollowingFragment extends Fragment {
 
     public static final String ARGS_FOLLOWING_FRAGMENT = "com.yumtaufik.gitser.fragment.ARGS_FOLLOWING_FRAGMENT";
 
     FollowingFollowersAdapter adapter;
-    RecyclerView rvFollowing;
+    RecyclerView rvDetailProfileFollowing;
     
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
@@ -41,30 +41,30 @@ public class FollowingFragment extends Fragment {
     
     String username;
 
-    public FollowingFragment() {
+    public DetailProfileFollowingFragment() {
         // Required empty public constructor
     }
 
-    public static FollowingFragment newInstance(String username) {
-        FollowingFragment followingFragment = new FollowingFragment();
+    public static DetailProfileFollowingFragment newInstance(String username) {
+        DetailProfileFollowingFragment fragment = new DetailProfileFollowingFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARGS_FOLLOWING_FRAGMENT, username);
-        followingFragment.setArguments(bundle);
-        return followingFragment;
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_following, container, false);
+        return inflater.inflate(R.layout.fragment_detail_profile_following, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvFollowing = view.findViewById(R.id.rvFollowing);
+        rvDetailProfileFollowing = view.findViewById(R.id.rvDetailProfileFollowing);
 
         errorLayout = view.findViewById(R.id.errorLayout);
         imgErrorImage = view.findViewById(R.id.imgErrorImage);
@@ -88,13 +88,13 @@ public class FollowingFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        rvFollowing.setLayoutManager(layoutManager);
-        rvFollowing.setHasFixedSize(true);
-        rvFollowing.setItemAnimator(new DefaultItemAnimator());
-        rvFollowing.setNestedScrollingEnabled(false);
+        rvDetailProfileFollowing.setLayoutManager(layoutManager);
+        rvDetailProfileFollowing.setHasFixedSize(true);
+        rvDetailProfileFollowing.setItemAnimator(new DefaultItemAnimator());
+        rvDetailProfileFollowing.setNestedScrollingEnabled(false);
 
         adapter = new FollowingFollowersAdapter();
-        rvFollowing.setAdapter(adapter);
+        rvDetailProfileFollowing.setAdapter(adapter);
 
         FollowingViewModel viewModel = new ViewModelProvider(this).get(FollowingViewModel.class);
         if (isNetworkAvailable()) {

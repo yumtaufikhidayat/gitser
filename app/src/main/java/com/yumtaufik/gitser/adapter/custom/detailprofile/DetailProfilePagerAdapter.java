@@ -1,12 +1,12 @@
-package com.yumtaufik.gitser.adapter.custom;
+package com.yumtaufik.gitser.adapter.custom.detailprofile;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.yumtaufik.gitser.fragment.FollowersFragment;
-import com.yumtaufik.gitser.fragment.FollowingFragment;
+import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowersFragment;
+import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowingFragment;
 
 public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
 
@@ -24,10 +24,10 @@ public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return FollowingFragment.newInstance(username);
+                return DetailProfileFollowingFragment.newInstance(username);
 
             case 1:
-                return FollowersFragment.newInstance(username);
+                return DetailProfileFollowersFragment.newInstance(username);
 
             default:
                 return null;

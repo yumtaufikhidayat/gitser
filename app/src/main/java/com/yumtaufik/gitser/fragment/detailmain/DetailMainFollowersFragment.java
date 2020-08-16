@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.fragment;
+package com.yumtaufik.gitser.fragment.detailmain;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -29,12 +29,12 @@ import com.yumtaufik.gitser.viewmodel.followers.FollowersViewModel;
 
 import java.util.List;
 
-public class FollowersFragment extends Fragment {
+public class DetailMainFollowersFragment extends Fragment {
 
-    public static final String ARGS_FOLLOWERS_FRAGMENT = "com.yumtaufik.gitser.fragment.EXTRA_FOLLOWERS_FRAGMENT";
+    private static final String ARGS_FOLLOWERS_FRAGMENT = "com.yumtaufik.gitser.fragment.detailmain.ARGS_FOLLOWERS_FRAGMENT";
 
     FollowingFollowersAdapter adapter;
-    RecyclerView rvFollowers;
+    RecyclerView rvDetailMainFollowers;
 
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
@@ -42,60 +42,60 @@ public class FollowersFragment extends Fragment {
 
     String username;
 
-    public FollowersFragment() {
+    public DetailMainFollowersFragment() {
         // Required empty public constructor
     }
 
-    public static FollowersFragment newInstance(String username) {
-        FollowersFragment followersFragment = new FollowersFragment();
+    public static DetailMainFollowersFragment newInstance(String username) {
+        DetailMainFollowersFragment fragment = new DetailMainFollowersFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARGS_FOLLOWERS_FRAGMENT, username);
-        followersFragment.setArguments(bundle);
-        return followersFragment;
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_followers, container, false);
+        return inflater.inflate(R.layout.fragment_detail_main_followers, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvFollowers = view.findViewById(R.id.rvFollowers);
+        rvDetailMainFollowers = view.findViewById(R.id.rvDetailMainFollowers);
 
         errorLayout = view.findViewById(R.id.errorLayout);
         imgErrorImage = view.findViewById(R.id.imgErrorImage);
         tvErrorTitle = view.findViewById(R.id.tvErrorTitle);
         tvErrorMessage = view.findViewById(R.id.tvErrorMessage);
-        
-        setFollowersArguments();
+
+        setFollowersArgument();
 
         setViewModel();
     }
 
-    private void setFollowersArguments() {
+    private void setFollowersArgument() {
         if (getArguments() != null) {
             username = getArguments().getString(ARGS_FOLLOWERS_FRAGMENT);
         } else {
             Log.i("argumentsNull", "onViewCreated: ");
-        } 
+        }
     }
 
     private void setViewModel() {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        rvFollowers.setLayoutManager(layoutManager);
-        rvFollowers.setHasFixedSize(true);
-        rvFollowers.setItemAnimator(new DefaultItemAnimator());
-        rvFollowers.setNestedScrollingEnabled(false);
+        rvDetailMainFollowers.setLayoutManager(layoutManager);
+        rvDetailMainFollowers.setHasFixedSize(true);
+        rvDetailMainFollowers.setItemAnimator(new DefaultItemAnimator());
+        rvDetailMainFollowers.setNestedScrollingEnabled(false);
 
         adapter = new FollowingFollowersAdapter();
-        rvFollowers.setAdapter(adapter);
+        rvDetailMainFollowers.setAdapter(adapter);
 
         FollowersViewModel viewModel = new ViewModelProvider(this).get(FollowersViewModel.class);
         if (isNetworkAvailable()) {

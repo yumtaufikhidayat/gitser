@@ -24,7 +24,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
-import com.yumtaufik.gitser.adapter.custom.DetailProfilePagerAdapter;
+import com.yumtaufik.gitser.adapter.custom.detailprofile.DetailProfilePagerAdapter;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
@@ -70,15 +70,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
-        DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(
-                getSupportFragmentManager(),
-                tabLayoutDetailProfile.getTabCount(),
-                username
-        );
-        viewPagerDetailProfile.setAdapter(profilePagerAdapter);
-
-        addOnTabSelected();
-        viewPagerDetailProfile.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutDetailProfile));
+        setDetailProfilePagerAdapter();
 
         setViewModel();
     }
@@ -144,6 +136,18 @@ public class DetailProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
+
+    private void setDetailProfilePagerAdapter() {
+        DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(
+                getSupportFragmentManager(),
+                tabLayoutDetailProfile.getTabCount(),
+                username
+        );
+        viewPagerDetailProfile.setAdapter(profilePagerAdapter);
+
+        addOnTabSelected();
+        viewPagerDetailProfile.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutDetailProfile));
+    }
 
     private void setViewModel() {
 

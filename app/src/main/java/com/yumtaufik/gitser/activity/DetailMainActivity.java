@@ -24,6 +24,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.adapter.custom.detailmain.DetailMainPagerAdapter;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
@@ -54,6 +55,7 @@ public class DetailMainActivity extends AppCompatActivity {
 
     DetailProfileViewModel profileViewModel;
     MainResponse mainResponse;
+    String username;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +64,13 @@ public class DetailMainActivity extends AppCompatActivity {
 
         setInit();
 
+        setParcelableData();
+
         setWindowNotificationBg();
 
         setGetSupportActionBar();
+
+        setDetailMainPagerAdapter();
         
         setViewModel();
     }
@@ -85,10 +91,17 @@ public class DetailMainActivity extends AppCompatActivity {
         tvCompanyMain = findViewById(R.id.tvCompanyMain);
         tvLinkMain = findViewById(R.id.tvLinkMain);
 
+        tabLayoutDetailMain = findViewById(R.id.tabLayoutDetailMain);
+        viewPagerDetailMain = findViewById(R.id.viewPagerDetailMain);
+
         errorLayout = findViewById(R.id.errorLayout);
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
+    }
+
+    private void setParcelableData() {
+        username = mainResponse.getLogin();
     }
 
     //----Method to set notification bar----
@@ -124,9 +137,19 @@ public class DetailMainActivity extends AppCompatActivity {
     }
     //----Ends-----
 
-    private void setViewModel() {
+    private void setDetailMainPagerAdapter() {
+        DetailMainPagerAdapter mainPagerAdapter = new DetailMainPagerAdapter(
+                getSupportFragmentManager(),
+                tabLayoutDetailMain.getTabCount(),
+                username
+        );
+        viewPagerDetailMain.setAdapter(mainPagerAdapter);
 
-        String username = mainResponse.getLogin();
+        addOnTabSelected();
+        viewPagerDetailMain.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutDetailMain));
+    }
+
+    private void setViewModel() {
 
         errorLayout.setVisibility(View.GONE);
 
@@ -206,4 +229,25 @@ public class DetailMainActivity extends AppCompatActivity {
         }
     }
     //---Ends----
+
+    //----Methods to set tab layout----
+    private void addOnTabSelected() {
+        tabLayoutDetailMain.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPagerDetailMain.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+    //----Ends----
 }

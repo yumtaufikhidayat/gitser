@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FollowersFragment">
+    tools:context=".fragment.detailmain.DetailMainFollowersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFollowers"
+        android:id="@+id/rvDetailMainFollowers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
