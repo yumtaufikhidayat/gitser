@@ -266,7 +266,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayoutDetailProfile"
+            android:id="@+id/tabLayoutProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
@@ -294,7 +294,7 @@
     </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerDetailProfile"
+        android:id="@+id/viewPagerProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

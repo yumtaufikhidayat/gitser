@@ -22,9 +22,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.adapter.custom.profile.ProfilePagerAdapter;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
@@ -43,11 +46,16 @@ public class ProfileActivity extends AppCompatActivity {
             tvCompany,
             tvLink;
 
+    TabLayout tabLayoutProfile;
+    ViewPager viewPagerProfile;
+
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
     TextView tvErrorTitle, tvErrorMessage;
 
     DetailProfileViewModel profileViewModel;
+
+    String username = "yumtaufikhidayat";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +67,8 @@ public class ProfileActivity extends AppCompatActivity {
         setWindowNotificationBg();
 
         setGetSupportActionBar();
+
+        setProfilePagerAdapter();
 
         setViewModel();
     }
@@ -77,6 +87,9 @@ public class ProfileActivity extends AppCompatActivity {
         tvLocation = findViewById(R.id.tvLocation);
         tvCompany = findViewById(R.id.tvCompany);
         tvLink = findViewById(R.id.tvLink);
+
+        tabLayoutProfile = findViewById(R.id.tabLayoutProfile);
+        viewPagerProfile = findViewById(R.id.viewPagerProfile);
 
         errorLayout = findViewById(R.id.errorLayout);
         imgErrorImage = findViewById(R.id.imgErrorImage);
@@ -137,13 +150,25 @@ public class ProfileActivity extends AppCompatActivity {
     }
     //----Ends-----
 
+    private void setProfilePagerAdapter() {
+        ProfilePagerAdapter profilePagerAdapter = new ProfilePagerAdapter(
+                getSupportFragmentManager(),
+                tabLayoutProfile.getTabCount(),
+                username
+        );
+        viewPagerProfile.setAdapter(profilePagerAdapter);
+
+        addOnTabSelected();
+        viewPagerProfile.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutProfile));
+    }
+
     private void setViewModel() {
 
         errorLayout.setVisibility(View.GONE);
 
         if (isNetworkAvailable()) {
             profileViewModel = new ViewModelProvider(this).get(DetailProfileViewModel.class);
-            profileViewModel.getDetailProfileByUsername("yumtaufikhidayat").observe(this, new Observer<DetailProfileResponse>() {
+            profileViewModel.getDetailProfileByUsername(username).observe(this, new Observer<DetailProfileResponse>() {
                 @Override
                 public void onChanged(DetailProfileResponse detailProfileResponse) {
                     if (detailProfileResponse != null) {
@@ -211,4 +236,25 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
     //---Ends----
+
+    //----Methods to set tab layout----
+    private void addOnTabSelected() {
+        tabLayoutProfile.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPagerProfile.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+    //----Ends----
 }

@@ -11,6 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/profile/ProfilePagerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowingFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_followers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_following.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -21,13 +26,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bio.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +115,7 @@
       <recent name="com.yumtaufik.gitser.activity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yumtaufik.gitser.adapter.custom.profile" />
       <recent name="com.yumtaufik.gitser.adapter.custom.detailmain" />
       <recent name="com.yumtaufik.gitser.adapter.following" />
     </key>
@@ -223,30 +225,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="266" y="122" width="824" height="482" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596176564904" />
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1597541725489">
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog" timestamp="1597553559532">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1597541725489" />
+    <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1597553559532" />
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl" timestamp="1596246267571">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596246267571" />
-    <state width="1324" height="239" key="GridCell.Tab.0.bottom" timestamp="1597541803366">
+    <state width="1324" height="238" key="GridCell.Tab.0.bottom" timestamp="1597553586390">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="239" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597541803366" />
-    <state width="1324" height="239" key="GridCell.Tab.0.center" timestamp="1597541803365">
+    <state width="1324" height="238" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597553586390" />
+    <state width="1324" height="238" key="GridCell.Tab.0.center" timestamp="1597553586389">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="239" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597541803365" />
-    <state width="1324" height="239" key="GridCell.Tab.0.left" timestamp="1597541803364">
+    <state width="1324" height="238" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597553586389" />
+    <state width="1324" height="238" key="GridCell.Tab.0.left" timestamp="1597553586388">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="239" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597541803364" />
-    <state width="1324" height="239" key="GridCell.Tab.0.right" timestamp="1597541803365">
+    <state width="1324" height="238" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597553586388" />
+    <state width="1324" height="238" key="GridCell.Tab.0.right" timestamp="1597553586390">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="239" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597541803365" />
+    <state width="1324" height="238" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597553586390" />
     <state x="266" y="110" width="824" height="506" key="IDE.errors.dialog" timestamp="1597492810480">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -283,9 +285,83 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" width="682" height="728" key="dock-window-4/0.0.1366.728@0.0.1366.728" timestamp="1597547229119" />
+    <state x="145" y="0" width="935" height="648" key="dock-window-5" timestamp="1597551905438">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="145" y="0" width="935" height="648" key="dock-window-5/0.0.1366.728@0.0.1366.728" timestamp="1597551905438" />
+    <state x="0" y="0" width="682" height="728" key="dock-window-6" timestamp="1597552120385">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="682" height="728" key="dock-window-6/0.0.1366.728@0.0.1366.728" timestamp="1597552120385" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1596768039277">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596768039277" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/profile/ProfilePagerAdapter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileFollowersFragment.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/followers/FollowersViewModel.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/followers/FollowersRepository.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/viewmodel/followers/FollowersRepository.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
