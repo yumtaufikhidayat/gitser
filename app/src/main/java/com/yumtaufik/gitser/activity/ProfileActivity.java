@@ -1,11 +1,5 @@
 package com.yumtaufik.gitser.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -14,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Html;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,6 +16,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
@@ -40,7 +39,6 @@ public class ProfileActivity extends AppCompatActivity {
             tvFollowing,
             tvFollowers,
             tvRepository,
-            tvBio,
             tvLocation,
             tvCompany,
             tvLink;
@@ -76,7 +74,6 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowing = findViewById(R.id.tvFollowing);
         tvFollowers = findViewById(R.id.tvFollowers);
         tvRepository = findViewById(R.id.tvRepository);
-        tvBio = findViewById(R.id.tvBio);
         tvLocation = findViewById(R.id.tvLocation);
         tvCompany = findViewById(R.id.tvCompany);
         tvLink = findViewById(R.id.tvLink);
@@ -157,7 +154,6 @@ public class ProfileActivity extends AppCompatActivity {
                         Integer following = detailProfileResponse.getFollowing();
                         Integer followers = detailProfileResponse.getFollowers();
                         Integer repos = detailProfileResponse.getPublicRepos();
-                        String bio = detailProfileResponse.getBio();
                         String location = detailProfileResponse.getLocation();
                         String company = detailProfileResponse.getCompany();
                         String link = detailProfileResponse.getBlog();
@@ -173,11 +169,6 @@ public class ProfileActivity extends AppCompatActivity {
                         tvFollowing.setText(String.valueOf(following));
                         tvFollowers.setText(String.valueOf(followers));
                         tvRepository.setText(String.valueOf(repos));
-
-                        tvBio.setText(bio);
-                        tvBio.setMarqueeRepeatLimit(5);
-                        tvBio.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                        tvBio.setSelected(true);
 
                         tvLocation.setText(location);
                         tvCompany.setText(company);

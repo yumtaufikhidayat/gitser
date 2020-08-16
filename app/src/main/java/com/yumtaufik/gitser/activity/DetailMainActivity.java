@@ -6,7 +6,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,7 +40,6 @@ public class DetailMainActivity extends AppCompatActivity {
             tvFollowingMain,
             tvFollowersMain,
             tvRepositoryMain,
-            tvBioMain,
             tvLocationMain,
             tvCompanyMain,
             tvLinkMain;
@@ -86,7 +84,6 @@ public class DetailMainActivity extends AppCompatActivity {
         tvFollowingMain = findViewById(R.id.tvFollowingMain);
         tvFollowersMain = findViewById(R.id.tvFollowersMain);
         tvRepositoryMain = findViewById(R.id.tvRepositoryMain);
-        tvBioMain = findViewById(R.id.tvBioMain);
         tvLocationMain = findViewById(R.id.tvLocationMain);
         tvCompanyMain = findViewById(R.id.tvCompanyMain);
         tvLinkMain = findViewById(R.id.tvLinkMain);
@@ -166,7 +163,6 @@ public class DetailMainActivity extends AppCompatActivity {
                         Integer following = detailProfileResponse.getFollowing();
                         Integer followers = detailProfileResponse.getFollowers();
                         Integer repos = detailProfileResponse.getPublicRepos();
-                        String bio = detailProfileResponse.getBio();
                         String location = detailProfileResponse.getLocation();
                         String company = detailProfileResponse.getCompany();
                         String link = detailProfileResponse.getBlog();
@@ -182,11 +178,6 @@ public class DetailMainActivity extends AppCompatActivity {
                         tvFollowingMain.setText(String.valueOf(following));
                         tvFollowersMain.setText(String.valueOf(followers));
                         tvRepositoryMain.setText(String.valueOf(repos));
-
-                        tvBioMain.setText(bio);
-                        tvBioMain.setMarqueeRepeatLimit(5);
-                        tvBioMain.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                        tvBioMain.setSelected(true);
 
                         tvLocationMain.setText(location);
                         tvCompanyMain.setText(company);

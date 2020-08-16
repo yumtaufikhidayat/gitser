@@ -194,30 +194,6 @@
                 android:layout_margin="10dp">
 
                 <ImageView
-                    android:id="@+id/imgBio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_bio"
-                    android:contentDescription="@null"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/imgLocation"/>
-
-                <TextView
-                    android:id="@+id/tvBioUserProfile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:singleLine="true"
-                    android:scrollHorizontally="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@android:color/black"
-                    android:text=""
-                    app:layout_constraintStart_toEndOf="@id/imgBio"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvLocationUserProfile"/>
-
-                <ImageView
                     android:id="@+id/imgLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -225,7 +201,7 @@
                     android:src="@drawable/ic_location"
                     android:contentDescription="@null"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imgBio"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/imgCompany"/>
 
                 <TextView
@@ -239,7 +215,7 @@
                     android:textColor="@android:color/black"
                     android:text=""
                     app:layout_constraintStart_toEndOf="@id/imgLocation"
-                    app:layout_constraintTop_toBottomOf="@id/tvBioUserProfile"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/tvCompanyUserProfile"/>
 
                 <ImageView

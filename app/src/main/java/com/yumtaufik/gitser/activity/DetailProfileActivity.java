@@ -6,7 +6,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,7 +40,6 @@ public class DetailProfileActivity extends AppCompatActivity {
             tvFollowingUserProfile,
             tvFollowersUserProfile,
             tvRepositoryUserProfile,
-            tvBioUserProfile,
             tvLocationUserProfile,
             tvCompanyUserProfile,
             tvLinkUserProfile;
@@ -86,7 +84,6 @@ public class DetailProfileActivity extends AppCompatActivity {
         tvFollowingUserProfile = findViewById(R.id.tvFollowingUserProfile);
         tvFollowersUserProfile = findViewById(R.id.tvFollowersUserProfile);
         tvRepositoryUserProfile = findViewById(R.id.tvRepositoryUserProfile);
-        tvBioUserProfile = findViewById(R.id.tvBioUserProfile);
         tvLocationUserProfile = findViewById(R.id.tvLocationUserProfile);
         tvCompanyUserProfile = findViewById(R.id.tvCompanyUserProfile);
         tvLinkUserProfile = findViewById(R.id.tvLinkUserProfile);
@@ -166,7 +163,6 @@ public class DetailProfileActivity extends AppCompatActivity {
                         Integer following = detailProfileResponse.getFollowing();
                         Integer followers = detailProfileResponse.getFollowers();
                         Integer repos = detailProfileResponse.getPublicRepos();
-                        String bio = detailProfileResponse.getBio();
                         String location = detailProfileResponse.getLocation();
                         String company = detailProfileResponse.getCompany();
                         String link = detailProfileResponse.getBlog();
@@ -182,11 +178,6 @@ public class DetailProfileActivity extends AppCompatActivity {
                         tvFollowingUserProfile.setText(String.valueOf(following));
                         tvFollowersUserProfile.setText(String.valueOf(followers));
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
-
-                        tvBioUserProfile.setText(bio);
-                        tvBioUserProfile.setMarqueeRepeatLimit(5);
-                        tvBioUserProfile.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                        tvBioUserProfile.setSelected(true);
 
                         tvLocationUserProfile.setText(location);
                         tvCompanyUserProfile.setText(company);
