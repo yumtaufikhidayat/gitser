@@ -52,7 +52,8 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
 
         if (sizeIntNew < 1) {
             double sizeDoubleKb = Math.round(sizeDouble * 1000);
-            String sizeStrKb = String.valueOf(sizeDoubleKb);
+            int sizeIntKb = (int) Math.round(sizeDoubleKb);
+            String sizeStrKb = String.valueOf(sizeIntKb);
             holder.tvRepositorySize.setText(String.format("%s KB", sizeStrKb));
         } else {
             holder.tvRepositorySize.setText(String.format("%s MB", sizeStrMb));
