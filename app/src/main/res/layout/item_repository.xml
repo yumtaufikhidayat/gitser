@@ -66,18 +66,6 @@
             app:layout_constraintStart_toEndOf="@+id/imgSize"
             app:layout_constraintTop_toBottomOf="@id/tvRepositoryDesc"/>
 
-        <TextView
-            android:id="@+id/tvSizeMB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:layout_marginStart="3dp"
-            android:text="@string/tvSizeMB"
-            android:textColor="@android:color/black"
-            app:layout_constraintStart_toEndOf="@+id/tvRepositorySize"
-            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryDesc" />
-
         <ImageView
             android:id="@+id/imgLanguage"
             android:layout_width="15dp"
@@ -85,7 +73,7 @@
             android:layout_marginStart="10dp"
             android:contentDescription="@null"
             android:src="@drawable/ic_outline_language"
-            app:layout_constraintStart_toEndOf="@+id/tvSizeMB"
+            app:layout_constraintStart_toEndOf="@+id/tvRepositorySize"
             app:layout_constraintTop_toBottomOf="@+id/tvRepositoryDesc"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

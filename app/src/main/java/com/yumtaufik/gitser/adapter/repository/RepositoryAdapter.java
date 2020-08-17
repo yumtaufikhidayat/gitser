@@ -46,11 +46,17 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
 
         String sizeStr = holder.tvRepositorySize.getText().toString().trim();
         int sizeInt = Integer.parseInt(sizeStr);
-        float sizeFloat = (float) sizeInt / 1000;
-        int sizeIntNew = (int) Math.round(sizeFloat);
-        String sizeStrNew = String.valueOf(sizeIntNew);
+        double sizeDouble = (float) sizeInt / 1000;
+        int sizeIntNew = (int) Math.round(sizeDouble);
+        String sizeStrMb = String.valueOf(sizeIntNew);
 
-        holder.tvRepositorySize.setText(sizeStrNew);
+        if (sizeIntNew < 1) {
+            double sizeDoubleKb = Math.round(sizeDouble * 1000);
+            String sizeStrKb = String.valueOf(sizeDoubleKb);
+            holder.tvRepositorySize.setText(String.format("%s KB", sizeStrKb));
+        } else {
+            holder.tvRepositorySize.setText(String.format("%s MB", sizeStrMb));
+        }
     }
 
     @Override

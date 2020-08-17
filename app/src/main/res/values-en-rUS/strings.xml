@@ -28,7 +28,6 @@
     <string name="tvStartSearch">Start searching</string>
     <string name="tvStartSearchDesc">Tap search icon to search by username</string>
     <string name="tvRefresh">Pull down to refresh</string>
-    <string name="tvSizeMB">MB</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
