@@ -73,7 +73,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            cardSearchUser = itemView.findViewById(R.id.cardSearchUser);
+            cardSearchUser = itemView.findViewById(R.id.cardUser);
             imgUserSearch = itemView.findViewById(R.id.imgUser);
             tvUsernameSearch = itemView.findViewById(R.id.tvUsername);
         }

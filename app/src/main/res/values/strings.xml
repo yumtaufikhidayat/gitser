@@ -27,6 +27,7 @@
     <string name="tvStartSearch">Mulai mencari</string>
     <string name="tvStartSearchDesc">Ketuk ikon Cari untuk mencari username</string>
     <string name="tvRefresh">Tarik ke bawah untuk me-refresh</string>
+    <string name="tvSizeMB">MB</string>
 
     <string-array name="username">
         <item>JakeWharton</item>

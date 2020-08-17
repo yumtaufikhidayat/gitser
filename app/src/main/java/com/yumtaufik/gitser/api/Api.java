@@ -9,4 +9,5 @@ public class Api {
     static final String DETAIL_PROFILE_URL = "users/{username}";
     static final String FOLLOWING_URL = "users/{username}/following";
     static final String FOLLOWERS_URL = "users/{username}/followers";
+    static final String REPOSITORY_URL = "users/{username}/repos";
 }
