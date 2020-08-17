@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowersFragment;
 import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowingFragment;
+import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileReposFragment;
 
 public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
 
@@ -28,6 +29,9 @@ public class DetailProfilePagerAdapter extends FragmentStatePagerAdapter {
 
             case 1:
                 return DetailProfileFollowersFragment.newInstance(username);
+
+            case 2:
+                return DetailProfileReposFragment.newInstance(username);
 
             default:
                 return null;

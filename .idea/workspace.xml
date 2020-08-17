@@ -11,13 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/profile/ProfileReposFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_repos.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/detailprofile/DetailProfileReposFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_profile_repos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/profile/ProfilePagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/profile/ProfilePagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/detailprofile/DetailProfilePagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/detailprofile/DetailProfilePagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,10 +252,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="484" y="145" width="387" height="436" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245894465" />
-    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597627380788">
+    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597704974080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1597627380788" />
+    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1597704974080" />
     <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597626028537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
