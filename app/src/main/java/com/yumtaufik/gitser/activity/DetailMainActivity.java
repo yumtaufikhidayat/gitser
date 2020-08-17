@@ -28,6 +28,8 @@ import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
+import java.util.Locale;
+
 public class DetailMainActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE_MAIN = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE_MAIN";
@@ -175,9 +177,24 @@ public class DetailMainActivity extends AppCompatActivity {
 
                         tvNameMain.setText(name);
                         tvUsernameMain.setText(username);
+
                         tvFollowingMain.setText(String.valueOf(following));
+                        String followingStr = tvFollowingMain.getText().toString().trim();
+                        Integer followingInt = Integer.parseInt(followingStr);
+                        String followingStrNew = String.format(Locale.US, "%,d", followingInt).replace(',', '.');
+                        tvFollowersMain.setText(followingStrNew);
+
                         tvFollowersMain.setText(String.valueOf(followers));
+                        String followersStr = tvFollowersMain.getText().toString().trim();
+                        Integer followersInt = Integer.parseInt(followersStr);
+                        String followersStrNew = String.format(Locale.US, "%,d", followersInt).replace(',', '.');
+                        tvFollowersMain.setText(followersStrNew);
+
                         tvRepositoryMain.setText(String.valueOf(repos));
+                        String reposStr = tvRepositoryMain.getText().toString().trim();
+                        Integer reposInt = Integer.parseInt(reposStr);
+                        String reposStrNew = String.format(Locale.US, "%,d", reposInt).replace(',', '.');
+                        tvRepositoryMain.setText(reposStrNew);
 
                         tvLocationMain.setText(location);
                         tvCompanyMain.setText(company);
