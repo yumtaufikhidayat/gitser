@@ -9,6 +9,7 @@ import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowersFragmen
 import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowingFragment;
 import com.yumtaufik.gitser.fragment.profile.ProfileFollowersFragment;
 import com.yumtaufik.gitser.fragment.profile.ProfileFollowingFragment;
+import com.yumtaufik.gitser.fragment.profile.ProfileReposFragment;
 
 public class ProfilePagerAdapter extends FragmentStatePagerAdapter {
 
@@ -30,6 +31,9 @@ public class ProfilePagerAdapter extends FragmentStatePagerAdapter {
 
             case 1:
                 return ProfileFollowersFragment.newInstance(username);
+
+            case 2:
+                return ProfileReposFragment.newInstance(username);
 
             default:
                 return null;
