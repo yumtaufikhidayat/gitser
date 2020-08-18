@@ -173,6 +173,7 @@ public class SearchActivity extends AppCompatActivity {
         } else {
             showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
             swipeRefreshSearch.setRefreshing(false);
+            errorLayout.setVisibility(View.GONE);
         }
     }
 
