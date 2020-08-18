@@ -31,6 +31,8 @@ import com.yumtaufik.gitser.adapter.custom.profile.ProfilePagerAdapter;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
+import java.util.Locale;
+
 public class ProfileActivity extends AppCompatActivity {
 
     Toolbar toolbarProfile;
@@ -191,9 +193,24 @@ public class ProfileActivity extends AppCompatActivity {
 
                         tvName.setText(name);
                         tvUsername.setText(username);
+
                         tvFollowing.setText(String.valueOf(following));
+                        String followingStr = tvFollowing.getText().toString().trim();
+                        Integer followingInt = Integer.parseInt(followingStr);
+                        String followingStrNew = String.format(Locale.US, "%,d", followingInt).replace(',', '.');
+                        tvFollowing.setText(followingStrNew);
+
                         tvFollowers.setText(String.valueOf(followers));
+                        String followersStr = tvFollowers.getText().toString().trim();
+                        Integer followersInt = Integer.parseInt(followersStr);
+                        String followersStrNew = String.format(Locale.US, "%,d", followersInt).replace(',', '.');
+                        tvFollowers.setText(followersStrNew);
+
                         tvRepository.setText(String.valueOf(repos));
+                        String reposStr = tvRepository.getText().toString().trim();
+                        Integer reposInt = Integer.parseInt(reposStr);
+                        String reposStrNew = String.format(Locale.US, "%,d", reposInt).replace(',', '.');
+                        tvRepository.setText(reposStrNew);
 
                         tvLocation.setText(location);
                         tvCompany.setText(company);

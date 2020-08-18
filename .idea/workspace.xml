@@ -11,16 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/detailprofile/DetailProfileReposFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_profile_repos.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/detailprofile/DetailProfilePagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/custom/detailprofile/DetailProfilePagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/repository/RepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/repository/RepositoryAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +50,9 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -68,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ApkExportedModule" value="app" />
     <property name="DEBUGGABLE_DEVICE" value="asus-asus_x007d-H1AXGF047934WJ6" />
     <property name="DEBUGGABLE_PROCESS" value="com.yumtaufik.gitser" />
     <property name="DEBUGGER_ID" value="Auto" />
@@ -196,6 +196,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1597623059663" />
+    <state x="366" y="95" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1597710064788">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="366" y="95" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1597710064788" />
     <state x="297" y="0" width="762" height="726" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597546167238">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -252,10 +256,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="484" y="145" width="387" height="436" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1596245894465" />
-    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597704974080">
+    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597707772731">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1597704974080" />
+    <state x="673" y="0" width="683" height="726" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1597707772731" />
     <state x="229" y="21" width="898" height="684" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597626028537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -264,14 +268,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" width="682" height="728" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1597704109570" />
-    <state x="0" y="0" width="682" height="728" key="dock-window-2" timestamp="1597625378491">
+    <state x="0" y="0" width="682" height="728" key="dock-window-2" timestamp="1597707686179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" width="682" height="728" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1597625378491" />
-    <state x="0" y="0" width="682" height="728" key="dock-window-3" timestamp="1597502037208">
+    <state x="0" y="0" width="682" height="728" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1597707686179" />
+    <state x="0" y="0" width="682" height="728" key="dock-window-3" timestamp="1597710995286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" width="682" height="728" key="dock-window-3/0.0.1366.728@0.0.1366.728" timestamp="1597502037208" />
+    <state x="0" y="0" width="682" height="728" key="dock-window-3/0.0.1366.728@0.0.1366.728" timestamp="1597710995286" />
     <state x="0" y="0" width="682" height="728" key="dock-window-4" timestamp="1597547229119">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -284,6 +288,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" width="682" height="728" key="dock-window-6/0.0.1366.728@0.0.1366.728" timestamp="1597552120385" />
+    <state x="689" y="159" key="run.anything.popup" timestamp="1597707678326">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="689" y="159" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597707678326" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1597632005239">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

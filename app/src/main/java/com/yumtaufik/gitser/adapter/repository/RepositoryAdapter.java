@@ -13,6 +13,7 @@ import com.yumtaufik.gitser.model.repository.RepositoryResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.MyViewHolder> {
 
@@ -48,7 +49,6 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
         int sizeInt = Integer.parseInt(sizeStr);
         double sizeDouble = (float) sizeInt / 1000;
         int sizeIntNew = (int) Math.round(sizeDouble);
-        String sizeStrMb = String.valueOf(sizeIntNew);
 
         if (sizeIntNew < 1) {
             double sizeDoubleKb = Math.round(sizeDouble * 1000);
@@ -56,6 +56,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
             String sizeStrKb = String.valueOf(sizeIntKb);
             holder.tvRepositorySize.setText(String.format("%s KB", sizeStrKb));
         } else {
+            String sizeStrMb = String.valueOf(sizeIntNew);
             holder.tvRepositorySize.setText(String.format("%s MB", sizeStrMb));
         }
     }

@@ -28,6 +28,8 @@ import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
+import java.util.Locale;
+
 public class DetailProfileActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE";
@@ -175,9 +177,24 @@ public class DetailProfileActivity extends AppCompatActivity {
 
                         tvNameUserProfile.setText(name);
                         tvUsernameUserProfile.setText(username);
+
                         tvFollowingUserProfile.setText(String.valueOf(following));
+                        String followingStr = tvFollowingUserProfile.getText().toString().trim();
+                        Integer followingInt = Integer.parseInt(followingStr);
+                        String followingStrNew = String.format(Locale.US, "%,d", followingInt).replace(',', '.');
+                        tvFollowingUserProfile.setText(followingStrNew);
+
                         tvFollowersUserProfile.setText(String.valueOf(followers));
+                        String followersStr = tvFollowersUserProfile.getText().toString().trim();
+                        Integer followersInt = Integer.parseInt(followersStr);
+                        String followersStrNew = String.format(Locale.US, "%,d", followersInt).replace(',', '.');
+                        tvFollowersUserProfile.setText(followersStrNew);
+
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
+                        String reposStr = tvRepositoryUserProfile.getText().toString().trim();
+                        Integer reposInt = Integer.parseInt(reposStr);
+                        String reposStrNew = String.format(Locale.US, "%,d", reposInt).replace(',', '.');
+                        tvRepositoryUserProfile.setText(reposStrNew);
 
                         tvLocationUserProfile.setText(location);
                         tvCompanyUserProfile.setText(company);
