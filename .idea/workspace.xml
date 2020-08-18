@@ -11,12 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/DetailProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/repository/RepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/repository/RepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/detailprofile/DetailProfileReposFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/fragment/detailprofile/DetailProfileReposFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,22 +232,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596246267571" />
-    <state width="1324" height="203" key="GridCell.Tab.0.bottom" timestamp="1597704354748">
+    <state width="1324" height="203" key="GridCell.Tab.0.bottom" timestamp="1597716178780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597704354748" />
-    <state width="1324" height="203" key="GridCell.Tab.0.center" timestamp="1597704354747">
+    <state width="1324" height="203" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597716178780" />
+    <state width="1324" height="203" key="GridCell.Tab.0.center" timestamp="1597716178778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="203" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597704354747" />
-    <state width="1324" height="203" key="GridCell.Tab.0.left" timestamp="1597704354746">
+    <state width="1324" height="203" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597716178778" />
+    <state width="1324" height="203" key="GridCell.Tab.0.left" timestamp="1597716178777">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="203" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597704354746" />
-    <state width="1324" height="203" key="GridCell.Tab.0.right" timestamp="1597704354747">
+    <state width="1324" height="203" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597716178777" />
+    <state width="1324" height="203" key="GridCell.Tab.0.right" timestamp="1597716178779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="203" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597704354747" />
+    <state width="1324" height="203" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597716178779" />
     <state x="266" y="110" width="824" height="506" key="IDE.errors.dialog" timestamp="1597627881656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

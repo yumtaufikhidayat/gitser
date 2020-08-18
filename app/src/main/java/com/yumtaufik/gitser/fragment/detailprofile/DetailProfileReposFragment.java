@@ -67,6 +67,11 @@ public class DetailProfileReposFragment extends Fragment {
 
         rvDetailProfileRepos = view.findViewById(R.id.rvDetailProfileRepos);
 
+        errorLayout = view.findViewById(R.id.errorLayout);
+        imgErrorImage = view.findViewById(R.id.imgErrorImage);
+        tvErrorTitle = view.findViewById(R.id.tvErrorTitle);
+        tvErrorMessage = view.findViewById(R.id.tvErrorMessage);
+
         setRepositoryArguments();
 
         setViewModel();

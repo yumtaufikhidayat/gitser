@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
             swipeRefreshMain.setRefreshing(false);
+            errorLayout.setVisibility(View.GONE);
         }
     }
 
