@@ -1,7 +1,7 @@
 package com.yumtaufik.gitser.api;
 
-import com.yumtaufik.gitser.model.followingfollowers.FollowingFollowersResponse;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
+import com.yumtaufik.gitser.model.followingfollowers.FollowingFollowersResponse;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.model.repository.RepositoryResponse;
 import com.yumtaufik.gitser.model.search.SearchResponse;

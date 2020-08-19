@@ -13,7 +13,6 @@ import com.yumtaufik.gitser.model.repository.RepositoryResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.MyViewHolder> {
 

@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowersFragment;
-import com.yumtaufik.gitser.fragment.detailprofile.DetailProfileFollowingFragment;
 import com.yumtaufik.gitser.fragment.profile.ProfileFollowersFragment;
 import com.yumtaufik.gitser.fragment.profile.ProfileFollowingFragment;
 import com.yumtaufik.gitser.fragment.profile.ProfileReposFragment;
