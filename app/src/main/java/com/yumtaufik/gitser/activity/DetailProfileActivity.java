@@ -33,6 +33,8 @@ import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
+
 public class DetailProfileActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE";
@@ -150,9 +152,9 @@ public class DetailProfileActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Toast.makeText(DetailProfileActivity.this, "Ditambahkan ke Favorit", Toast.LENGTH_SHORT).show();
+                    Toasty.success(DetailProfileActivity.this, "Ditambahkan ke Favorit!", Toast.LENGTH_SHORT, true).show();
                 } else {
-                    Toast.makeText(DetailProfileActivity.this, "Dihapus dari Favorit", Toast.LENGTH_SHORT).show();
+                    Toasty.success(DetailProfileActivity.this, "Dihapus dari Favorit!", Toast.LENGTH_SHORT, true).show();
                 }
             }
         });
