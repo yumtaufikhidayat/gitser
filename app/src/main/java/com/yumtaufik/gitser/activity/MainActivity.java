@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setViewModel() {
 
+        errorLayout.setVisibility(View.GONE);
         swipeRefreshMain.setRefreshing(false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
@@ -134,16 +135,15 @@ public class MainActivity extends AppCompatActivity {
                         adapter.setDataMain(mainResponses);
                         swipeRefreshMain.setRefreshing(false);
                     } else {
-                        showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
                         swipeRefreshMain.setRefreshing(false);
-                        errorLayout.setVisibility(View.GONE);
+                        showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
                     }
+                    errorLayout.setVisibility(View.GONE);
                 }
             });
         } else {
             showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
             swipeRefreshMain.setRefreshing(false);
-            errorLayout.setVisibility(View.GONE);
         }
     }
 
