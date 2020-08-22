@@ -121,8 +121,8 @@ public class DetailMainActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + mainResponse.getLogin() + "</font>")));
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#DC143C\">" + mainResponse.getLogin() + "</font>")));
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_red);
             getSupportActionBar().setElevation(0);
         }
     }

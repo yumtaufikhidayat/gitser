@@ -117,8 +117,8 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbarProfile);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#DC143C\">" + getString(R.string.tvProfile) + "</font>")));
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_red);
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + getString(R.string.tvProfile) + "</font>")));
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             getSupportActionBar().setElevation(0);
         }
     }
