@@ -10,8 +10,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -46,6 +49,8 @@ public class DetailMainActivity extends AppCompatActivity {
             tvCompanyMain,
             tvLinkMain;
 
+    ToggleButton toggleFavDetailMain;
+
     TabLayout tabLayoutDetailMain;
     ViewPager viewPagerDetailMain;
 
@@ -70,6 +75,8 @@ public class DetailMainActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
+        setToggleFavorite();
+
         setDetailMainPagerAdapter();
         
         setViewModel();
@@ -89,6 +96,8 @@ public class DetailMainActivity extends AppCompatActivity {
         tvLocationMain = findViewById(R.id.tvLocationMain);
         tvCompanyMain = findViewById(R.id.tvCompanyMain);
         tvLinkMain = findViewById(R.id.tvLinkMain);
+
+        toggleFavDetailMain = findViewById(R.id.toggleFavDetailMain);
 
         tabLayoutDetailMain = findViewById(R.id.tabLayoutDetailMain);
         viewPagerDetailMain = findViewById(R.id.viewPagerDetailMain);
@@ -135,6 +144,19 @@ public class DetailMainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
+
+    private void setToggleFavorite() {
+        toggleFavDetailMain.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(DetailMainActivity.this, "Ditambahkan ke Favorit", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailMainActivity.this, "Dihapus dari Favorit", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     private void setDetailMainPagerAdapter() {
         DetailMainPagerAdapter mainPagerAdapter = new DetailMainPagerAdapter(

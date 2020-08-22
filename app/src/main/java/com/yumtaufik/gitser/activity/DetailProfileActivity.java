@@ -10,8 +10,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -46,6 +49,8 @@ public class DetailProfileActivity extends AppCompatActivity {
             tvCompanyUserProfile,
             tvLinkUserProfile;
 
+    ToggleButton toggleFavDetailProfile;
+
     TabLayout tabLayoutDetailProfile;
     ViewPager viewPagerDetailProfile;
 
@@ -70,6 +75,8 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
+        setToggleFavorite();
+
         setDetailProfilePagerAdapter();
 
         setViewModel();
@@ -89,6 +96,8 @@ public class DetailProfileActivity extends AppCompatActivity {
         tvLocationUserProfile = findViewById(R.id.tvLocationUserProfile);
         tvCompanyUserProfile = findViewById(R.id.tvCompanyUserProfile);
         tvLinkUserProfile = findViewById(R.id.tvLinkUserProfile);
+
+        toggleFavDetailProfile = findViewById(R.id.toggleFavDetailProfile);
 
         tabLayoutDetailProfile = findViewById(R.id.tabLayoutDetailProfile);
         viewPagerDetailProfile = findViewById(R.id.viewPagerDetailProfile);
@@ -135,6 +144,19 @@ public class DetailProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
+
+    private void setToggleFavorite() {
+        toggleFavDetailProfile.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(DetailProfileActivity.this, "Ditambahkan ke Favorit", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailProfileActivity.this, "Dihapus dari Favorit", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     private void setDetailProfilePagerAdapter() {
         DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(
