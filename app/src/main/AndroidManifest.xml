@@ -14,8 +14,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.DetailMainActivity"
+            android:name=".activity.FavoriteActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity
+            android:name=".activity.DetailMainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".activity.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />
