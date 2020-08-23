@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -27,10 +28,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.search.SearchAdapter;
+import com.yumtaufik.gitser.helper.LoadingDialog;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.search.SearchViewModel;
 
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -43,6 +47,8 @@ public class SearchActivity extends AppCompatActivity {
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
     TextView tvErrorTitle, tvErrorMessage;
+
+    LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,8 @@ public class SearchActivity extends AppCompatActivity {
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
+
+        loadingDialog = new LoadingDialog(this);
 
         viewModel = new ViewModelProvider(this).get(SearchViewModel.class);
     }
@@ -141,11 +149,15 @@ public class SearchActivity extends AppCompatActivity {
     //----Ends----
 
     private void setSearchUser(String query) {
-        errorLayout.setVisibility(View.GONE);
-        swipeRefreshSearch.setRefreshing(true);
 
-        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(SearchActivity.this);
-        rvSearchUser.setLayoutManager(mLinearLayoutManager);
+        errorLayout.setVisibility(View.GONE);
+
+        swipeRefreshSearch.setRefreshing(true);
+        loadingDialog.startLoadingDialog();
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(SearchActivity.this);
+        
+        rvSearchUser.setLayoutManager(layoutManager);
         rvSearchUser.setHasFixedSize(true);
         rvSearchUser.setItemAnimator(new DefaultItemAnimator());
         rvSearchUser.setNestedScrollingEnabled(false);
@@ -162,8 +174,10 @@ public class SearchActivity extends AppCompatActivity {
                         if (searchItems.size() > 0) {
                             adapter.setDataItems(searchItems);
                             swipeRefreshSearch.setRefreshing(false);
+                            loadingDialog.dismissLoadingDialog();
                         } else {
                             swipeRefreshSearch.setRefreshing(false);
+                            loadingDialog.dismissLoadingDialog();
                             showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
                         }
                         errorLayout.setVisibility(View.GONE);
@@ -173,6 +187,7 @@ public class SearchActivity extends AppCompatActivity {
         } else {
             showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
             swipeRefreshSearch.setRefreshing(false);
+            loadingDialog.dismissLoadingDialog();
         }
     }
 

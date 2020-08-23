@@ -26,6 +26,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.main.MainAdapter;
+import com.yumtaufik.gitser.helper.LoadingDialog;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.viewmodel.main.MainViewModel;
 
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout errorLayout;
     ImageView imgErrorImage;
     TextView tvErrorTitle, tvErrorMessage;
+
+    LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
+
+        loadingDialog = new LoadingDialog(this);
     }
 
     //----Method to set notification bar----
@@ -115,7 +120,10 @@ public class MainActivity extends AppCompatActivity {
     private void setViewModel() {
 
         errorLayout.setVisibility(View.GONE);
-        swipeRefreshMain.setRefreshing(false);
+
+        swipeRefreshMain.setRefreshing(true);
+        loadingDialog.startLoadingDialog();
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvMain.setLayoutManager(layoutManager);
@@ -134,8 +142,10 @@ public class MainActivity extends AppCompatActivity {
                     if (mainResponses.size() > 0) {
                         adapter.setDataMain(mainResponses);
                         swipeRefreshMain.setRefreshing(false);
+                        loadingDialog.dismissLoadingDialog();
                     } else {
                         swipeRefreshMain.setRefreshing(false);
+                        loadingDialog.dismissLoadingDialog();
                         showErrorMessage(R.drawable.no_result, R.string.tvNoResult, R.string.tvNoResultDesc);
                     }
                     errorLayout.setVisibility(View.GONE);
@@ -144,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
             swipeRefreshMain.setRefreshing(false);
+            loadingDialog.dismissLoadingDialog();
         }
     }
 
