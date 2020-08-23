@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_favorite:
-                //To favorite activity
+                startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
                 break;
 
             case R.id.nav_profile:

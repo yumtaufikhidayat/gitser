@@ -29,5 +29,6 @@
     <string name="tvStartSearchDesc">Tap search icon to search by username</string>
     <string name="tvRefresh">Pull down to refresh</string>
     <string name="tvProcessing">Loading…</string>
+    <string name="tvDeleteAllItems">Delete all items?</string>
 
 </resources>
