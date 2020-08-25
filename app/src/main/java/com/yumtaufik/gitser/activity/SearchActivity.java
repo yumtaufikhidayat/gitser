@@ -27,7 +27,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.search.SearchAdapter;
-import com.yumtaufik.gitser.helper.LoadingDialog;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.search.SearchViewModel;
 
