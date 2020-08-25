@@ -24,8 +24,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgFavUser"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
             android:src="@color/colorPrimary"
@@ -74,7 +74,7 @@
         <View
             android:id="@+id/dividerOne"
             android:layout_width="1dp"
-            android:layout_height="0dp"
+            android:layout_height="10dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvFavFollowers"
@@ -108,7 +108,7 @@
         <View
             android:id="@+id/dividerTwo"
             android:layout_width="1dp"
-            android:layout_height="0dp"
+            android:layout_height="10dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvFavRepository"
@@ -138,6 +138,72 @@
             app:layout_constraintTop_toBottomOf="@id/tvFavRepository"
             app:layout_constraintStart_toStartOf="@id/tvFavRepository"
             app:layout_constraintEnd_toEndOf="@id/tvFavRepository"/>
+
+        <ImageView
+            android:id="@+id/imgFavLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_location"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toBottomOf="@+id/tvFavFollowingTitle"
+            app:layout_constraintStart_toStartOf="@id/tvFavUsername"/>
+
+        <TextView
+            android:id="@+id/tvFavLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@id/tvFavFollowingTitle"
+            app:layout_constraintStart_toEndOf="@id/imgFavLocation"/>
+
+        <ImageView
+            android:id="@+id/imgFavCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_office"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toBottomOf="@+id/imgFavLocation"
+            app:layout_constraintStart_toStartOf="@id/tvFavUsername"/>
+
+        <TextView
+            android:id="@+id/tvFavCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@id/tvFavLocation"
+            app:layout_constraintStart_toEndOf="@id/imgFavCompany"/>
+
+        <ImageView
+            android:id="@+id/imgFavLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_link"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toBottomOf="@+id/imgFavCompany"
+            app:layout_constraintStart_toStartOf="@id/tvFavUsername"/>
+
+        <TextView
+            android:id="@+id/tvFavLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@id/tvFavCompany"
+            app:layout_constraintStart_toEndOf="@id/imgFavLink"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
