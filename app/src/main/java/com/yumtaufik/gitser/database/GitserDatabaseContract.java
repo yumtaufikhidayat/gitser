@@ -4,18 +4,18 @@ import android.provider.BaseColumns;
 
  public class GitserDatabaseContract {
 
-    static String TABLE_NAME = "favoriteTable";
+     public static String TABLE_NAME = "gitserFavoriteTable";
 
-     static final class GitserColumns implements BaseColumns {
+     public static final class GitserColumns implements BaseColumns {
 
-         static String FAVORITE_AVATAR_URL = "favoriteAvatarUrl";
-         static String FAVORITE_USERNAME = "favoriteUsername";
-         static String FAVORITE_NAME = "favoriteName";
-         static String FAVORITE_FOLLOWING = "favorite_following";
-         static String FAVORITE_FOLLOWERS = "favorite_followers";
-         static String FAVORITE_REPOSITORY = "favoriteRepository";
-         static String FAVORITE_LOCATION = "favoritelocation";
-         static String FAVORITE_COMPANY = "favorite_company";
-         static String FAVORITE_LINK = "favorite_link";
+         public static String FAVORITE_AVATAR_URL = "favoriteAvatarUrl";
+         public static String FAVORITE_USERNAME = "favoriteUsername";
+         public static String FAVORITE_NAME = "favoriteName";
+         public static String FAVORITE_FOLLOWING = "favoriteFollowing";
+         public static String FAVORITE_FOLLOWERS = "favoriteFollowers";
+         public static String FAVORITE_REPOSITORY = "favoriteRepository";
+         public static String FAVORITE_LOCATION = "favoriteLocation";
+         public static String FAVORITE_COMPANY = "favoriteCompany";
+         public static String FAVORITE_LINK = "favoriteLink";
      }
 }

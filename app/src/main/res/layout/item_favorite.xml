@@ -32,8 +32,19 @@
             app:civ_border_width="2.5dp"
             app:civ_border_color="@color/colorPrimaryDark"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvFavName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:text="@string/tvName"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgFavUser"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tvFavUsername"
@@ -44,14 +55,14 @@
             android:textColor="@android:color/black"
             android:text="@string/tvUsername"
             app:layout_constraintStart_toEndOf="@id/imgFavUser"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvFavName"/>
 
         <TextView
             android:id="@+id/tvFavFollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text="@string/tvFollowingNumber"
@@ -85,7 +96,7 @@
             android:id="@+id/tvFavFollowers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text="@string/tvFollowerNumber"
@@ -119,7 +130,7 @@
             android:id="@+id/tvFavRepository"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text="@string/tvRepositoryNumber"
@@ -143,7 +154,7 @@
             android:id="@+id/imgFavLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/ic_location"
             android:contentDescription="@null"
             app:layout_constraintTop_toBottomOf="@+id/tvFavFollowingTitle"
@@ -153,7 +164,7 @@
             android:id="@+id/tvFavLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
