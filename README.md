@@ -8,8 +8,8 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 
 ### Software
 #### Operating System
-- OS Name : Zorin OS (based on Ubuntu 18.04 LTS)
-- Version : 15.2
+- OS Name : Linux Mint (based on Ubuntu 18.04 LTS)
+- Version : 19.3
 - Platform : 64 bit
 
 #### Programming Language
@@ -34,12 +34,11 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 - Migrate to AndroidX : Yes
 
 #### Dependencies
-##### By Gradle
+##### By Default
         - implementation fileTree(dir: "libs", include: ["*.jar"])
-        - implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        - implementation 'androidx.core:core-ktx:1.3.0'
-        - implementation 'androidx.appcompat:appcompat:1.1.0'
-        - implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        - implementation 'androidx.appcompat:appcompat:1.2.0'
+        - implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+        - implementation 'androidx.legacy:legacy-support-v4:1.0.0'
         - testImplementation 'junit:junit:4.12'
         - androidTestImplementation 'androidx.test.ext:junit:1.1.1'
         - androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -47,7 +46,8 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 ##### By Third Parties
 - Material design
 
-        - implementation 'com.google.android.material:material:1.1.0'
+        - implementation 'com.google.android.material:material:1.2.0'
+        - implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
 - Circle image
 
@@ -56,3 +56,12 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 - Glide
 
         - implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+- View Model
+
+        - implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+        - annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.2.0'
+
+- Toasty
+
+        - implementation 'com.github.GrenderG:Toasty:1.5.0'
