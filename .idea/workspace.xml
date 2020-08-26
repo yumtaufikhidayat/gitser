@@ -11,9 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46850d02-b7d4-4533-a26a-07a8c7172667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/helper/CustomOnClickListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/favorite/GitserFavoriteAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/favorite/GitserFavoriteAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,10 +192,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="203" y="99" width="950" height="528" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1596253681277" />
-    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1598347551877">
+    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1598412214914">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1598347551877" />
+    <state x="491" y="70" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1598412214914" />
     <state x="366" y="95" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1597710064788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

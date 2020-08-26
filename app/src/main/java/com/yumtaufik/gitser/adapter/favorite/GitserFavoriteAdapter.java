@@ -1,5 +1,6 @@
 package com.yumtaufik.gitser.adapter.favorite;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,10 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.helper.CustomOnClickListener;
 import com.yumtaufik.gitser.model.favorite.GitserFavorite;
 
 import java.util.ArrayList;
@@ -18,9 +21,14 @@ import java.util.ArrayList;
 public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAdapter.MyViewHolder> {
 
     ArrayList<GitserFavorite> gitserFavoriteList = new ArrayList<>();
+    Activity activity;
 
     public GitserFavoriteAdapter(ArrayList<GitserFavorite> gitserFavoriteList) {
         this.gitserFavoriteList = gitserFavoriteList;
+    }
+
+    public GitserFavoriteAdapter(Activity activity) {
+        this.activity = activity;
     }
 
     public ArrayList<GitserFavorite> getGitserFavoriteList() {
@@ -34,13 +42,17 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         }
 
         this.gitserFavoriteList.addAll(gitserFavoriteList);
-
         notifyDataSetChanged();
     }
 
     public void addItem(GitserFavorite gitserFavorite) {
         this.gitserFavoriteList.add(gitserFavorite);
         notifyItemInserted(gitserFavoriteList.size() - 1);
+    }
+
+    public void updateItem(int position, GitserFavorite gitserFavorite) {
+        this.gitserFavoriteList.set(position, gitserFavorite);
+        notifyItemChanged(position, gitserFavorite);
     }
 
     public void removeItem(int position) {
@@ -77,6 +89,12 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         holder.tvFavCompany.setText(favorite.getFavoriteCompany());
         holder.tvFavLink.setText(favorite.getFavoriteLink());
 
+        holder.cardFavorite.setOnClickListener(new CustomOnClickListener(position, new CustomOnClickListener.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(View view, int position) {
+
+            }
+        }));
     }
 
     @Override
@@ -86,6 +104,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
+        CardView cardFavorite;
         ImageView imgFavUser;
         TextView tvFavName,
                 tvFavUsername,
@@ -99,6 +118,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            cardFavorite = itemView.findViewById(R.id.cardFavorite);
             imgFavUser = itemView.findViewById(R.id.imgFavUser);
             tvFavName = itemView.findViewById(R.id.tvFavName);
             tvFavUsername = itemView.findViewById(R.id.tvFavUsername);
