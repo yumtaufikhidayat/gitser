@@ -29,5 +29,17 @@
     <string name="tvRefresh">Tarik ke bawah untuk me-refresh</string>
     <string name="tvProcessing">Memuat…</string>
     <string name="tvDeleteAllItems">Hapus seluruh item?</string>
+    <string name="tvDetailFavorite">Detail Favorit</string>
+    <string name="tvDeleteFavorite">Hapus Favorit</string>
+    <string name="tvDeleteFavoriteDesc">Hapus dari Favorit?</string>
+    <string name="tvYes">Ya</string>
+    <string name="tvNo">Tidak</string>
+    <string name="tvDeletedFavoriteItemSuccessfully">Berhasil dihapus dari favorit</string>
+    <string name="tvDeletedFavoriteItemFailed">Gagal dihapus dari favorit</string>
+    <string name="tvInsertFavoriteSuccessfully">Ditambahkan ke favorit</string>
+    <string name="tvInsertFavoriteFailed">Gagal ditambahkan ke favorit</string>
+    <string name="tvFavoriteExist">Sudah ada di favorite</string>
+
+    <string name="btnDeleteFavorite">Hapus Favorit</string>
 
 </resources>

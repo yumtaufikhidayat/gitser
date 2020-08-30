@@ -1,6 +1,7 @@
 package com.yumtaufik.gitser.adapter.favorite;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,52 +14,53 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.activity.DetailFavoriteActivity;
 import com.yumtaufik.gitser.helper.CustomOnClickListener;
-import com.yumtaufik.gitser.model.favorite.GitserFavorite;
+import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.util.ArrayList;
 
 public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAdapter.MyViewHolder> {
 
-    ArrayList<GitserFavorite> gitserFavoriteList = new ArrayList<>();
+    ArrayList<DetailProfileResponse> profileResponsesList = new ArrayList<>();
     Activity activity;
 
-    public GitserFavoriteAdapter(ArrayList<GitserFavorite> gitserFavoriteList) {
-        this.gitserFavoriteList = gitserFavoriteList;
+    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
+        this.profileResponsesList = profileResponsesList;
     }
 
     public GitserFavoriteAdapter(Activity activity) {
         this.activity = activity;
     }
 
-    public ArrayList<GitserFavorite> getGitserFavoriteList() {
-        return gitserFavoriteList;
+    public ArrayList<DetailProfileResponse> getGitserFavoriteList() {
+        return profileResponsesList;
     }
 
-    public void setGitserFavoriteList(ArrayList<GitserFavorite> gitserFavoriteList) {
+    public void setGitserFavoriteList(ArrayList<DetailProfileResponse> profileResponsesList) {
 
-        if (gitserFavoriteList.size() > 0) {
-            this.gitserFavoriteList.clear();
+        if (profileResponsesList.size() > 0) {
+            this.profileResponsesList.clear();
         }
 
-        this.gitserFavoriteList.addAll(gitserFavoriteList);
+        this.profileResponsesList.addAll(profileResponsesList);
         notifyDataSetChanged();
     }
 
-    public void addItem(GitserFavorite gitserFavorite) {
-        this.gitserFavoriteList.add(gitserFavorite);
-        notifyItemInserted(gitserFavoriteList.size() - 1);
+    public void addItem(DetailProfileResponse profileResponse) {
+        this.profileResponsesList.add(profileResponse);
+        notifyItemInserted(profileResponsesList.size() - 1);
     }
 
-    public void updateItem(int position, GitserFavorite gitserFavorite) {
-        this.gitserFavoriteList.set(position, gitserFavorite);
-        notifyItemChanged(position, gitserFavorite);
+    public void updateItem(int position, DetailProfileResponse profileResponse) {
+        this.profileResponsesList.set(position, profileResponse);
+        notifyItemChanged(position, profileResponse);
     }
 
     public void removeItem(int position) {
-        this.gitserFavoriteList.remove(position);
+        this.profileResponsesList.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, gitserFavoriteList.size());
+        notifyItemRangeChanged(position, profileResponsesList.size());
     }
 
     @NonNull
@@ -72,34 +74,38 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
     @Override
     public void onBindViewHolder(@NonNull GitserFavoriteAdapter.MyViewHolder holder, int position) {
 
-        GitserFavorite favorite = gitserFavoriteList.get(position);
+        DetailProfileResponse favorite = profileResponsesList.get(position);
 
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
-                .load(favorite.getFavoriteAvatarUrl())
+                .load(favorite.getAvatarUrl())
                 .placeholder(R.color.colorPrimaryDark)
                 .into(holder.imgFavUser);
 
-        holder.tvFavName.setText(favorite.getFavoriteName());
-        holder.tvFavUsername.setText(favorite.getFavoriteUsername());
-        holder.tvFavFollowing.setText(favorite.getFavoriteFollowing());
-        holder.tvFavFollowers.setText(favorite.getFavoriteFollowers());
-        holder.tvFavRepository.setText(favorite.getFavoriteRepository());
-        holder.tvFavLocation.setText(favorite.getFavoriteLocation());
-        holder.tvFavCompany.setText(favorite.getFavoriteCompany());
-        holder.tvFavLink.setText(favorite.getFavoriteLink());
+        holder.tvFavName.setText(favorite.getName());
+        holder.tvFavUsername.setText(favorite.getLogin());
+        holder.tvFavFollowing.setText(favorite.getFollowing());
+        holder.tvFavFollowers.setText(favorite.getFollowers());
+        holder.tvFavRepository.setText(favorite.getPublicRepos());
+        holder.tvFavLocation.setText(favorite.getLocation());
+        holder.tvFavCompany.setText(favorite.getCompany());
+        holder.tvFavLink.setText(favorite.getBlog());
 
         holder.cardFavorite.setOnClickListener(new CustomOnClickListener(position, new CustomOnClickListener.OnItemClickCallback() {
             @Override
             public void onItemClicked(View view, int position) {
 
+                Intent intent = new Intent(activity, DetailFavoriteActivity.class);
+                intent.putExtra(DetailFavoriteActivity.EXTRA_POSITION, position);
+                intent.putExtra(DetailFavoriteActivity.EXTRA_FAVORITE, profileResponsesList.get(position));
+                activity.startActivityForResult(intent, DetailFavoriteActivity.REQUEST_UPDATE);
             }
         }));
     }
 
     @Override
     public int getItemCount() {
-        return gitserFavoriteList.size();
+        return profileResponsesList.size();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {

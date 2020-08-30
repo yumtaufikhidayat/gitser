@@ -1,16 +1,18 @@
 package com.yumtaufik.gitser.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.detailprofile.DetailProfilePagerAdapter;
+import com.yumtaufik.gitser.database.GitserHelper;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
@@ -38,6 +41,10 @@ import es.dmoral.toasty.Toasty;
 public class DetailProfileActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE";
+    public static final int RESULT_ADD = 101;
+    public static final int RESULT_DELETE = 301;
+    public static final String EXTRA_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_PROFILE";
+    public static final String EXTRA_POSITION = "com.yumtaufik.gitser.activity.EXTRA_POSITION";
 
     Toolbar toolbarDetail;
     
@@ -62,7 +69,13 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     DetailProfileViewModel profileViewModel;
     SearchItems searchItems;
+
+    DetailProfileResponse profileResponse;
+
     String username;
+    int position;
+
+    GitserHelper gitserHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +90,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
-        setToggleFavorite();
+//        setToggleFavorite();
 
         setDetailProfilePagerAdapter();
 
@@ -89,7 +102,9 @@ public class DetailProfileActivity extends AppCompatActivity {
         searchItems = getIntent().getParcelableExtra(EXTRA_DETAIL_PROFILE);
 
         toolbarDetail = findViewById(R.id.toolbarDetail);
+
         imgUserProfile = findViewById(R.id.imgUserProfile);
+
         tvNameUserProfile = findViewById(R.id.tvNameUserProfile);
         tvUsernameUserProfile = findViewById(R.id.tvUsernameUserProfile);
         tvFollowingUserProfile = findViewById(R.id.tvFollowingUserProfile);
@@ -108,6 +123,9 @@ public class DetailProfileActivity extends AppCompatActivity {
         imgErrorImage = findViewById(R.id.imgErrorImage);
         tvErrorTitle = findViewById(R.id.tvErrorTitle);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
+
+        gitserHelper = GitserHelper.getInstance(getApplicationContext());
+        gitserHelper.openDatabase();
     }
 
     private void setParcelableData() {
@@ -139,25 +157,147 @@ public class DetailProfileActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.detail_profile_menu, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
+        }
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+
+            case R.id.nav_favorite_profile:
+
+                profileResponse = new DetailProfileResponse();
+
+                String avatarUrl = imgUserProfile.getResources().toString().trim();
+                String name = tvNameUserProfile.getText().toString().trim();
+                String username = tvUsernameUserProfile.getText().toString().trim();
+                String following = tvFollowingUserProfile.getText().toString().trim();
+                String followers = tvFollowersUserProfile.getText().toString().trim();
+                String repository = tvRepositoryUserProfile.getText().toString().trim();
+                String location = tvLocationUserProfile.getText().toString().trim();
+                String company = tvCompanyUserProfile.getText().toString().trim();
+                String link = tvLinkUserProfile.getText().toString().trim();
+
+                profileResponse.setAvatarUrl(avatarUrl);
+                profileResponse.setName(name);
+                profileResponse.setLogin(username);
+
+                int followingInt = Integer.parseInt(following);
+                profileResponse.setFollowing(followingInt);
+
+                int followersInt = Integer.parseInt(followers);
+                profileResponse.setFollowers(followersInt);
+
+                int repositoryInt = Integer.parseInt(repository);
+                profileResponse.setPublicRepos(repositoryInt);
+
+                profileResponse.setLocation(location);
+                profileResponse.setCompany(company);
+                profileResponse.setBlog(link);
+
+                Intent intent = new Intent();
+                intent.putExtra(EXTRA_PROFILE, profileResponse);
+                intent.putExtra(EXTRA_POSITION, position);
+
+                boolean update = gitserHelper.isFavoriteExist(profileResponse.getName());
+
+                if (update) {
+                    Toasty.warning(DetailProfileActivity.this, R.string.tvFavoriteExist, Toast.LENGTH_SHORT, true).show();
+                } else {
+                    long insert = gitserHelper.insertFavorite(profileResponse);
+                    if (insert > 0) {
+                        profileResponse.setId((int) insert);
+                        setResult(RESULT_ADD);
+                        Toasty.success(DetailProfileActivity.this, R.string.tvInsertFavoriteSuccessfully, Toast.LENGTH_SHORT, true).show();
+                        Log.i("insertSuccess", "onCheckedChanged: ");
+                        finish();
+                    } else {
+                        Toasty.error(DetailProfileActivity.this, R.string.tvInsertFavoriteFailed, Toast.LENGTH_SHORT, true).show();
+                        Log.i("insertFailed", "onCheckedChanged: ");
+                    }
+                }
+
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
 
     private void setToggleFavorite() {
-        toggleFavDetailProfile.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Toasty.success(DetailProfileActivity.this, "Ditambahkan ke Favorit!", Toast.LENGTH_SHORT, true).show();
-                } else {
-                    Toasty.success(DetailProfileActivity.this, "Dihapus dari Favorit!", Toast.LENGTH_SHORT, true).show();
-                }
-            }
-        });
+
+        profileResponse = new DetailProfileResponse();
+
+        String avatarUrl = imgUserProfile.getResources().toString().trim();
+        String name = tvNameUserProfile.getText().toString().trim();
+        String username = tvUsernameUserProfile.getText().toString().trim();
+        String following = tvFollowingUserProfile.getText().toString().trim();
+        String followers = tvFollowersUserProfile.getText().toString().trim();
+        String repository = tvRepositoryUserProfile.getText().toString().trim();
+        String location = tvLocationUserProfile.getText().toString().trim();
+        String company = tvCompanyUserProfile.getText().toString().trim();
+        String link = tvLinkUserProfile.getText().toString().trim();
+
+        profileResponse.setAvatarUrl(avatarUrl);
+        profileResponse.setName(name);
+        profileResponse.setLogin(username);
+
+        int followingInt = Integer.parseInt(following);
+        profileResponse.setFollowing(followingInt);
+
+        int followersInt = Integer.parseInt(followers);
+        profileResponse.setFollowers(followersInt);
+
+        int repositoryInt = Integer.parseInt(repository);
+        profileResponse.setPublicRepos(repositoryInt);
+
+        profileResponse.setLocation(location);
+        profileResponse.setCompany(company);
+        profileResponse.setBlog(link);
+
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_PROFILE, profileResponse);
+        intent.putExtra(EXTRA_POSITION, position);
+
+//        toggleFavDetailProfile.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    long insert = gitserHelper.insertFavorite(profileResponse);
+//                    if (insert > 0) {
+//                        profileResponse.setId((int) insert);
+//                        setResult(RESULT_ADD);
+//                        Toasty.success(DetailProfileActivity.this, R.string.tvInsertFavoriteSuccessfully, Toast.LENGTH_SHORT, true).show();
+//                        Log.i("insertSuccess", "onCheckedChanged: ");
+//                        finish();
+//                    } else {
+//                        Toasty.error(DetailProfileActivity.this, R.string.tvInsertFavoriteFailed, Toast.LENGTH_SHORT, true).show();
+//                        Log.i("insertFailed", "onCheckedChanged: ");
+//                    }
+//                } else {
+//                    long delete = gitserHelper.deleteFavorite(profileResponse.getId());
+//                    if (delete > 0) {
+//                        Intent intentDelete = new Intent();
+//                        intentDelete.putExtra(EXTRA_POSITION, position);
+//                        setResult(RESULT_DELETE, intentDelete);
+//                        Toasty.success(DetailProfileActivity.this, R.string.tvDeletedFavoriteItemSuccessfully, Toast.LENGTH_SHORT, true).show();
+//                        finish();
+//                        Log.i("deleteSuccess", "onCheckedChanged: ");
+//                    } else {
+//                        Toasty.error(DetailProfileActivity.this, R.string.tvDeletedFavoriteItemFailed, Toast.LENGTH_SHORT, true).show();
+//                    }
+//                }
+//            }
+//        });
+
     }
 
     private void setDetailProfilePagerAdapter() {
@@ -283,4 +423,11 @@ public class DetailProfileActivity extends AppCompatActivity {
         });
     }
     //----Ends----
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        gitserHelper.closeDatabase();
+    }
 }

@@ -45,6 +45,9 @@ public class SearchItems implements Parcelable {
 	@SerializedName("organizations_url")
 	private String organizationsUrl;
 
+	public SearchItems() {
+	}
+
 	protected SearchItems(Parcel in) {
 		gistsUrl = in.readString();
 		reposUrl = in.readString();

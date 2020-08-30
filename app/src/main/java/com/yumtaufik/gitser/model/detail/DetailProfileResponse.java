@@ -1,8 +1,11 @@
 package com.yumtaufik.gitser.model.detail;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class DetailProfileResponse{
+public class DetailProfileResponse implements Parcelable {
 	@SerializedName("gists_url")
 	private String gistsUrl;
 	@SerializedName("repos_url")
@@ -67,6 +70,67 @@ public class DetailProfileResponse{
 	private String location;
 	@SerializedName("node_id")
 	private String nodeId;
+
+	public DetailProfileResponse() {
+		//required empty constructor
+	}
+
+	protected DetailProfileResponse(Parcel in) {
+		gistsUrl = in.readString();
+		reposUrl = in.readString();
+		followingUrl = in.readString();
+		bio = in.readString();
+		createdAt = in.readString();
+		login = in.readString();
+		type = in.readString();
+		blog = in.readString();
+		subscriptionsUrl = in.readString();
+		updatedAt = in.readString();
+		siteAdmin = in.readByte() != 0;
+		company = in.readString();
+		id = in.readInt();
+		publicRepos = in.readInt();
+		gravatarId = in.readString();
+		organizationsUrl = in.readString();
+		starredUrl = in.readString();
+		followersUrl = in.readString();
+		publicGists = in.readInt();
+		url = in.readString();
+		receivedEventsUrl = in.readString();
+		followers = in.readInt();
+		avatarUrl = in.readString();
+		eventsUrl = in.readString();
+		htmlUrl = in.readString();
+		following = in.readInt();
+		name = in.readString();
+		location = in.readString();
+		nodeId = in.readString();
+	}
+
+	public static final Creator<DetailProfileResponse> CREATOR = new Creator<DetailProfileResponse>() {
+		@Override
+		public DetailProfileResponse createFromParcel(Parcel in) {
+			return new DetailProfileResponse(in);
+		}
+
+		@Override
+		public DetailProfileResponse[] newArray(int size) {
+			return new DetailProfileResponse[size];
+		}
+	};
+
+	public DetailProfileResponse(int id, String avatarUrl, String name, String username, int following, int followers, int repos, String location, String company, String link) {
+		this.id = id;
+		this.avatarUrl = avatarUrl;
+		this.name = name;
+		this.login = username;
+		this.following = following;
+		this.followers = followers;
+		this.publicRepos = repos;
+		this.location = location;
+		this.company = company;
+		this.bio = link;
+	}
 
 	public String getGistsUrl() {
 		return gistsUrl;
@@ -322,5 +386,43 @@ public class DetailProfileResponse{
 
 	public void setNodeId(String nodeId) {
 		this.nodeId = nodeId;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(gistsUrl);
+		dest.writeString(reposUrl);
+		dest.writeString(followingUrl);
+		dest.writeString(bio);
+		dest.writeString(createdAt);
+		dest.writeString(login);
+		dest.writeString(type);
+		dest.writeString(blog);
+		dest.writeString(subscriptionsUrl);
+		dest.writeString(updatedAt);
+		dest.writeByte((byte) (siteAdmin ? 1 : 0));
+		dest.writeString(company);
+		dest.writeInt(id);
+		dest.writeInt(publicRepos);
+		dest.writeString(gravatarId);
+		dest.writeString(organizationsUrl);
+		dest.writeString(starredUrl);
+		dest.writeString(followersUrl);
+		dest.writeInt(publicGists);
+		dest.writeString(url);
+		dest.writeString(receivedEventsUrl);
+		dest.writeInt(followers);
+		dest.writeString(avatarUrl);
+		dest.writeString(eventsUrl);
+		dest.writeString(htmlUrl);
+		dest.writeInt(following);
+		dest.writeString(name);
+		dest.writeString(location);
+		dest.writeString(nodeId);
 	}
 }

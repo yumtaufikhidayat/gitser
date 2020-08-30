@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.yumtaufik.gitser.model.favorite.GitserFavorite;
+import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.util.ArrayList;
 
@@ -60,52 +60,63 @@ public class GitserHelper {
         }
     }
 
-    public ArrayList<GitserFavorite> getAllFavorites() {
+    public static ArrayList<DetailProfileResponse> getAllFavorites() {
 
-        ArrayList<GitserFavorite> gitserFavoriteArrayList = new ArrayList<>();
+        ArrayList<DetailProfileResponse> profileResponseList = new ArrayList<>();
 
-        Cursor cursor = database.query(
+        Cursor cursor = databaseHelper.getReadableDatabase().query(
                 DATABASE_TABLE,
                 null,
                 null,
                 null,
                 null
                 , null,
-                _ID + " ASC",
+                _ID + " DESC",
                 null
         );
         cursor.moveToFirst();
 
-        GitserFavorite gitserFavorite = new GitserFavorite();;
+        DetailProfileResponse profileResponse;
         if (cursor.getCount() > 0) {
             do {
+                profileResponse = new DetailProfileResponse();
+                profileResponse.setId(cursor.getInt(cursor.getColumnIndexOrThrow(_ID)));
+                profileResponse.setAvatarUrl(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_AVATAR_URL)));
+                profileResponse.setName(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_NAME)));
+                profileResponse.setLogin(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_USERNAME)));
+                profileResponse.setFollowing(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWING)));
+                profileResponse.setFollowers(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWERS)));
+                profileResponse.setPublicRepos(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_REPOSITORY)));
+                profileResponse.setLocation(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LOCATION)));
+                profileResponse.setCompany(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_COMPANY)));
+                profileResponse.setBlog(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LINK)));
 
-                gitserFavorite.setFavoriteId(cursor.getInt(cursor.getColumnIndexOrThrow(_ID)));
-                gitserFavorite.setFavoriteAvatarUrl(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_AVATAR_URL)));
-                gitserFavorite.setFavoriteName(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_NAME)));
-                gitserFavorite.setFavoriteUsername(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_USERNAME)));
-                gitserFavorite.setFavoriteFollowing(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWING)));
-                gitserFavorite.setFavoriteFollowers(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWERS)));
-                gitserFavorite.setFavoriteRepository(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_REPOSITORY)));
-                gitserFavorite.setFavoriteLocation(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LOCATION)));
-                gitserFavorite.setFavoriteCompany(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_COMPANY)));
-                gitserFavorite.setFavoriteLink(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LINK)));
-
-                gitserFavoriteArrayList.add(gitserFavorite);
+                profileResponseList.add(profileResponse);
                 cursor.moveToNext();
 
             } while (!cursor.isAfterLast());
         }
 
         cursor.close();
-        return gitserFavoriteArrayList;
+        return profileResponseList;
+    }
+
+    public Cursor getAllFavorite() {
+        return database.query(
+                DATABASE_TABLE,
+                null,
+                null,
+                null,
+                null
+                , null,
+                _ID + " DESC");
     }
 
     public boolean isFavoriteExist(String name) {
 
         Cursor cursor;
 
-        String sql = "SELECT * FROM " + DATABASE_TABLE + " WHERE FAVORITE_NAME = '" + name + "'";
+        String sql = " SELECT * FROM " + DATABASE_TABLE + " WHERE " + FAVORITE_NAME + " = '" + name + "'";
         cursor = database.rawQuery(sql, null);
 
         int count = cursor.getCount();
@@ -115,23 +126,23 @@ public class GitserHelper {
         return count > 0;
     }
 
-    public long insertFavorite(GitserFavorite favorite) {
+    public long insertFavorite(DetailProfileResponse profileResponse) {
 
         ContentValues values = new ContentValues();
-        values.put(FAVORITE_AVATAR_URL, favorite.getFavoriteAvatarUrl());
-        values.put(FAVORITE_NAME, favorite.getFavoriteName());
-        values.put(FAVORITE_USERNAME, favorite.getFavoriteUsername());
-        values.put(FAVORITE_FOLLOWING, favorite.getFavoriteFollowing());
-        values.put(FAVORITE_FOLLOWERS, favorite.getFavoriteFollowers());
-        values.put(FAVORITE_REPOSITORY, favorite.getFavoriteRepository());
-        values.put(FAVORITE_LOCATION, favorite.getFavoriteLocation());
-        values.put(FAVORITE_COMPANY, favorite.getFavoriteCompany());
-        values.put(FAVORITE_LINK, favorite.getFavoriteLink());
+        values.put(FAVORITE_AVATAR_URL, profileResponse.getAvatarUrl());
+        values.put(FAVORITE_NAME, profileResponse.getName());
+        values.put(FAVORITE_USERNAME, profileResponse.getLogin());
+        values.put(FAVORITE_FOLLOWING, profileResponse.getFollowing());
+        values.put(FAVORITE_FOLLOWERS, profileResponse.getFollowers());
+        values.put(FAVORITE_REPOSITORY, profileResponse.getPublicRepos());
+        values.put(FAVORITE_LOCATION, profileResponse.getLocation());
+        values.put(FAVORITE_COMPANY, profileResponse.getCompany());
+        values.put(FAVORITE_LINK, profileResponse.getBlog());
 
         return database.insert(DATABASE_TABLE, null, values);
     }
 
-    public int deleteFavorite(String id) {
+    public int deleteFavorite(int id) {
         return database.delete(DATABASE_TABLE,
                 _ID + " = '"
                 + id + "'",
