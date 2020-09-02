@@ -64,7 +64,7 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
     private void setInit() {
 
         gitserHelper = new GitserHelper(FavoriteActivity.this);
-        adapter = new GitserFavoriteAdapter();
+        adapter = new GitserFavoriteAdapter(this);
 
         toolbarFavorite = findViewById(R.id.toolbarFavorite);
 

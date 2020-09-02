@@ -35,6 +35,14 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         notifyDataSetChanged();
     }
 
+    public GitserFavoriteAdapter(Activity activity) {
+        this.activity = activity;
+    }
+
+    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
+        this.profileResponsesList = profileResponsesList;
+    }
+
     public void addItem(DetailProfileResponse profileResponse) {
         this.profileResponsesList.add(profileResponse);
         notifyItemInserted(profileResponsesList.size() - 1);
@@ -60,7 +68,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final GitserFavoriteAdapter.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final GitserFavoriteAdapter.MyViewHolder holder, int position) {
 
         DetailProfileResponse favorite = profileResponsesList.get(position);
 

@@ -41,7 +41,6 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE";
     public static final int RESULT_ADD = 101;
-    public static final int RESULT_DELETE = 301;
     public static final String EXTRA_PROFILE = "com.yumtaufik.gitser.activity.EXTRA_PROFILE";
     public static final String EXTRA_POSITION = "com.yumtaufik.gitser.activity.EXTRA_POSITION";
 
@@ -158,9 +157,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-        }
+
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
@@ -266,25 +263,9 @@ public class DetailProfileActivity extends AppCompatActivity {
 
                         tvNameUserProfile.setText(name);
                         tvUsernameUserProfile.setText(username);
-
                         tvFollowingUserProfile.setText(String.valueOf(following));
-                        String followingStr = tvFollowingUserProfile.getText().toString().trim();
-                        Integer followingInt = Integer.parseInt(followingStr);
-                        String followingStrNew = String.format(Locale.US, "%,d", followingInt).replace(',', '.');
-                        tvFollowingUserProfile.setText(followingStrNew);
-
                         tvFollowersUserProfile.setText(String.valueOf(followers));
-                        String followersStr = tvFollowersUserProfile.getText().toString().trim();
-                        Integer followersInt = Integer.parseInt(followersStr);
-                        String followersStrNew = String.format(Locale.US, "%,d", followersInt).replace(',', '.');
-                        tvFollowersUserProfile.setText(followersStrNew);
-
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
-                        String reposStr = tvRepositoryUserProfile.getText().toString().trim();
-                        Integer reposInt = Integer.parseInt(reposStr);
-                        String reposStrNew = String.format(Locale.US, "%,d", reposInt).replace(',', '.');
-                        tvRepositoryUserProfile.setText(reposStrNew);
-
                         tvLocationUserProfile.setText(location);
                         tvCompanyUserProfile.setText(company);
                         tvLinkUserProfile.setText(link);

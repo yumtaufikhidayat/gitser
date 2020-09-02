@@ -34,8 +34,6 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
     public static final int RESULT_UPDATE = 201;
     public static final int RESULT_DELETE = 301;
 
-    private final int ALERT_DIALOG_DELETE = 20;
-
     private DetailProfileResponse profileResponse;
     
     private int position;
@@ -70,6 +68,8 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
         setGitserDbHelper();
 
         setDataPosition();
+
+        setInitOnClick();
     }
 
     private void setInit() {
@@ -126,9 +126,7 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
     }
     //----Ends-----
 
-    private void showAlertDialogDelete(int type) {
-
-        final boolean isDialogDelete = type == ALERT_DIALOG_DELETE;
+    private void showAlertDialogDelete() {
 
         String favAvatarUrl = imgFav.getResources().toString().trim();
         String favName = tvNameFav.getText().toString().trim();
@@ -174,19 +172,15 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
                 .setPositiveButton(R.string.tvYes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (isDialogDelete) {
+                        long favoriteItem = gitserHelper.deleteFavorite(profileResponse.getId());
+                        if (favoriteItem > 0) {
+                            Intent deleteIntent = new Intent();
+                            deleteIntent.putExtra(EXTRA_POSITION, position);
+                            setResult(RESULT_DELETE, deleteIntent);
+                            Toasty.success(DetailFavoriteActivity.this, R.string.tvDeletedFavoriteItemSuccessfully, Toast.LENGTH_SHORT, true).show();
                             finish();
                         } else {
-                            long favoriteItem = gitserHelper.deleteFavorite(profileResponse.getId());
-                            if (favoriteItem > 0) {
-                                Intent deleteIntent = new Intent();
-                                deleteIntent.putExtra(EXTRA_POSITION, position);
-                                setResult(RESULT_DELETE, deleteIntent);
-                                Toasty.success(DetailFavoriteActivity.this, R.string.tvDeletedFavoriteItemSuccessfully, Toast.LENGTH_SHORT, true).show();
-                                finish();
-                            } else {
-                                Toasty.error(DetailFavoriteActivity.this, R.string.tvDeletedFavoriteItemFailed, Toast.LENGTH_SHORT).show();
-                            }
+                            Toasty.error(DetailFavoriteActivity.this, R.string.tvDeletedFavoriteItemFailed, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -217,19 +211,23 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
 
             tvNameFav.setText(profileResponse.getName());
             tvUsernameFav.setText(profileResponse.getLogin());
-            tvFollowingFav.setText(profileResponse.getFollowing());
-            tvFollowersFav.setText(profileResponse.getFollowers());
-            tvRepositoryFav.setText(profileResponse.getPublicRepos());
+            tvFollowingFav.setText(String.valueOf(profileResponse.getFollowing()));
+            tvFollowersFav.setText(String.valueOf(profileResponse.getFollowers()));
+            tvRepositoryFav.setText(String.valueOf(profileResponse.getPublicRepos()));
             tvLocationFav.setText(profileResponse.getLocation());
             tvCompanyFav.setText(profileResponse.getCompany());
             tvLinkFav.setText(profileResponse.getBlog());
         }
     }
 
+    private void setInitOnClick() {
+        btnDeleteFavorite.setOnClickListener(this);
+    }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnDeleteFavorite) {
-            showAlertDialogDelete(ALERT_DIALOG_DELETE);
+            showAlertDialogDelete();
         }
     }
 }

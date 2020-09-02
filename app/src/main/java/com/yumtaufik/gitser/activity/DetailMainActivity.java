@@ -10,11 +10,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -33,8 +30,6 @@ import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
 import java.util.Locale;
 
-import es.dmoral.toasty.Toasty;
-
 public class DetailMainActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL_PROFILE_MAIN = "com.yumtaufik.gitser.activity.EXTRA_DETAIL_PROFILE_MAIN";
@@ -50,8 +45,6 @@ public class DetailMainActivity extends AppCompatActivity {
             tvLocationMain,
             tvCompanyMain,
             tvLinkMain;
-
-    ToggleButton toggleFavDetailMain;
 
     TabLayout tabLayoutDetailMain;
     ViewPager viewPagerDetailMain;
@@ -77,8 +70,6 @@ public class DetailMainActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
-        setToggleFavorite();
-
         setDetailMainPagerAdapter();
         
         setViewModel();
@@ -98,8 +89,6 @@ public class DetailMainActivity extends AppCompatActivity {
         tvLocationMain = findViewById(R.id.tvLocationMain);
         tvCompanyMain = findViewById(R.id.tvCompanyMain);
         tvLinkMain = findViewById(R.id.tvLinkMain);
-
-        toggleFavDetailMain = findViewById(R.id.toggleFavDetailMain);
 
         tabLayoutDetailMain = findViewById(R.id.tabLayoutDetailMain);
         viewPagerDetailMain = findViewById(R.id.viewPagerDetailMain);
@@ -146,19 +135,6 @@ public class DetailMainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
-
-    private void setToggleFavorite() {
-        toggleFavDetailMain.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Toasty.success(DetailMainActivity.this, "Ditambahkan ke Favorit!", Toast.LENGTH_SHORT, true).show();
-                } else {
-                    Toasty.success(DetailMainActivity.this, "Dihapus dari Favorit!", Toast.LENGTH_SHORT, true).show();
-                }
-            }
-        });
-    }
 
     private void setDetailMainPagerAdapter() {
         DetailMainPagerAdapter mainPagerAdapter = new DetailMainPagerAdapter(
