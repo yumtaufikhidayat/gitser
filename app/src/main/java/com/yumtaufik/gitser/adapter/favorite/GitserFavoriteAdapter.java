@@ -25,18 +25,6 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
     ArrayList<DetailProfileResponse> profileResponsesList = new ArrayList<>();
     Activity activity;
 
-    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
-        this.profileResponsesList = profileResponsesList;
-    }
-
-    public GitserFavoriteAdapter(Activity activity) {
-        this.activity = activity;
-    }
-
-    public ArrayList<DetailProfileResponse> getGitserFavoriteList() {
-        return profileResponsesList;
-    }
-
     public void setGitserFavoriteList(ArrayList<DetailProfileResponse> profileResponsesList) {
 
         if (profileResponsesList.size() > 0) {
@@ -72,7 +60,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GitserFavoriteAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final GitserFavoriteAdapter.MyViewHolder holder, final int position) {
 
         DetailProfileResponse favorite = profileResponsesList.get(position);
 
@@ -84,9 +72,9 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
 
         holder.tvFavName.setText(favorite.getName());
         holder.tvFavUsername.setText(favorite.getLogin());
-        holder.tvFavFollowing.setText(favorite.getFollowing());
-        holder.tvFavFollowers.setText(favorite.getFollowers());
-        holder.tvFavRepository.setText(favorite.getPublicRepos());
+        holder.tvFavFollowing.setText(String.valueOf(favorite.getFollowing()));
+        holder.tvFavFollowers.setText(String.valueOf(favorite.getFollowers()));
+        holder.tvFavRepository.setText(String.valueOf(favorite.getPublicRepos()));
         holder.tvFavLocation.setText(favorite.getLocation());
         holder.tvFavCompany.setText(favorite.getCompany());
         holder.tvFavLink.setText(favorite.getBlog());

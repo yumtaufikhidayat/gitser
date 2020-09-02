@@ -51,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text="@string/tvUsername"
             app:layout_constraintStart_toEndOf="@id/imgFavUser"
@@ -65,6 +64,7 @@
             android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:text="@string/tvFollowingNumber"
             app:layout_constraintStart_toEndOf="@id/imgFavUser"
             app:layout_constraintTop_toBottomOf="@id/tvFavUsername"
@@ -74,8 +74,7 @@
             android:id="@+id/tvFavFollowingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="5dp"
             android:textColor="@android:color/black"
             android:text="@string/tvFollowing"
             app:layout_constraintTop_toBottomOf="@id/tvFavFollowing"
@@ -99,6 +98,7 @@
             android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:text="@string/tvFollowerNumber"
             app:layout_constraintTop_toBottomOf="@id/tvFavUsername"
             app:layout_constraintStart_toEndOf="@id/dividerOne"
@@ -108,8 +108,7 @@
             android:id="@+id/tvFavFollowersTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="5dp"
             android:textColor="@android:color/black"
             android:text="@string/tvFollowers"
             app:layout_constraintTop_toBottomOf="@id/tvFavFollowers"
@@ -133,6 +132,7 @@
             android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:text="@string/tvRepositoryNumber"
             app:layout_constraintTop_toBottomOf="@id/tvFavUsername"
             app:layout_constraintEnd_toEndOf="parent"
@@ -142,8 +142,7 @@
             android:id="@+id/tvFavRepositoryTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="5dp"
             android:textColor="@android:color/black"
             android:text="@string/tvRepository"
             app:layout_constraintTop_toBottomOf="@id/tvFavRepository"
@@ -166,10 +165,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text=""
             app:layout_constraintTop_toBottomOf="@id/tvFavFollowingTitle"
+            app:layout_constraintBottom_toTopOf="@+id/tvFavCompany"
             app:layout_constraintStart_toEndOf="@id/imgFavLocation"/>
 
         <ImageView
@@ -188,10 +187,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text=""
             app:layout_constraintTop_toBottomOf="@id/tvFavLocation"
+            app:layout_constraintBottom_toTopOf="@+id/tvFavLink"
             app:layout_constraintStart_toEndOf="@id/imgFavCompany"/>
 
         <ImageView
@@ -210,10 +209,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:text=""
             app:layout_constraintTop_toBottomOf="@id/tvFavCompany"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/imgFavLink"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

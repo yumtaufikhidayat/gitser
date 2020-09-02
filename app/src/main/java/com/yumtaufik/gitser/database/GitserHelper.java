@@ -9,8 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
-import java.util.ArrayList;
-
 import static android.provider.BaseColumns._ID;
 import static com.yumtaufik.gitser.database.GitserDatabaseContract.GitserColumns.FAVORITE_AVATAR_URL;
 import static com.yumtaufik.gitser.database.GitserDatabaseContract.GitserColumns.FAVORITE_COMPANY;
@@ -60,56 +58,17 @@ public class GitserHelper {
         }
     }
 
-    public static ArrayList<DetailProfileResponse> getAllFavorites() {
+    public Cursor getFavorites() {
 
-        ArrayList<DetailProfileResponse> profileResponseList = new ArrayList<>();
+        String sql = "SELECT * FROM " + DATABASE_TABLE;
+        database = databaseHelper.getReadableDatabase();
 
-        Cursor cursor = databaseHelper.getReadableDatabase().query(
-                DATABASE_TABLE,
-                null,
-                null,
-                null,
-                null
-                , null,
-                _ID + " DESC",
-                null
-        );
-        cursor.moveToFirst();
-
-        DetailProfileResponse profileResponse;
-        if (cursor.getCount() > 0) {
-            do {
-                profileResponse = new DetailProfileResponse();
-                profileResponse.setId(cursor.getInt(cursor.getColumnIndexOrThrow(_ID)));
-                profileResponse.setAvatarUrl(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_AVATAR_URL)));
-                profileResponse.setName(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_NAME)));
-                profileResponse.setLogin(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_USERNAME)));
-                profileResponse.setFollowing(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWING)));
-                profileResponse.setFollowers(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWERS)));
-                profileResponse.setPublicRepos(cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_REPOSITORY)));
-                profileResponse.setLocation(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LOCATION)));
-                profileResponse.setCompany(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_COMPANY)));
-                profileResponse.setBlog(cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_LINK)));
-
-                profileResponseList.add(profileResponse);
-                cursor.moveToNext();
-
-            } while (!cursor.isAfterLast());
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(sql, null);
         }
 
-        cursor.close();
-        return profileResponseList;
-    }
-
-    public Cursor getAllFavorite() {
-        return database.query(
-                DATABASE_TABLE,
-                null,
-                null,
-                null,
-                null
-                , null,
-                _ID + " DESC");
+        return cursor;
     }
 
     public boolean isFavoriteExist(String name) {

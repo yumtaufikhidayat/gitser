@@ -63,6 +63,9 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
 
     private void setInit() {
 
+        gitserHelper = new GitserHelper(FavoriteActivity.this);
+        adapter = new GitserFavoriteAdapter();
+
         toolbarFavorite = findViewById(R.id.toolbarFavorite);
 
         rvFavorite = findViewById(R.id.rvFavorite);
@@ -71,11 +74,11 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
     //----Method to set notification bar----
     private void setWindowNotificationBg() {
 
-        Window windowNotifBg = this.getWindow();
-        windowNotifBg.setStatusBarColor(this.getResources().getColor(R.color.colorPrimaryDark));
+        Window windowNotificationBackground = this.getWindow();
+        windowNotificationBackground.setStatusBarColor(this.getResources().getColor(R.color.colorPrimaryDark));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            windowNotifBg.getDecorView().setSystemUiVisibility(0);
+            windowNotificationBackground.getDecorView().setSystemUiVisibility(0);
         }
     }
     //----Ends----
@@ -179,16 +182,10 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
             profileCallback.get().preExecute();
         }
 
-//        @Override
-//        protected ArrayList<DetailProfileResponse> doInBackground(Void... voids) {
-//            return gitserHelperWeakReference.get().getAllFavorites();
-//        }
-
         @Override
         protected ArrayList<DetailProfileResponse> doInBackground(Void... voids) {
-
-            Cursor cursor = gitserHelperWeakReference.get().getAllFavorite();
-            return MappingHelper.mapCursorToArrayList(cursor);
+            Cursor dataCursor = gitserHelperWeakReference.get().getFavorites();
+            return MappingHelper.mapCursorToArrayList(dataCursor);
         }
 
         @Override

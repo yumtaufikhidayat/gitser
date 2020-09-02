@@ -16,7 +16,6 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -58,8 +57,6 @@ public class DetailProfileActivity extends AppCompatActivity {
             tvCompanyUserProfile,
             tvLinkUserProfile;
 
-    ToggleButton toggleFavDetailProfile;
-
     TabLayout tabLayoutDetailProfile;
     ViewPager viewPagerDetailProfile;
 
@@ -90,8 +87,6 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         setGetSupportActionBar();
 
-//        setToggleFavorite();
-
         setDetailProfilePagerAdapter();
 
         setViewModel();
@@ -113,8 +108,6 @@ public class DetailProfileActivity extends AppCompatActivity {
         tvLocationUserProfile = findViewById(R.id.tvLocationUserProfile);
         tvCompanyUserProfile = findViewById(R.id.tvCompanyUserProfile);
         tvLinkUserProfile = findViewById(R.id.tvLinkUserProfile);
-
-        toggleFavDetailProfile = findViewById(R.id.toggleFavDetailProfile);
 
         tabLayoutDetailProfile = findViewById(R.id.tabLayoutDetailProfile);
         viewPagerDetailProfile = findViewById(R.id.viewPagerDetailProfile);
@@ -231,74 +224,6 @@ public class DetailProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
-
-    private void setToggleFavorite() {
-
-        profileResponse = new DetailProfileResponse();
-
-        String avatarUrl = imgUserProfile.getResources().toString().trim();
-        String name = tvNameUserProfile.getText().toString().trim();
-        String username = tvUsernameUserProfile.getText().toString().trim();
-        String following = tvFollowingUserProfile.getText().toString().trim();
-        String followers = tvFollowersUserProfile.getText().toString().trim();
-        String repository = tvRepositoryUserProfile.getText().toString().trim();
-        String location = tvLocationUserProfile.getText().toString().trim();
-        String company = tvCompanyUserProfile.getText().toString().trim();
-        String link = tvLinkUserProfile.getText().toString().trim();
-
-        profileResponse.setAvatarUrl(avatarUrl);
-        profileResponse.setName(name);
-        profileResponse.setLogin(username);
-
-        int followingInt = Integer.parseInt(following);
-        profileResponse.setFollowing(followingInt);
-
-        int followersInt = Integer.parseInt(followers);
-        profileResponse.setFollowers(followersInt);
-
-        int repositoryInt = Integer.parseInt(repository);
-        profileResponse.setPublicRepos(repositoryInt);
-
-        profileResponse.setLocation(location);
-        profileResponse.setCompany(company);
-        profileResponse.setBlog(link);
-
-        Intent intent = new Intent();
-        intent.putExtra(EXTRA_PROFILE, profileResponse);
-        intent.putExtra(EXTRA_POSITION, position);
-
-//        toggleFavDetailProfile.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if (isChecked) {
-//                    long insert = gitserHelper.insertFavorite(profileResponse);
-//                    if (insert > 0) {
-//                        profileResponse.setId((int) insert);
-//                        setResult(RESULT_ADD);
-//                        Toasty.success(DetailProfileActivity.this, R.string.tvInsertFavoriteSuccessfully, Toast.LENGTH_SHORT, true).show();
-//                        Log.i("insertSuccess", "onCheckedChanged: ");
-//                        finish();
-//                    } else {
-//                        Toasty.error(DetailProfileActivity.this, R.string.tvInsertFavoriteFailed, Toast.LENGTH_SHORT, true).show();
-//                        Log.i("insertFailed", "onCheckedChanged: ");
-//                    }
-//                } else {
-//                    long delete = gitserHelper.deleteFavorite(profileResponse.getId());
-//                    if (delete > 0) {
-//                        Intent intentDelete = new Intent();
-//                        intentDelete.putExtra(EXTRA_POSITION, position);
-//                        setResult(RESULT_DELETE, intentDelete);
-//                        Toasty.success(DetailProfileActivity.this, R.string.tvDeletedFavoriteItemSuccessfully, Toast.LENGTH_SHORT, true).show();
-//                        finish();
-//                        Log.i("deleteSuccess", "onCheckedChanged: ");
-//                    } else {
-//                        Toasty.error(DetailProfileActivity.this, R.string.tvDeletedFavoriteItemFailed, Toast.LENGTH_SHORT, true).show();
-//                    }
-//                }
-//            }
-//        });
-
-    }
 
     private void setDetailProfilePagerAdapter() {
         DetailProfilePagerAdapter profilePagerAdapter = new DetailProfilePagerAdapter(

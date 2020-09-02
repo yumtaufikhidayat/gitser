@@ -53,17 +53,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"/>
 
-                        <ToggleButton
-                            android:id="@+id/toggleFavDetailProfile"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:textOn=""
-                            android:textOff=""
-                            style="?android:attr/borderlessButtonStyle"
-                            android:background="@drawable/favorite_selector"
-                            app:layout_constraintBottom_toBottomOf="@id/imgUserProfile"
-                            app:layout_constraintEnd_toEndOf="@+id/imgUserProfile"/>
-
                         <TextView
                             android:id="@+id/tvNameUserProfile"
                             android:layout_width="wrap_content"

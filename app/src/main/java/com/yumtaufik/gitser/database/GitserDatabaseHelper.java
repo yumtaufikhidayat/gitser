@@ -13,7 +13,7 @@ public class GitserDatabaseHelper extends SQLiteOpenHelper {
 
     private static String SQL_CREATE_TABLE = String.format("CREATE TABLE %s"
             + " (%s INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + "%s TEXT NOT NULL,"
+            + "%s BLOB NOT NULL,"
             + "%s TEXT NOT NULL,"
             + "%s TEXT NOT NULL,"
             + "%s TEXT NOT NULL,"
