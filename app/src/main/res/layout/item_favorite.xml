@@ -7,8 +7,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="3dp"
     android:layout_marginBottom="3dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
@@ -60,7 +60,6 @@
             android:id="@+id/tvFavFollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
@@ -75,11 +74,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginStart="25dp"
             android:textColor="@android:color/black"
             android:text="@string/tvFollowing"
             app:layout_constraintTop_toBottomOf="@id/tvFavFollowing"
-            app:layout_constraintStart_toStartOf="@id/tvFavUsername"
+            app:layout_constraintStart_toStartOf="@id/tvFavFollowing"
             app:layout_constraintEnd_toEndOf="@id/tvFavFollowing"/>
 
         <View
