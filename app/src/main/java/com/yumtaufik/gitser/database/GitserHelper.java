@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
@@ -85,10 +86,10 @@ public class GitserHelper {
         return count > 0;
     }
 
-    public long insertFavorite(DetailProfileResponse profileResponse) {
+    public long insertFavorite(DetailProfileResponse profileResponse, byte[] avatarUrl) throws SQLException {
 
         ContentValues values = new ContentValues();
-        values.put(FAVORITE_AVATAR_URL, profileResponse.getAvatarUrl());
+        values.put(FAVORITE_AVATAR_URL, avatarUrl);
         values.put(FAVORITE_NAME, profileResponse.getName());
         values.put(FAVORITE_USERNAME, profileResponse.getLogin());
         values.put(FAVORITE_FOLLOWING, profileResponse.getFollowing());
@@ -99,6 +100,45 @@ public class GitserHelper {
         values.put(FAVORITE_LINK, profileResponse.getBlog());
 
         return database.insert(DATABASE_TABLE, null, values);
+    }
+
+    public byte[] getBitmapAvatarUrl(DetailProfileResponse profileResponse) {
+
+        database = databaseHelper.getReadableDatabase();
+        SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+
+        String[] select = {
+                FAVORITE_AVATAR_URL,
+                FAVORITE_NAME,
+                FAVORITE_USERNAME,
+                FAVORITE_FOLLOWING,
+                FAVORITE_FOLLOWERS,
+                FAVORITE_REPOSITORY,
+                FAVORITE_LOCATION,
+                FAVORITE_COMPANY,
+                FAVORITE_LINK
+        };
+
+        queryBuilder.setTables(DATABASE_TABLE);
+
+        Cursor cursor = queryBuilder.query(
+                database,
+                select,
+                FAVORITE_NAME + " = ? ",
+                new String[]{profileResponse.getName()},
+                null,
+                null,
+                null);
+
+        byte[] result = null;
+
+        if (cursor.moveToFirst()) {
+            do {
+                result = cursor.getBlob(cursor.getColumnIndex(FAVORITE_AVATAR_URL));
+            } while (cursor.moveToNext());
+        }
+
+        return result;
     }
 
     public int deleteFavorite(int id) {

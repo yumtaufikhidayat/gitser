@@ -2,6 +2,7 @@ package com.yumtaufik.gitser.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -17,9 +18,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.database.GitserHelper;
+import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import es.dmoral.toasty.Toasty;
@@ -65,8 +66,6 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
 
         setGetSupportActionBar();
 
-        setGitserDbHelper();
-
         setDataPosition();
 
         setInitOnClick();
@@ -75,6 +74,9 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
     private void setInit() {
 
         profileResponse = getIntent().getParcelableExtra(EXTRA_FAVORITE);
+
+        gitserHelper = GitserHelper.getInstance(getApplicationContext());
+//        gitserHelper = new GitserHelper(DetailFavoriteActivity.this);
 
         toolbarDetailFav = findViewById(R.id.toolbarDetailFav);
 
@@ -90,7 +92,6 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
         tvLinkFav = findViewById(R.id.tvLinkFav);
 
         btnDeleteFavorite = findViewById(R.id.btnDeleteFavorite);
-
     }
 
     //----Method to set notification bar----
@@ -111,7 +112,7 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + R.string.tvDetailFavorite + "</font>")));
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + profileResponse.getLogin() + "</font>")));
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             getSupportActionBar().setElevation(0);
         }
@@ -189,10 +190,6 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
         alertDialog.show();
     }
 
-    private void setGitserDbHelper() {
-        gitserHelper = GitserHelper.getInstance(getApplicationContext());
-    }
-
     private void setDataPosition() {
 
         if (profileResponse != null) {
@@ -203,11 +200,16 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
 
         if (profileResponse != null) {
 
-            Glide.with(this)
-                    .asBitmap()
-                    .load(profileResponse.getAvatarUrl())
-                    .placeholder(R.color.colorPrimaryDark)
-                    .into(imgFav);
+            byte[] data = gitserHelper.getBitmapAvatarUrl(profileResponse);
+
+            if (data != null) {
+
+                Bitmap bitmaps = Utils.getImage(data);
+                imgFav.setImageBitmap(bitmaps);
+
+            } else {
+                Toasty.error(DetailFavoriteActivity.this, R.string.tvFailedToShowAvatar, Toast.LENGTH_SHORT, true).show();
+            }
 
             tvNameFav.setText(profileResponse.getName());
             tvUsernameFav.setText(profileResponse.getLogin());

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static android.provider.BaseColumns._ID;
 import static com.yumtaufik.gitser.database.GitserDatabaseContract.GitserColumns.FAVORITE_AVATAR_URL;
@@ -26,7 +27,7 @@ public class MappingHelper {
         while (cursor.moveToNext()) {
 
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(_ID));
-            String avatarUrl = cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_AVATAR_URL));
+            String avatarUrl = Arrays.toString(cursor.getBlob(cursor.getColumnIndexOrThrow(FAVORITE_AVATAR_URL)));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_NAME));
             String username = cursor.getString(cursor.getColumnIndexOrThrow(FAVORITE_USERNAME));
             int following = cursor.getInt(cursor.getColumnIndexOrThrow(FAVORITE_FOLLOWING));

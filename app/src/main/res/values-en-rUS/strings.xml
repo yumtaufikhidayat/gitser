@@ -30,7 +30,6 @@
     <string name="tvRefresh">Pull down to refresh</string>
     <string name="tvProcessing">Loading…</string>
     <string name="tvDeleteAllItems">Delete all items?</string>
-    <string name="tvDetailFavorite">Detail Favorite</string>
     <string name="tvDeleteFavorite">Delete Favorite</string>
     <string name="tvDeleteFavoriteDesc">Delete from Favorite?</string>
     <string name="tvYes">Yes</string>
@@ -40,6 +39,7 @@
     <string name="tvInsertFavoriteSuccessfully">Successfully added to favorite</string>
     <string name="tvInsertFavoriteFailed">Failed to add to favorite.</string>
     <string name="tvFavoriteExist">Already in favorite</string>
+    <string name="tvFailedToShowAvatar">Failed to show avatar</string>
 
     <string name="btnDeleteFavorite">Delete Favorite</string>
 

@@ -2,6 +2,8 @@ package com.yumtaufik.gitser.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -29,11 +31,10 @@ import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.detailprofile.DetailProfilePagerAdapter;
 import com.yumtaufik.gitser.database.GitserHelper;
+import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
-
-import java.util.Locale;
 
 import es.dmoral.toasty.Toasty;
 
@@ -203,7 +204,11 @@ public class DetailProfileActivity extends AppCompatActivity {
                 if (update) {
                     Toasty.warning(DetailProfileActivity.this, R.string.tvFavoriteExist, Toast.LENGTH_SHORT, true).show();
                 } else {
-                    long insert = gitserHelper.insertFavorite(profileResponse);
+
+                    Bitmap bitmap = ((BitmapDrawable) imgUserProfile.getDrawable()).getBitmap();
+
+                    long insert = gitserHelper.insertFavorite(profileResponse, Utils.getBytes(bitmap));
+
                     if (insert > 0) {
                         profileResponse.setId((int) insert);
                         setResult(RESULT_ADD);

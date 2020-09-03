@@ -2,28 +2,36 @@ package com.yumtaufik.gitser.adapter.favorite;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.activity.DetailFavoriteActivity;
+import com.yumtaufik.gitser.database.GitserHelper;
 import com.yumtaufik.gitser.helper.CustomOnClickListener;
+import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.util.ArrayList;
+
+import es.dmoral.toasty.Toasty;
 
 public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAdapter.MyViewHolder> {
 
     ArrayList<DetailProfileResponse> profileResponsesList = new ArrayList<>();
     Activity activity;
+
+    GitserHelper gitserHelper;
 
     public void setGitserFavoriteList(ArrayList<DetailProfileResponse> profileResponsesList) {
 
@@ -39,18 +47,18 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         this.activity = activity;
     }
 
-    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
-        this.profileResponsesList = profileResponsesList;
-    }
+//    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
+//        this.profileResponsesList = profileResponsesList;
+//    }
 
-    public void addItem(DetailProfileResponse profileResponse) {
-        this.profileResponsesList.add(profileResponse);
+    public void addItem(DetailProfileResponse favorite) {
+        this.profileResponsesList.add(favorite);
         notifyItemInserted(profileResponsesList.size() - 1);
     }
 
-    public void updateItem(int position, DetailProfileResponse profileResponse) {
-        this.profileResponsesList.set(position, profileResponse);
-        notifyItemChanged(position, profileResponse);
+    public void updateItem(int position, DetailProfileResponse favorite) {
+        this.profileResponsesList.set(position, favorite);
+        notifyItemChanged(position, favorite);
     }
 
     public void removeItem(int position) {
@@ -72,11 +80,17 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
 
         DetailProfileResponse favorite = profileResponsesList.get(position);
 
-        Glide.with(holder.itemView.getContext())
-                .asBitmap()
-                .load(favorite.getAvatarUrl())
-                .placeholder(R.color.colorPrimaryDark)
-                .into(holder.imgFavUser);
+        gitserHelper = new GitserHelper(activity);
+        byte[] data = gitserHelper.getBitmapAvatarUrl(favorite);
+
+        if (data != null) {
+
+            Bitmap bitmap = Utils.getImage(data);
+            holder.imgFavUser.setImageBitmap(bitmap);
+
+        } else {
+            Toasty.error(activity, R.string.tvFailedToShowAvatar, Toast.LENGTH_SHORT, true).show();
+        }
 
         holder.tvFavName.setText(favorite.getName());
         holder.tvFavUsername.setText(favorite.getLogin());
@@ -95,6 +109,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
                 intent.putExtra(DetailFavoriteActivity.EXTRA_POSITION, position);
                 intent.putExtra(DetailFavoriteActivity.EXTRA_FAVORITE, profileResponsesList.get(position));
                 activity.startActivityForResult(intent, DetailFavoriteActivity.REQUEST_UPDATE);
+                Log.i("adapterfav", "onItemClicked: ");
             }
         }));
     }
