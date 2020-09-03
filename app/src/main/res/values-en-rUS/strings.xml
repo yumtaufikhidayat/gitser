@@ -42,6 +42,7 @@
     <string name="tvInsertFavoriteFailed">Failed to add to favorite.</string>
     <string name="tvFavoriteExist">Already in favorite</string>
     <string name="tvFailedToShowAvatar">Failed to show avatar</string>
+    <string name="tvNull">null</string>
 
     <string name="btnDeleteFavorite">Delete Favorite</string>
 

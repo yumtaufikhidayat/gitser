@@ -217,7 +217,7 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
             tvRepositoryFav.setText(String.valueOf(profileResponse.getPublicRepos()));
             tvLocationFav.setText(profileResponse.getLocation());
             tvCompanyFav.setText(profileResponse.getCompany());
-            tvLinkFav.setText(profileResponse.getBlog());
+            tvLinkFav.setText(profileResponse.getBio());
         }
     }
 

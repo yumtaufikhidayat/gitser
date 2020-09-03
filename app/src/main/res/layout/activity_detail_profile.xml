@@ -61,7 +61,7 @@
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textStyle="bold"
                             android:textColor="@android:color/black"
-                            android:text=""
+                            android:text="@string/tvNull"
                             app:layout_constraintStart_toStartOf="@id/imgUserProfile"
                             app:layout_constraintEnd_toEndOf="@id/imgUserProfile"
                             app:layout_constraintTop_toBottomOf="@id/imgUserProfile"/>
@@ -71,7 +71,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:text=""
+                            android:text="@string/tvNull"
                             app:layout_constraintStart_toStartOf="@id/tvNameUserProfile"
                             app:layout_constraintEnd_toEndOf="@id/tvNameUserProfile"
                             app:layout_constraintTop_toBottomOf="@id/tvNameUserProfile"
@@ -213,7 +213,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text=""
+                    android:text="@string/tvNull"
                     app:layout_constraintStart_toEndOf="@id/imgLocation"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/tvCompanyUserProfile"/>
@@ -238,7 +238,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text=""
+                    android:text="@string/tvNull"
                     app:layout_constraintStart_toEndOf="@id/imgCompany"
                     app:layout_constraintTop_toBottomOf="@id/tvLocationUserProfile"
                     app:layout_constraintBottom_toTopOf="@id/tvLinkUserProfile"/>
@@ -263,7 +263,7 @@
                     android:maxLines="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/black"
-                    android:text=""
+                    android:text="@string/tvNull"
                     app:layout_constraintStart_toEndOf="@id/imgLink"
                     app:layout_constraintTop_toBottomOf="@id/tvCompanyUserProfile"
                     app:layout_constraintBottom_toBottomOf="parent"/>

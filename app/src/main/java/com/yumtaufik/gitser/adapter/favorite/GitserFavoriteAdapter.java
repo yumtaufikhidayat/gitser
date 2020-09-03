@@ -45,10 +45,6 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         this.activity = activity;
     }
 
-//    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponsesList) {
-//        this.profileResponsesList = profileResponsesList;
-//    }
-
     public void addItem(DetailProfileResponse favorite) {
         this.profileResponsesList.add(favorite);
         notifyItemInserted(profileResponsesList.size() - 1);
@@ -97,7 +93,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         holder.tvFavRepository.setText(String.valueOf(favorite.getPublicRepos()));
         holder.tvFavLocation.setText(favorite.getLocation());
         holder.tvFavCompany.setText(favorite.getCompany());
-        holder.tvFavLink.setText(favorite.getBlog());
+        holder.tvFavLink.setText(favorite.getBio());
 
         holder.cardFavorite.setOnClickListener(new View.OnClickListener() {
             @Override

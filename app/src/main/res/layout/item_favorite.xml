@@ -41,7 +41,7 @@
             android:layout_marginStart="15dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
-            android:text="@string/tvName"
+            android:text="@string/tvNull"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/imgFavUser"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textColor="@android:color/black"
-            android:text="@string/tvUsername"
+            android:text="@string/tvNull"
             app:layout_constraintStart_toEndOf="@id/imgFavUser"
             app:layout_constraintTop_toBottomOf="@+id/tvFavName"/>
 
@@ -167,7 +167,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
             android:textColor="@android:color/black"
-            android:text=""
+            android:text="@string/tvNull"
             app:layout_constraintTop_toBottomOf="@id/tvFavFollowingTitle"
             app:layout_constraintBottom_toTopOf="@+id/tvFavCompany"
             app:layout_constraintStart_toEndOf="@id/imgFavLocation"/>
@@ -189,7 +189,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
             android:textColor="@android:color/black"
-            android:text=""
+            android:text="@string/tvNull"
             app:layout_constraintTop_toBottomOf="@id/tvFavLocation"
             app:layout_constraintBottom_toTopOf="@+id/tvFavLink"
             app:layout_constraintStart_toEndOf="@id/imgFavCompany"/>
@@ -211,7 +211,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
             android:textColor="@android:color/black"
-            android:text=""
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/tvNull"
             app:layout_constraintTop_toBottomOf="@id/tvFavCompany"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/imgFavLink"/>

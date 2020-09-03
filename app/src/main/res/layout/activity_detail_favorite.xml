@@ -51,7 +51,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:text=""
+                    android:text="@string/tvNull"
                     app:layout_constraintStart_toStartOf="@id/imgFav"
                     app:layout_constraintEnd_toEndOf="@id/imgFav"
                     app:layout_constraintTop_toBottomOf="@id/imgFav"/>
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:text=""
+                    android:text="@string/tvNull"
                     app:layout_constraintStart_toStartOf="@id/tvNameFav"
                     app:layout_constraintEnd_toEndOf="@id/tvNameFav"
                     app:layout_constraintTop_toBottomOf="@id/tvNameFav"
@@ -203,7 +203,7 @@
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@android:color/black"
-            android:text=""
+            android:text="@string/tvNull"
             app:layout_constraintStart_toEndOf="@id/imgLocationFav"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tvCompanyFav"/>
@@ -228,7 +228,7 @@
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@android:color/black"
-            android:text=""
+            android:text="@string/tvNull"
             app:layout_constraintStart_toEndOf="@id/imgCompanyFav"
             app:layout_constraintTop_toBottomOf="@id/tvLocationFav"
             app:layout_constraintBottom_toTopOf="@id/tvLinkFav"/>
@@ -253,7 +253,7 @@
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@android:color/black"
-            android:text=""
+            android:text="@string/tvNull"
             app:layout_constraintStart_toEndOf="@id/imgLinkFav"
             app:layout_constraintTop_toBottomOf="@id/tvCompanyFav"
             app:layout_constraintBottom_toBottomOf="parent"/>

@@ -41,6 +41,7 @@
     <string name="tvInsertFavoriteFailed">Gagal ditambahkan ke favorit</string>
     <string name="tvFavoriteExist">Sudah ada di favorite</string>
     <string name="tvFailedToShowAvatar">Gagal menampilkan avatar</string>
+    <string name="tvNull">null</string>
 
     <string name="btnDeleteFavorite">Hapus Favorit</string>
 
