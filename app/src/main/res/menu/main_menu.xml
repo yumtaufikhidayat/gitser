@@ -14,6 +14,11 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/nav_settings"
+        android:title="@string/tvSettings"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/nav_profile"
         android:title="@string/tvProfile"
         app:showAsAction="never"/>

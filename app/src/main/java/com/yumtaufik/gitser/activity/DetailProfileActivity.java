@@ -281,20 +281,20 @@ public class DetailProfileActivity extends AppCompatActivity {
                 }
             });
         } else {
-            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+            showErrorMessage();
             errorLayout.setVisibility(View.GONE);
         }
     }
 
     //----Method to show error connection----
-    private void showErrorMessage(Integer image, Integer title, Integer message) {
+    private void showErrorMessage() {
         if (errorLayout.getVisibility() == View.GONE) {
             errorLayout.setVisibility(View.VISIBLE);
         }
 
-        imgErrorImage.setImageResource(image);
-        tvErrorTitle.setText(title);
-        tvErrorMessage.setText(message);
+        imgErrorImage.setImageResource(R.drawable.ic_no_connection);
+        tvErrorTitle.setText(R.string.tvOops);
+        tvErrorMessage.setText(R.string.tvCheckYourConnection);
     }
     //----Ends----
 

@@ -211,8 +211,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
             android:textColor="@android:color/black"
-            android:ellipsize="end"
-            android:maxLines="1"
             android:text="@string/tvNull"
             app:layout_constraintTop_toBottomOf="@id/tvFavCompany"
             app:layout_constraintBottom_toBottomOf="parent"
