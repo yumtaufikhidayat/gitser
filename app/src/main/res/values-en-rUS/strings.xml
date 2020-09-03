@@ -30,6 +30,8 @@
     <string name="tvRefresh">Pull down to refresh</string>
     <string name="tvProcessing">Loading…</string>
     <string name="tvDeleteAllItems">Delete all items?</string>
+    <string name="tvDeleteAllItemsDesc">Are you sure to delete all favorites?</string>
+    <string name="tvDeletedAllFavoritesSuccessfully">Successfully delete all favorites</string>
     <string name="tvDeleteFavorite">Delete Favorite</string>
     <string name="tvDeleteFavoriteDesc">Delete from Favorite?</string>
     <string name="tvYes">Yes</string>

@@ -1,5 +1,6 @@
 package com.yumtaufik.gitser.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -11,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +30,8 @@ import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+
+import es.dmoral.toasty.Toasty;
 
 public class FavoriteActivity extends AppCompatActivity implements LoadProfileCallback{
 
@@ -105,8 +110,14 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+
+            case R.id.nav_delete:
+                showDialogDelete();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -118,6 +129,30 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
         rvFavorite.setLayoutManager(layoutManager);
         rvFavorite.setHasFixedSize(true);
         rvFavorite.setAdapter(adapter);
+    }
+
+    private void showDialogDelete() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle(R.string.tvDeleteAllItems)
+                .setMessage(R.string.tvDeleteAllItemsDesc)
+                .setCancelable(false)
+                .setNegativeButton(R.string.tvNo, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .setPositiveButton(R.string.tvYes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        gitserHelper.deleteAllFavorites();
+                        Toasty.success(FavoriteActivity.this, R.string.tvDeletedAllFavoritesSuccessfully, Toast.LENGTH_SHORT, true).show();
+                        finish();
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 
     @Override

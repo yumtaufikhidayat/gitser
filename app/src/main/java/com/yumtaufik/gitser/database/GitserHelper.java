@@ -124,8 +124,8 @@ public class GitserHelper {
         Cursor cursor = queryBuilder.query(
                 database,
                 select,
-                FAVORITE_NAME + " = ? ",
-                new String[]{profileResponse.getName()},
+                FAVORITE_USERNAME + " = ? ",
+                new String[]{profileResponse.getLogin()},
                 null,
                 null,
                 null);
@@ -147,5 +147,10 @@ public class GitserHelper {
                 + id + "'",
                 null
         );
+    }
+
+    public void deleteAllFavorites() {
+        database = databaseHelper.getWritableDatabase();
+        database.execSQL("DELETE FROM " + DATABASE_TABLE);
     }
 }

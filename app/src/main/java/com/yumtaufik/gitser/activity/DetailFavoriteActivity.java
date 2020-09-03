@@ -76,7 +76,6 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
         profileResponse = getIntent().getParcelableExtra(EXTRA_FAVORITE);
 
         gitserHelper = GitserHelper.getInstance(getApplicationContext());
-//        gitserHelper = new GitserHelper(DetailFavoriteActivity.this);
 
         toolbarDetailFav = findViewById(R.id.toolbarDetailFav);
 

@@ -3,7 +3,6 @@ package com.yumtaufik.gitser.adapter.favorite;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.activity.DetailFavoriteActivity;
 import com.yumtaufik.gitser.database.GitserHelper;
-import com.yumtaufik.gitser.helper.CustomOnClickListener;
 import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
@@ -76,7 +74,7 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final GitserFavoriteAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final GitserFavoriteAdapter.MyViewHolder holder, final int position) {
 
         DetailProfileResponse favorite = profileResponsesList.get(position);
 
@@ -101,17 +99,17 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         holder.tvFavCompany.setText(favorite.getCompany());
         holder.tvFavLink.setText(favorite.getBlog());
 
-        holder.cardFavorite.setOnClickListener(new CustomOnClickListener(position, new CustomOnClickListener.OnItemClickCallback() {
+        holder.cardFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClicked(View view, int position) {
+            public void onClick(View v) {
 
                 Intent intent = new Intent(activity, DetailFavoriteActivity.class);
                 intent.putExtra(DetailFavoriteActivity.EXTRA_POSITION, position);
                 intent.putExtra(DetailFavoriteActivity.EXTRA_FAVORITE, profileResponsesList.get(position));
                 activity.startActivityForResult(intent, DetailFavoriteActivity.REQUEST_UPDATE);
-                Log.i("adapterfav", "onItemClicked: ");
+
             }
-        }));
+        });
     }
 
     @Override

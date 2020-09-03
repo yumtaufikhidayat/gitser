@@ -29,6 +29,8 @@
     <string name="tvRefresh">Tarik ke bawah untuk me-refresh</string>
     <string name="tvProcessing">Memuat…</string>
     <string name="tvDeleteAllItems">Hapus seluruh item?</string>
+    <string name="tvDeleteAllItemsDesc">Anda yakin ingin menghapus seluruh favorit?</string>
+    <string name="tvDeletedAllFavoritesSuccessfully">Berhasil menghapus seluruh favorit</string>
     <string name="tvDeleteFavorite">Hapus Favorit</string>
     <string name="tvDeleteFavoriteDesc">Hapus dari Favorit?</string>
     <string name="tvYes">Ya</string>
