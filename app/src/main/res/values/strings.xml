@@ -44,9 +44,9 @@
     <string name="tvFavoriteExist">Sudah ada di favorite</string>
     <string name="tvFailedToShowAvatar">Gagal menampilkan avatar</string>
     <string name="tvNull">null</string>
-    <string name="tvInfoDesc">Jangan lupa untuk menekan tombol star jika bermanfaat</string>
+    <string name="tvInfoDesc">Mari bertegur sapa dan jangan lupa untuk menekan tombol star jika bermanfaat</string>
     <string name="tvAppInfo">Info Aplikasi</string>
-    <string name="tvGithubUrl">https://github.com/yumtaufikhidayat/gitser</string>
+    <string name="tvDeveloperGithubUrl">https://github.com/yumtaufikhidayat/gitser</string>
     <string name="tvDeveloperEmail">yumtaufik1997@gmail.com</string>
     <string name="tvInstallEmailApp">Silakan install aplikasi Email terlebih dahulu</string>
     <string name="tvInstallBrowserApp">Silakan install aplikasi Browser terlebih dahulu</string>

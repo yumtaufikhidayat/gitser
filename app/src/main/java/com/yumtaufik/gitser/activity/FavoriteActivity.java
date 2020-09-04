@@ -14,10 +14,12 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,6 +45,8 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
     RecyclerView rvFavorite;
     GitserHelper gitserHelper;
 
+    ArrayList<DetailProfileResponse> profileResponseList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,21 +59,30 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
         setGetSupportActionBar();
 
         if (savedInstanceState == null) {
+
             new LoadProfileAsync(gitserHelper, this).execute();
+
         } else {
-            ArrayList<DetailProfileResponse> profileResponseList = savedInstanceState.getParcelableArrayList(EXTRA_STATE);
+
+            profileResponseList = savedInstanceState.getParcelableArrayList(EXTRA_STATE);
+
             if (profileResponseList != null) {
                 adapter.setGitserFavoriteList(profileResponseList);
             }
         }
 
         setRecyclerView();
+
+        setItemTouchHelper();
     }
 
     private void setInit() {
 
         gitserHelper = new GitserHelper(FavoriteActivity.this);
-        adapter = new GitserFavoriteAdapter(this);
+
+        profileResponseList = new ArrayList<>();
+
+        adapter = new GitserFavoriteAdapter(profileResponseList,this);
 
         toolbarFavorite = findViewById(R.id.toolbarFavorite);
 
@@ -130,6 +143,30 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
         rvFavorite.setHasFixedSize(true);
         rvFavorite.setAdapter(adapter);
     }
+
+    private void setItemTouchHelper() {
+
+        ItemTouchHelper favoriteItemTouchHelper = new ItemTouchHelper(simpleCallback);
+        favoriteItemTouchHelper.attachToRecyclerView(rvFavorite);
+    }
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            int position = viewHolder.getAdapterPosition();
+
+            if (direction == ItemTouchHelper.LEFT) {
+                profileResponseList.remove(position);
+                adapter.notifyItemRemoved(position);
+            }
+        }
+    };
 
     private void showDialogDelete() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

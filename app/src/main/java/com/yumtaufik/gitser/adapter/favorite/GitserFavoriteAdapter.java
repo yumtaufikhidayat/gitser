@@ -26,7 +26,7 @@ import es.dmoral.toasty.Toasty;
 
 public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAdapter.MyViewHolder> {
 
-    ArrayList<DetailProfileResponse> profileResponsesList = new ArrayList<>();
+    ArrayList<DetailProfileResponse> profileResponsesList;
     Activity activity;
 
     GitserHelper gitserHelper;
@@ -41,7 +41,8 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         notifyDataSetChanged();
     }
 
-    public GitserFavoriteAdapter(Activity activity) {
+    public GitserFavoriteAdapter(ArrayList<DetailProfileResponse> profileResponse, Activity activity) {
+        this.profileResponsesList = profileResponse;
         this.activity = activity;
     }
 
