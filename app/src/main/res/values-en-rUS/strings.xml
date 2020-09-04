@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Gitser</string>
+    <string name="tvAppVersion">Version 1.0</string>
     <string name="tvUsername">Username</string>
     <string name="tvName">Name</string>
     <string name="tvHello">Hello,</string>
@@ -18,6 +19,7 @@
     <string name="tvSearchDots">Search…</string>
     <string name="tvDetailProfile">Detail Profile</string>
     <string name="tvSettings">Settings</string>
+    <string name="tvInfo">Info</string>
     <string name="tvFavorite">Favorite</string>
     <string name="tvProfile">Profile</string>
     <string name="tvLanguage">Language</string>
@@ -43,6 +45,12 @@
     <string name="tvFavoriteExist">Already in favorite</string>
     <string name="tvFailedToShowAvatar">Failed to show avatar</string>
     <string name="tvNull">null</string>
+    <string name="tvInfoDesc">Don\'t forget to press star if useful</string>
+    <string name="tvAppInfo">App Info</string>
+    <string name="tvGithubUrl">https://github.com/yumtaufikhidayat/gitser</string>
+    <string name="tvDeveloperEmail">yumtaufik1997@gmail.com</string>
+    <string name="tvInstallEmailApp">Please install Email application first</string>
+    <string name="tvInstallBrowserApp">Please install Browser application first</string>
 
     <string name="btnDeleteFavorite">Delete Favorite</string>
 

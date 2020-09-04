@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Gitser</string>
+    <string name="tvAppVersion">Versi 1.0</string>
     <string name="tvUsername">Username</string>
     <string name="tvName">Nama</string>
     <string name="tvHello">Halo,</string>
@@ -17,6 +18,7 @@
     <string name="tvSearchDots">Cari…</string>
     <string name="tvDetailProfile">Detail Profil</string>
     <string name="tvSettings">Pengaturan</string>
+    <string name="tvInfo">Info</string>
     <string name="tvFavorite">Favorit</string>
     <string name="tvProfile">Profil</string>
     <string name="tvLanguage">Bahasa</string>
@@ -42,6 +44,12 @@
     <string name="tvFavoriteExist">Sudah ada di favorite</string>
     <string name="tvFailedToShowAvatar">Gagal menampilkan avatar</string>
     <string name="tvNull">null</string>
+    <string name="tvInfoDesc">Jangan lupa untuk menekan tombol star jika bermanfaat</string>
+    <string name="tvAppInfo">Info Aplikasi</string>
+    <string name="tvGithubUrl">https://github.com/yumtaufikhidayat/gitser</string>
+    <string name="tvDeveloperEmail">yumtaufik1997@gmail.com</string>
+    <string name="tvInstallEmailApp">Silakan install aplikasi Email terlebih dahulu</string>
+    <string name="tvInstallBrowserApp">Silakan install aplikasi Browser terlebih dahulu</string>
 
     <string name="btnDeleteFavorite">Hapus Favorit</string>
 

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
@@ -28,6 +29,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.profile.ProfilePagerAdapter;
+import com.yumtaufik.gitser.bottomsheet.ProfileInfoBottomSheet;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
@@ -139,8 +141,10 @@ public class ProfileActivity extends AppCompatActivity {
                 onBackPressed();
                 break;
 
-            case R.id.nav_settings:
-                //To settings layout
+            case R.id.nav_info:
+                ProfileInfoBottomSheet profileInfoBottomSheet = new ProfileInfoBottomSheet();
+                profileInfoBottomSheet.setStyle(DialogFragment.STYLE_NORMAL, R.style.BaseBottomSheetMenu);
+                profileInfoBottomSheet.show(getSupportFragmentManager(), "profileInfoBottomSheet");
                 break;
 
             case R.id.nav_language:
@@ -222,20 +226,20 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             });
         } else {
-            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+            showErrorMessage();
             errorLayout.setVisibility(View.GONE);
         }
     }
 
     //----Method to show error connection----
-    private void showErrorMessage(Integer image, Integer title, Integer message) {
+    private void showErrorMessage() {
         if (errorLayout.getVisibility() == View.GONE) {
             errorLayout.setVisibility(View.VISIBLE);
         }
 
-        imgErrorImage.setImageResource(image);
-        tvErrorTitle.setText(title);
-        tvErrorMessage.setText(message);
+        imgErrorImage.setImageResource(R.drawable.ic_no_connection);
+        tvErrorTitle.setText(R.string.tvOops);
+        tvErrorMessage.setText(R.string.tvCheckYourConnection);
     }
     //----Ends----
 

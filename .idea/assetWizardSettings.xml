@@ -307,7 +307,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/taufik/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/193.6626763/plugins/android/lib/android.jar!/images/material/icons/materialicons/delete_sweep/baseline_delete_sweep_24.xml" />
+                                      <entry key="url" value="jar:file:/home/taufik/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/193.6626763/plugins/android/lib/android.jar!/images/material/icons/materialiconsoutlined/all_inbox/outline_all_inbox_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -317,8 +317,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_baseline_delete" />
+                            <entry key="color" value="dc143c" />
+                            <entry key="outputName" value="ic_repository" />
                           </map>
                         </option>
                       </PersistentState>
