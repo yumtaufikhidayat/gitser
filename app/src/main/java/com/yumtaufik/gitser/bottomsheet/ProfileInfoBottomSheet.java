@@ -71,8 +71,7 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
                 intent.putExtra(Intent.EXTRA_TEXT, "");
 
                 PackageManager packageManager = Objects.requireNonNull(getContext()).getPackageManager();
-                List<ResolveInfo> activities = packageManager.queryIntentActivities(intent,
-                        PackageManager.MATCH_DEFAULT_ONLY);
+                List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 boolean isIntentSafe = activities.size() > 0;
 
                 if (isIntentSafe) {
@@ -86,11 +85,10 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
             public void updateDrawState(@NonNull TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setColor(Color.BLUE);
-                ds.setUnderlineText(false);
             }
         };
 
-        spannableStringEmail.setSpan(clickableSpanEmail, 0, 23, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableStringEmail.setSpan(clickableSpanEmail, 0, email.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvProfileInfoEmail.setText(spannableStringEmail);
         tvProfileInfoEmail.setMovementMethod(LinkMovementMethod.getInstance());
     }
@@ -107,8 +105,7 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
 
                 PackageManager packageManager = Objects.requireNonNull(getContext()).getPackageManager();
-                List<ResolveInfo> activities = packageManager.queryIntentActivities(browserIntent,
-                        PackageManager.MATCH_DEFAULT_ONLY);
+                List<ResolveInfo> activities = packageManager.queryIntentActivities(browserIntent, PackageManager.MATCH_DEFAULT_ONLY);
                 boolean isIntentSafe = activities.size() > 0;
 
                 if (isIntentSafe) {
@@ -122,11 +119,10 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
             public void updateDrawState(@NonNull TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setColor(Color.BLUE);
-                ds.setUnderlineText(false);
             }
         };
 
-        spannableStringGithubUrl.setSpan(clickableSpanGithubUrl, 0, 42, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableStringGithubUrl.setSpan(clickableSpanGithubUrl, 0, githubUrl.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvProfileInfoGithubUrl.setText(spannableStringGithubUrl);
         tvProfileInfoGithubUrl.setMovementMethod(LinkMovementMethod.getInstance());
     }

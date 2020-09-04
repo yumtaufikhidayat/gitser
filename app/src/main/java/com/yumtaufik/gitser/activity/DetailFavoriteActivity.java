@@ -2,10 +2,19 @@ package com.yumtaufik.gitser.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,6 +32,8 @@ import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.database.GitserHelper;
 import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
+
+import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
@@ -217,7 +229,35 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
             tvRepositoryFav.setText(String.valueOf(profileResponse.getPublicRepos()));
             tvLocationFav.setText(profileResponse.getLocation());
             tvCompanyFav.setText(profileResponse.getCompany());
-            tvLinkFav.setText(profileResponse.getBio());
+
+            SpannableString spannableLink = new SpannableString(profileResponse.getBio());
+            ClickableSpan spanLink = new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    Intent intentLink = new Intent(Intent.ACTION_VIEW, Uri.parse(profileResponse.getBio()));
+
+                    PackageManager packageManager = getPackageManager();
+                    List<ResolveInfo> activities = packageManager.queryIntentActivities(intentLink, PackageManager.MATCH_DEFAULT_ONLY);
+
+                    boolean isIntentSafe = activities.size() > 0;
+
+                    if (isIntentSafe) {
+                        startActivity(Intent.createChooser(intentLink, "Open with"));
+                    } else {
+                        Toasty.warning(DetailFavoriteActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                    }
+                }
+
+                @Override
+                public void updateDrawState(@NonNull TextPaint ds) {
+                    super.updateDrawState(ds);
+                    ds.setColor(Color.BLUE);
+                }
+            };
+
+            spannableLink.setSpan(spanLink, 0, profileResponse.getBio().length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            tvLinkFav.setText(spannableLink);
+            tvLinkFav.setMovementMethod(LinkMovementMethod.getInstance());
         }
     }
 

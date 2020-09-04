@@ -2,7 +2,16 @@ package com.yumtaufik.gitser.adapter.favorite;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.net.Uri;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +30,7 @@ import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
@@ -95,6 +105,37 @@ public class GitserFavoriteAdapter extends RecyclerView.Adapter<GitserFavoriteAd
         holder.tvFavLocation.setText(favorite.getLocation());
         holder.tvFavCompany.setText(favorite.getCompany());
         holder.tvFavLink.setText(favorite.getBio());
+
+        final String link = holder.tvFavLink.getText().toString().trim();
+
+        SpannableString spannableLink = new SpannableString(link);
+        ClickableSpan spanLink = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Intent intentLink = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+
+                PackageManager packageManager = holder.itemView.getContext().getPackageManager();
+                List<ResolveInfo> activities = packageManager.queryIntentActivities(intentLink, PackageManager.MATCH_DEFAULT_ONLY);
+
+                boolean isIntentSafe = activities.size() > 0;
+
+                if (isIntentSafe) {
+                    holder.itemView.getContext().startActivity(Intent.createChooser(intentLink, "Open with"));
+                } else {
+                    Toasty.warning(holder.itemView.getContext(), R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                }
+            }
+
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setColor(Color.BLUE);
+            }
+        };
+
+        spannableLink.setSpan(spanLink, 0, link.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        holder.tvFavLink.setText(spannableLink);
+        holder.tvFavLink.setMovementMethod(LinkMovementMethod.getInstance());
 
         holder.cardFavorite.setOnClickListener(new View.OnClickListener() {
             @Override

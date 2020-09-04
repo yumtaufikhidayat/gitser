@@ -2,13 +2,22 @@ package com.yumtaufik.gitser.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +28,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -35,6 +45,8 @@ import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.search.SearchItems;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
+
+import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
@@ -258,7 +270,7 @@ public class DetailProfileActivity extends AppCompatActivity {
                         Integer repos = detailProfileResponse.getPublicRepos();
                         String location = detailProfileResponse.getLocation();
                         String company = detailProfileResponse.getCompany();
-                        String link = detailProfileResponse.getBlog();
+                        final String link = detailProfileResponse.getBlog();
 
                         Glide.with(DetailProfileActivity.this)
                                 .asBitmap()
@@ -273,7 +285,35 @@ public class DetailProfileActivity extends AppCompatActivity {
                         tvRepositoryUserProfile.setText(String.valueOf(repos));
                         tvLocationUserProfile.setText(location);
                         tvCompanyUserProfile.setText(company);
-                        tvLinkUserProfile.setText(link);
+
+                        SpannableString spannableLink = new SpannableString(link);
+                        ClickableSpan spanLink = new ClickableSpan() {
+                            @Override
+                            public void onClick(@NonNull View widget) {
+                                Intent intentLink = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+
+                                PackageManager packageManager = getPackageManager();
+                                List<ResolveInfo> activities = packageManager.queryIntentActivities(intentLink, PackageManager.MATCH_DEFAULT_ONLY);
+
+                                boolean isIntentSafe = activities.size() > 0;
+
+                                if (isIntentSafe) {
+                                    startActivity(Intent.createChooser(intentLink, "Open with"));
+                                } else {
+                                    Toasty.warning(DetailProfileActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                                }
+                            }
+
+                            @Override
+                            public void updateDrawState(@NonNull TextPaint ds) {
+                                super.updateDrawState(ds);
+                                ds.setColor(Color.BLUE);
+                            }
+                        };
+
+                        spannableLink.setSpan(spanLink, 0, link.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        tvLinkUserProfile.setText(spannableLink);
+                        tvLinkUserProfile.setMovementMethod(LinkMovementMethod.getInstance());
 
                     } else {
                         Log.i("onChangedFailed", "onChanged: ");

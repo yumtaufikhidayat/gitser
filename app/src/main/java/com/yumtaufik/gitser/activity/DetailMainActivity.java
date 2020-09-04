@@ -1,18 +1,30 @@
 package com.yumtaufik.gitser.activity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -28,7 +40,10 @@ import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.model.main.MainResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
 
+import java.util.List;
 import java.util.Locale;
+
+import es.dmoral.toasty.Toasty;
 
 public class DetailMainActivity extends AppCompatActivity {
 
@@ -167,7 +182,7 @@ public class DetailMainActivity extends AppCompatActivity {
                         Integer repos = detailProfileResponse.getPublicRepos();
                         String location = detailProfileResponse.getLocation();
                         String company = detailProfileResponse.getCompany();
-                        String link = detailProfileResponse.getBlog();
+                        final String link = detailProfileResponse.getBlog();
 
                         Glide.with(DetailMainActivity.this)
                                 .asBitmap()
@@ -198,7 +213,35 @@ public class DetailMainActivity extends AppCompatActivity {
 
                         tvLocationMain.setText(location);
                         tvCompanyMain.setText(company);
-                        tvLinkMain.setText(link);
+
+                        SpannableString spannableLink = new SpannableString(link);
+                        ClickableSpan spanLink = new ClickableSpan() {
+                            @Override
+                            public void onClick(@NonNull View widget) {
+                                Intent intentLink = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+
+                                PackageManager packageManager = getPackageManager();
+                                List<ResolveInfo> activities = packageManager.queryIntentActivities(intentLink, PackageManager.MATCH_DEFAULT_ONLY);
+
+                                boolean isIntentSafe = activities.size() > 0;
+
+                                if (isIntentSafe) {
+                                    startActivity(Intent.createChooser(intentLink, "Open with"));
+                                } else {
+                                    Toasty.warning(DetailMainActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                                }
+                            }
+
+                            @Override
+                            public void updateDrawState(@NonNull TextPaint ds) {
+                                super.updateDrawState(ds);
+                                ds.setColor(Color.BLUE);
+                            }
+                        };
+
+                        spannableLink.setSpan(spanLink, 0, link.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        tvLinkMain.setText(spannableLink);
+                        tvLinkMain.setMovementMethod(LinkMovementMethod.getInstance());
 
                     } else {
                         Log.i("onChangedFailed", "onChanged: ");
@@ -206,20 +249,20 @@ public class DetailMainActivity extends AppCompatActivity {
                 }
             });
         } else {
-            showErrorMessage(R.drawable.ic_no_connection, R.string.tvOops, R.string.tvCheckYourConnection);
+            showErrorMessage();
             errorLayout.setVisibility(View.GONE);
         }
     }
 
     //----Method to show error connection----
-    private void showErrorMessage(Integer image, Integer title, Integer message) {
+    private void showErrorMessage() {
         if (errorLayout.getVisibility() == View.GONE) {
             errorLayout.setVisibility(View.VISIBLE);
         }
 
-        imgErrorImage.setImageResource(image);
-        tvErrorTitle.setText(title);
-        tvErrorMessage.setText(message);
+        imgErrorImage.setImageResource(R.drawable.ic_no_connection);
+        tvErrorTitle.setText(R.string.tvOops);
+        tvErrorMessage.setText(R.string.tvCheckYourConnection);
     }
     //----Ends----
 
