@@ -19,15 +19,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/FavoriteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/activity/FavoriteActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/favorite/GitserFavoriteAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/yumtaufik/gitser/adapter/favorite/GitserFavoriteAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet_profile_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet_profile_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-en-rUS/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +81,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/BFAA Dicoding/Gitser" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -250,26 +244,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="541" y="125" width="274" height="475" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1599126522820" />
-    <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl" timestamp="1599114245488">
+    <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl" timestamp="1599218363070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599114245488" />
-    <state width="1324" height="316" key="GridCell.Tab.0.bottom" timestamp="1599185635853">
+    <state x="461" y="121" width="424" height="482" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599218363070" />
+    <state width="1324" height="186" key="GridCell.Tab.0.bottom" timestamp="1599222358138">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="316" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599185635853" />
-    <state width="1324" height="316" key="GridCell.Tab.0.center" timestamp="1599185635852">
+    <state width="1324" height="186" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599222358138" />
+    <state width="1324" height="186" key="GridCell.Tab.0.center" timestamp="1599222358137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="316" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599185635852" />
-    <state width="1324" height="316" key="GridCell.Tab.0.left" timestamp="1599185635851">
+    <state width="1324" height="186" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599222358137" />
+    <state width="1324" height="186" key="GridCell.Tab.0.left" timestamp="1599222358137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="316" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599185635851" />
-    <state width="1324" height="316" key="GridCell.Tab.0.right" timestamp="1599185635852">
+    <state width="1324" height="186" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599222358137" />
+    <state width="1324" height="186" key="GridCell.Tab.0.right" timestamp="1599222358138">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="316" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599185635852" />
+    <state width="1324" height="186" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599222358138" />
     <state x="266" y="110" width="824" height="506" key="IDE.errors.dialog" timestamp="1597627881656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
