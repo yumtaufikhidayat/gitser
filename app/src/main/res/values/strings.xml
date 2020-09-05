@@ -52,7 +52,8 @@
     <string name="tvInstallBrowserApp">Silakan install aplikasi Browser terlebih dahulu</string>
     <string name="tvNotification">Notifikasi</string>
     <string name="tvChooseLanguage">Pilih bahasa</string>
-    <string name="tvNotificationTitle">Notifikasi pada 9 AM</string>
+    <string name="tvNotificationTitle">Notifikasi pada 09.00 AM</string>
+    <string name="tvOtherMenus">Menu lainnya</string>
 
     <string name="btnDeleteFavorite">Hapus Favorit</string>
 

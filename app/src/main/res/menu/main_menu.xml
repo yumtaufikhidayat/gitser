@@ -9,18 +9,32 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/nav_favorite"
-        android:title="@string/tvFavorite"
-        app:showAsAction="never"/>
+        android:title="@string/tvOtherMenus"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_more">
 
-    <item
-        android:id="@+id/nav_settings"
-        android:title="@string/tvSettings"
-        app:showAsAction="never"/>
+        <menu>
 
-    <item
-        android:id="@+id/nav_profile"
-        android:title="@string/tvProfile"
-        app:showAsAction="never"/>
+            <item
+                android:id="@+id/nav_favorite"
+                android:title="@string/tvFavorite"
+                android:icon="@drawable/ic_favorite_checked"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/nav_settings"
+                android:title="@string/tvSettings"
+                android:icon="@drawable/ic_settings"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:title="@string/tvProfile"
+                android:icon="@drawable/ic_profile"
+                app:showAsAction="never"/>
+
+        </menu>
+
+    </item>
 
 </menu>

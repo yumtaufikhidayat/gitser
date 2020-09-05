@@ -96,21 +96,23 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.nav_search_main:
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                break;
+                return true;
 
             case R.id.nav_favorite:
                 startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
-                break;
+                return true;
 
             case R.id.nav_settings:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                break;
+                return true;
 
             case R.id.nav_profile:
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                break;
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
