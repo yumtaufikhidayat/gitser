@@ -97,6 +97,7 @@ public class FavoriteActivity extends AppCompatActivity implements LoadProfileCa
     private void setGetSupportActionBar() {
 
         setSupportActionBar(toolbarFavorite);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + getString(R.string.tvFavorite) + "</font>")));

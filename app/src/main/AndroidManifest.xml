@@ -14,6 +14,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/tvSettings"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
             android:name=".activity.DetailFavoriteActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity

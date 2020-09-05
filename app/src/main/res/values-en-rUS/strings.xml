@@ -51,6 +51,9 @@
     <string name="tvDeveloperEmail">yumtaufik1997@gmail.com</string>
     <string name="tvInstallEmailApp">Please install Email application first</string>
     <string name="tvInstallBrowserApp">Please install Browser application first</string>
+    <string name="tvNotification">Notification</string>
+    <string name="tvChooseLanguage">Pilih bahasa</string>
+    <string name="tvNotificationTitle">Notification on 9 AM</string>
 
     <string name="btnDeleteFavorite">Delete Favorite</string>
 
