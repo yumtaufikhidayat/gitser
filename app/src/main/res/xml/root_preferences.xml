@@ -5,11 +5,11 @@
         app:title="@string/tvLanguage">
 
         <ListPreference
+            app:key="language"
             app:icon="@drawable/ic_language"
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
+            app:defaultValue="Indonesia"
+            app:entries="@array/arrayLanguages"
+            app:entryValues="@array/arrayLanguagesValues"
             app:title="@string/tvChooseLanguage"
             app:useSimpleSummaryProvider="true" />
 
@@ -19,8 +19,8 @@
         app:title="@string/tvNotification">
 
         <SwitchPreferenceCompat
+            app:key="notification"
             app:icon="@drawable/ic_notifications"
-            app:key="sync"
             app:title="@string/tvNotificationTitle" />
 
     </PreferenceCategory>
