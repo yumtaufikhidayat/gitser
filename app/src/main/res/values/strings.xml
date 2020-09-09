@@ -55,6 +55,10 @@
     <string name="tvNotificationTitle">Notifikasi pada 09.00 AM</string>
     <string name="tvOtherMenus">Menu lainnya</string>
 
+    <!--Settings preferences keys-->
+    <string name="keyLanguage">Bahasa</string>
+    <string name="keyNotifications">Notifikasi</string>
+
     <string name="btnDeleteFavorite">Hapus Favorit</string>
 
 </resources>

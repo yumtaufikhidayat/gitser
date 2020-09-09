@@ -6,8 +6,8 @@
     </string-array>
 
     <string-array name="arrayLanguagesValues">
-        <item>reply</item>
-        <item>reply_all</item>
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
 </resources>

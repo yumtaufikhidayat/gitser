@@ -5,7 +5,7 @@
         app:title="@string/tvLanguage">
 
         <ListPreference
-            app:key="language"
+            app:key="@string/keyLanguage"
             app:icon="@drawable/ic_language"
             app:defaultValue="Indonesia"
             app:entries="@array/arrayLanguages"
@@ -18,8 +18,8 @@
     <PreferenceCategory
         app:title="@string/tvNotification">
 
-        <SwitchPreferenceCompat
-            app:key="notification"
+        <CheckBoxPreference
+            app:key="@string/keyNotifications"
             app:icon="@drawable/ic_notifications"
             app:title="@string/tvNotificationTitle" />
 

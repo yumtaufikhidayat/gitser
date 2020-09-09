@@ -56,6 +56,10 @@
     <string name="tvNotificationTitle">Notification on 09.00 AM</string>
     <string name="tvOtherMenus">Menu lainnya</string>
 
+    <!--Settings preferences keys-->
+    <string name="keyLanguage">Language</string>
+    <string name="keyNotifications">Notification</string>
+
     <string name="btnDeleteFavorite">Delete Favorite</string>
 
 </resources>

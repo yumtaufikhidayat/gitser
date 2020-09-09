@@ -29,7 +29,7 @@ public class DetailProfileResponse implements Parcelable {
 	@SerializedName("updated_at")
 	private String updatedAt;
 	@SerializedName("site_admin")
-	private boolean siteAdmin = false;
+	private boolean siteAdmin;
 	@SerializedName("company")
 	private String company;
 	@SerializedName("id")
