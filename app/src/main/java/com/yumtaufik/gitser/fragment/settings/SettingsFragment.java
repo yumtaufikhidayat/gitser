@@ -2,18 +2,24 @@ package com.yumtaufik.gitser.fragment.settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.yumtaufik.gitser.R;
 
+import es.dmoral.toasty.Toasty;
+
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     String KEY_DEFAULT_VALUE = "KEY_DEFAULT_VALUE";
-    String KEY_LIST_LANGUAGES;
-    String KEY_CHECKBOX_NOTIFICATIONS;
+    String KEY_LIST_LANGUAGES, KEY_CHECKBOX_ALARM;
+
+    SharedPreferences sharedPreferences;
 
     ListPreference listPreference;
     CheckBoxPreference checkBoxPreference;
@@ -24,22 +30,77 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         setInit();
 
-        setSummaries();
+        setPreferences();
+
+        setCheckedAlarm();
+
+        setListOfLanguages();
     }
 
     private void setInit() {
 
         KEY_LIST_LANGUAGES = getResources().getString(R.string.keyLanguage);
-        KEY_CHECKBOX_NOTIFICATIONS = getResources().getString(R.string.keyNotifications);
+        KEY_CHECKBOX_ALARM = getResources().getString(R.string.keyNotifications);
 
         listPreference = findPreference(KEY_LIST_LANGUAGES);
-        checkBoxPreference = findPreference(KEY_CHECKBOX_NOTIFICATIONS);
+        checkBoxPreference = findPreference(KEY_CHECKBOX_ALARM);
     }
 
-    private void setSummaries() {
-        SharedPreferences sharedPreferences = getPreferenceManager().getSharedPreferences();
-        listPreference.setEntryValues(new String[]{sharedPreferences.getString(KEY_LIST_LANGUAGES, String.valueOf(2))});
-        checkBoxPreference.setChecked(sharedPreferences.getBoolean(KEY_CHECKBOX_NOTIFICATIONS, false));
+    private void setPreferences() {
+        sharedPreferences = getPreferenceManager().getSharedPreferences();
+    }
+
+    private void setCheckedAlarm() {
+
+        checkBoxPreference.setChecked(sharedPreferences.getBoolean(KEY_CHECKBOX_ALARM, false));
+        checkBoxPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object object) {
+
+                boolean isAlarmOn = (boolean) object;
+                if (isAlarmOn) {
+                    //Insert code here to call alarm manager at 9 AM
+                    Toasty.success(requireActivity(), "Alarm activated", Toast.LENGTH_SHORT, true).show();
+                } else {
+                    Toasty.success(requireActivity(), "Alarm deactivated", Toast.LENGTH_SHORT, true).show();
+                }
+
+                return true;
+            }
+        });
+    }
+
+    private void setListOfLanguages() {
+
+        String languages = sharedPreferences.getString(KEY_LIST_LANGUAGES, KEY_DEFAULT_VALUE);
+
+        if ("1".equals(languages)) {
+            Log.i("langIndonesia", "setLangIndonesia: ");
+        } else if ("2".equals(languages)) {
+            Log.i("langEngUS", "setLangEngUS: ");
+        }
+
+        listPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object object) {
+
+                String languageItemSelected = (String) object;
+                if (preference.getKey().equals(KEY_LIST_LANGUAGES)) {
+                    switch (languageItemSelected) {
+                        case "1":
+                            //Insert code here to call Indonesia language
+                            Toasty.success(requireActivity(), "Indonesia selected", Toast.LENGTH_SHORT, true).show();
+                            break;
+
+                        case "2":
+                            //Insert code here to call English(US) language
+                            Toasty.success(requireActivity(), "English (US) selected", Toast.LENGTH_SHORT, true).show();
+                            break;
+                    }
+                }
+                return true;
+            }
+        });
     }
 
     @Override
@@ -57,12 +118,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
-        if (key.equals(KEY_LIST_LANGUAGES)) {
-            listPreference.setSummary(sharedPreferences.getString(KEY_LIST_LANGUAGES, KEY_DEFAULT_VALUE));
-        }
-
-        if (key.equals(KEY_CHECKBOX_NOTIFICATIONS)) {
-            checkBoxPreference.setChecked(sharedPreferences.getBoolean(KEY_CHECKBOX_NOTIFICATIONS, false));
-        }
+        Log.i("KEY_LIST_LANGUAGES", "onSharedListLanguages: ");
+        Log.i("KEY_CHECKBOX_ALARM", "onSharedCheckboxAlarm: ");
     }
 }
