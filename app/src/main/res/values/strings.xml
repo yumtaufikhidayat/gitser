@@ -54,6 +54,8 @@
     <string name="tvChooseLanguage">Pilih bahasa</string>
     <string name="tvNotificationTitle">Notifikasi pada 09.00 AM</string>
     <string name="tvOtherMenus">Menu lainnya</string>
+    <string name="tvAlarmActivated">Alarm diaktifkan</string>
+    <string name="tvAlarmDeactivated">Alarm dimatikan</string>
 
     <!--Settings preferences keys-->
     <string name="keyLanguage">Bahasa</string>

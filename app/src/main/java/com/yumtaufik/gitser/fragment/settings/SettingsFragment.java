@@ -11,6 +11,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.service.AlarmReceiver;
 
 import es.dmoral.toasty.Toasty;
 
@@ -23,6 +24,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     ListPreference listPreference;
     CheckBoxPreference checkBoxPreference;
+
+    AlarmReceiver alarmReceiver;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -44,6 +47,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         listPreference = findPreference(KEY_LIST_LANGUAGES);
         checkBoxPreference = findPreference(KEY_CHECKBOX_ALARM);
+
+        alarmReceiver = new AlarmReceiver();
     }
 
     private void setPreferences() {
@@ -60,9 +65,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 boolean isAlarmOn = (boolean) object;
                 if (isAlarmOn) {
                     //Insert code here to call alarm manager at 9 AM
-                    Toasty.success(requireActivity(), "Alarm activated", Toast.LENGTH_SHORT, true).show();
+                    alarmReceiver.setRepeatingAlarmNotification(requireActivity(), "09:00");
+                    Toasty.success(requireActivity(), R.string.tvAlarmActivated, Toast.LENGTH_SHORT, true).show();
                 } else {
-                    Toasty.success(requireActivity(), "Alarm deactivated", Toast.LENGTH_SHORT, true).show();
+                    Toasty.success(requireActivity(), R.string.tvAlarmDeactivated, Toast.LENGTH_SHORT, true).show();
                 }
 
                 return true;
@@ -84,9 +90,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
             @Override
             public boolean onPreferenceChange(Preference preference, Object object) {
 
-                String languageItemSelected = (String) object;
+                String selectedLanguage = (String) object;
                 if (preference.getKey().equals(KEY_LIST_LANGUAGES)) {
-                    switch (languageItemSelected) {
+                    switch (selectedLanguage) {
                         case "1":
                             //Insert code here to call Indonesia language
                             Toasty.success(requireActivity(), "Indonesia selected", Toast.LENGTH_SHORT, true).show();
