@@ -1,4 +1,4 @@
-package com.yumtaufik.gitser.fragment.settings;
+package com.yumtaufik.gitser.settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -64,11 +64,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
                 boolean isAlarmOn = (boolean) object;
                 if (isAlarmOn) {
-                    //Insert code here to call alarm manager at 9 AM
                     alarmReceiver.setRepeatingAlarmNotification(requireActivity(), "09:00");
-                    Toasty.success(requireActivity(), R.string.tvAlarmActivated, Toast.LENGTH_SHORT, true).show();
                 } else {
-                    Toasty.success(requireActivity(), R.string.tvAlarmDeactivated, Toast.LENGTH_SHORT, true).show();
+                    alarmReceiver.cancelRepeatingAlarmNotification(requireActivity());
                 }
 
                 return true;

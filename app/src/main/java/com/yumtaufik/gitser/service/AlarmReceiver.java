@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
@@ -25,19 +26,25 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
+
 public class AlarmReceiver extends BroadcastReceiver {
 
     final String EXTRA_TITLE = "com.yumtaufik.gitser.service.EXTRA_TITLE";
     final String EXTRA_MESSAGE = "com.yumtaufik.gitser.service.EXTRA_MESSAGE";
+    public static final int ID_REPEATING = 101;
 
     String TITLE_REMINDER = "Reminder";
     String TITLE_MESSAGE = "Let's find popular user on Github";
 
+    public AlarmReceiver() {
+        //Constructor
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        String intentMessage = intent.getStringExtra(EXTRA_MESSAGE);
-
-        showAlarmNotification(context, intentMessage);
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        showAlarmNotification(context, message);
     }
 
     public void setRepeatingAlarmNotification(Context context, String time) {
@@ -58,15 +65,30 @@ public class AlarmReceiver extends BroadcastReceiver {
         calendar.set(Calendar.MINUTE, Integer.parseInt(alarmArray[1]));
         calendar.set(Calendar.SECOND, 0);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0);
         if (alarmManager != null) {
             alarmManager.setInexactRepeating(
                     AlarmManager.RTC_WAKEUP,
                     calendar.getTimeInMillis(),
-                    AlarmManager.INTERVAL_HOUR,
+                    AlarmManager.INTERVAL_DAY,
                     pendingIntent
             );
         }
+
+        Toasty.success(context, R.string.tvAlarmActivated, Toast.LENGTH_SHORT, true).show();
+    }
+
+    public void cancelRepeatingAlarmNotification(Context context) {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 2, intent, 0);
+        pendingIntent.cancel();
+
+        if (alarmManager != null) {
+            alarmManager.cancel(pendingIntent);
+        }
+
+        Toasty.success(context, R.string.tvAlarmDeactivated, Toast.LENGTH_SHORT, true).show();
     }
 
     public boolean isDateInvalid(String date, String format) {
@@ -119,7 +141,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Notification notification = builder.build();
         if (notificationManagerCompat != null) {
-            notificationManagerCompat.notify(101, notification);
+            notificationManagerCompat.notify(ID_REPEATING, notification);
         }
     }
 }

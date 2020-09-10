@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.yumtaufik.gitser.R;
-import com.yumtaufik.gitser.fragment.settings.SettingsFragment;
+import com.yumtaufik.gitser.settings.SettingsFragment;
 
 public class SettingsActivity extends AppCompatActivity {
 
