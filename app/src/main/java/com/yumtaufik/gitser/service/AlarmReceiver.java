@@ -124,7 +124,9 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .setColor(ContextCompat.getColor(context, android.R.color.transparent))
                 .setSound(ringtoneManager)
-                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.gitser));
+                .setChannelId(CHANNEL_ID)
+                .setPriority(Notification.PRIORITY_HIGH)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.gitser_g));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
