@@ -1,5 +1,7 @@
 package com.yumtaufik.gitser.adapter.repository;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
         final RepositoryResponse repository = repositoryList.get(position);
 
@@ -58,6 +60,14 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.My
             String sizeStrMb = String.valueOf(sizeIntNew);
             holder.tvRepositorySize.setText(String.format("%s MB", sizeStrMb));
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent repositoryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(repository.getHtml_url()));
+                holder.itemView.getContext().startActivity(Intent.createChooser(repositoryIntent, "Open with:"));
+            }
+        });
     }
 
     @Override
