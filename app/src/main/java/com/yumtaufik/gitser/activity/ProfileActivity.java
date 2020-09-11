@@ -40,6 +40,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.profile.ProfilePagerAdapter;
+import com.yumtaufik.gitser.api.Api;
 import com.yumtaufik.gitser.bottomsheet.ProfileInfoBottomSheet;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
 import com.yumtaufik.gitser.viewmodel.detail.DetailProfileViewModel;
@@ -74,6 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
     DetailProfileViewModel profileViewModel;
 
     String username = "yumtaufikhidayat";
+    String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,8 +169,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             case R.id.nav_share_profile:
                 try {
-
-                    String url = "https://github.com/" + username;
+                    url = Api.URL_GITHUB + username;
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -176,6 +177,19 @@ public class ProfileActivity extends AppCompatActivity {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, body);
                     startActivity(Intent.createChooser(shareIntent, "Share with:"));
 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.nav_open_browser_profile:
+
+                url = Api.URL_GITHUB + username;
+
+                try {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(Intent.createChooser(webIntent, "Open with:"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

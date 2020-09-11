@@ -57,6 +57,7 @@
     <string name="tvAlarmActivated">Alarm diaktifkan</string>
     <string name="tvAlarmDeactivated">Alarm dimatikan</string>
     <string name="tvShare">Bagikan</string>
+    <string name="tvOpenInBrowser">Buka di peramban</string>
 
     <!--Settings preferences keys-->
     <string name="keyLanguage">Bahasa</string>

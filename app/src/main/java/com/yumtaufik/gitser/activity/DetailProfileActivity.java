@@ -40,6 +40,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.custom.detailprofile.DetailProfilePagerAdapter;
+import com.yumtaufik.gitser.api.Api;
 import com.yumtaufik.gitser.database.GitserHelper;
 import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
@@ -81,7 +82,7 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     DetailProfileResponse profileResponse;
 
-    String username;
+    String username, url;
     int position;
 
     GitserHelper gitserHelper;
@@ -238,7 +239,7 @@ public class DetailProfileActivity extends AppCompatActivity {
             case R.id.nav_share_detail_profile:
                 try {
 
-                    String url = "https://github.com/" + searchItems.getLogin();
+                    url = Api.URL_GITHUB + searchItems.getLogin();
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -246,6 +247,19 @@ public class DetailProfileActivity extends AppCompatActivity {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, body);
                     startActivity(Intent.createChooser(shareIntent, "Share with:"));
 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.nav_open_browser_detail_profile:
+
+                url = Api.URL_GITHUB + searchItems.getLogin();
+
+                try {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(Intent.createChooser(webIntent, "Open with:"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

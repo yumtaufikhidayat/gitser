@@ -18,13 +18,19 @@
             <item
                 android:id="@+id/nav_language"
                 android:title="@string/tvLanguage"
-                android:icon="@drawable/ic_language"
+                android:icon="@drawable/ic_translate"
                 app:showAsAction="never"/>
 
             <item
                 android:id="@+id/nav_share_profile"
                 android:title="@string/tvShare"
                 android:icon="@drawable/ic_share_red"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/nav_open_browser_profile"
+                android:title="@string/tvOpenInBrowser"
+                android:icon="@drawable/ic_language"
                 app:showAsAction="never"/>
 
         </menu>

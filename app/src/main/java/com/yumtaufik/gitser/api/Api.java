@@ -10,4 +10,5 @@ public class Api {
     static final String FOLLOWING_URL = "users/{username}/following";
     static final String FOLLOWERS_URL = "users/{username}/followers";
     static final String REPOSITORY_URL = "users/{username}/repos";
+    public static final String URL_GITHUB = "https://github.com/";
 }

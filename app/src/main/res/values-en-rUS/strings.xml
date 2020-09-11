@@ -58,6 +58,7 @@
     <string name="tvAlarmActivated">Alarm activated</string>
     <string name="tvAlarmDeactivated">Alarm deactivated</string>
     <string name="tvShare">Share</string>
+    <string name="tvOpenInBrowser">Buka di peramban</string>
 
     <!--Settings preferences keys-->
     <string name="keyLanguage">Language</string>
