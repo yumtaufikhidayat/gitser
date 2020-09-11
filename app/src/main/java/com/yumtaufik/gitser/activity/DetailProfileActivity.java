@@ -155,8 +155,8 @@ public class DetailProfileActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#DC143C\">" + searchItems.getLogin() + "</font>")));
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_red);
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + searchItems.getLogin() + "</font>")));
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             getSupportActionBar().setElevation(0);
         }
     }

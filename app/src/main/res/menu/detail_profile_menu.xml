@@ -5,7 +5,24 @@
     <item
         android:id="@+id/nav_favorite_profile"
         android:title="@string/tvFavorite"
-        android:icon="@drawable/ic_favorite_checked"
+        android:icon="@drawable/ic_favorite_unchecked"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/tvOtherMenus"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_more">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_share_detail_profile"
+                android:title="@string/tvShare"
+                android:icon="@drawable/ic_share_red"
+                app:showAsAction="never"/>
+
+        </menu>
+
+    </item>
 
 </menu>

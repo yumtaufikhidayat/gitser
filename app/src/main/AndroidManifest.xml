@@ -19,7 +19,7 @@
         <receiver
             android:name=".service.AlarmReceiver"/>
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:label="@string/tvSettings"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity

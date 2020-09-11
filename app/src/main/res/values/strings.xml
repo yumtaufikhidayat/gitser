@@ -56,6 +56,7 @@
     <string name="tvOtherMenus">Menu lainnya</string>
     <string name="tvAlarmActivated">Alarm diaktifkan</string>
     <string name="tvAlarmDeactivated">Alarm dimatikan</string>
+    <string name="tvShare">Bagikan</string>
 
     <!--Settings preferences keys-->
     <string name="keyLanguage">Bahasa</string>

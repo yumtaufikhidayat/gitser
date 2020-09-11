@@ -318,7 +318,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="dc143c" />
-                            <entry key="outputName" value="ic_share" />
+                            <entry key="outputName" value="ic_share_red" />
                           </map>
                         </option>
                       </PersistentState>

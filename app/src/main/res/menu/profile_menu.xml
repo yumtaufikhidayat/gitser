@@ -9,8 +9,26 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/nav_language"
-        android:title="@string/tvLanguage"
-        android:icon="@drawable/ic_outline_language"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/tvOtherMenus"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_more">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_language"
+                android:title="@string/tvLanguage"
+                android:icon="@drawable/ic_language"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/nav_share_profile"
+                android:title="@string/tvShare"
+                android:icon="@drawable/ic_share_red"
+                app:showAsAction="never"/>
+
+        </menu>
+
+    </item>
+
 </menu>

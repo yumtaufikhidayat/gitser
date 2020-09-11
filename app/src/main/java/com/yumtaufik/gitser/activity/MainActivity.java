@@ -28,6 +28,7 @@ import com.yumtaufik.gitser.R;
 import com.yumtaufik.gitser.adapter.main.MainAdapter;
 import com.yumtaufik.gitser.helper.LoadingDialog;
 import com.yumtaufik.gitser.model.main.MainResponse;
+import com.yumtaufik.gitser.settings.SettingsActivity;
 import com.yumtaufik.gitser.viewmodel.main.MainViewModel;
 
 import java.util.List;

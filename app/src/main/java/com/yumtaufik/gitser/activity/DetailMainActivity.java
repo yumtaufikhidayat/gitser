@@ -17,6 +17,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -136,10 +138,19 @@ public class DetailMainActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#DC143C\">" + mainResponse.getLogin() + "</font>")));
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_red);
+            getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#FFFFFF\">" + mainResponse.getLogin() + "</font>")));
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             getSupportActionBar().setElevation(0);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.detail_main_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -147,6 +158,16 @@ public class DetailMainActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+
+            case R.id.nav_share_detail_main:
+                break;
+        }
+
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
