@@ -82,7 +82,8 @@ public class DetailProfileActivity extends AppCompatActivity {
 
     DetailProfileResponse profileResponse;
 
-    String username, url;
+    String username;
+    String url = Api.URL_GITHUB;
     int position;
 
     GitserHelper gitserHelper;
@@ -239,7 +240,7 @@ public class DetailProfileActivity extends AppCompatActivity {
             case R.id.nav_share_detail_profile:
                 try {
 
-                    url = Api.URL_GITHUB + searchItems.getLogin();
+                    url = url + searchItems.getLogin();
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -255,12 +256,13 @@ public class DetailProfileActivity extends AppCompatActivity {
 
             case R.id.nav_open_browser_detail_profile:
 
-                url = Api.URL_GITHUB + searchItems.getLogin();
+                url = url + searchItems.getLogin();
 
                 try {
                     Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     startActivity(Intent.createChooser(webIntent, "Open with:"));
                 } catch (Exception e) {
+                    Toasty.warning(DetailProfileActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
                     e.printStackTrace();
                 }
 

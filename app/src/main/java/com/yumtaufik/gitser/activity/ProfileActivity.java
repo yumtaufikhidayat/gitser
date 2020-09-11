@@ -75,7 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
     DetailProfileViewModel profileViewModel;
 
     String username = "yumtaufikhidayat";
-    String url;
+    String url = Api.URL_GITHUB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,7 +169,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             case R.id.nav_share_profile:
                 try {
-                    url = Api.URL_GITHUB + username;
+                    url = url + username;
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -185,12 +185,13 @@ public class ProfileActivity extends AppCompatActivity {
 
             case R.id.nav_open_browser_profile:
 
-                url = Api.URL_GITHUB + username;
+                url = url + username;
 
                 try {
                     Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     startActivity(Intent.createChooser(webIntent, "Open with:"));
                 } catch (Exception e) {
+                    Toasty.warning(ProfileActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
                     e.printStackTrace();
                 }
 

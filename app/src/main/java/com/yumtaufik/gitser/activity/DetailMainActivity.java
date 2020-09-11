@@ -73,7 +73,8 @@ public class DetailMainActivity extends AppCompatActivity {
 
     DetailProfileViewModel profileViewModel;
     MainResponse mainResponse;
-    String username, url;
+    String username;
+    String url = Api.URL_GITHUB;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +169,8 @@ public class DetailMainActivity extends AppCompatActivity {
             case R.id.nav_share_detail_main:
                 try {
 
-                    url = Api.URL_GITHUB + mainResponse.getLogin();
+                    url = url + mainResponse.getLogin();
+
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -184,12 +186,13 @@ public class DetailMainActivity extends AppCompatActivity {
 
             case R.id.nav_open_browser_detail_main:
 
-                url = Api.URL_GITHUB + mainResponse.getLogin();
+                url = url + mainResponse.getLogin();
 
                 try {
                     Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     startActivity(Intent.createChooser(webIntent, "Open with:"));
                 } catch (Exception e) {
+                    Toasty.warning(DetailMainActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
                     e.printStackTrace();
                 }
 
