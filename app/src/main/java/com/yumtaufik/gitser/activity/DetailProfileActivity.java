@@ -234,6 +234,10 @@ public class DetailProfileActivity extends AppCompatActivity {
                 }
 
                 break;
+
+            case R.id.nav_share_detail_profile:
+                //Code to share user info
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

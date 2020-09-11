@@ -165,6 +165,7 @@ public class DetailMainActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_share_detail_main:
+                //Code to share user info
                 break;
         }
 

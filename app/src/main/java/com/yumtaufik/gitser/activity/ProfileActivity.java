@@ -164,6 +164,10 @@ public class ProfileActivity extends AppCompatActivity {
             case R.id.nav_language:
                 startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
                 break;
+
+            case R.id.nav_share_profile:
+                //Code to share user info
+                break;
         }
 
         return super.onOptionsItemSelected(item);
