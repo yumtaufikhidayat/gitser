@@ -236,7 +236,20 @@ public class DetailProfileActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_share_detail_profile:
-                //Code to share user info
+                try {
+
+                    String url = "https://github.com/" + searchItems.getLogin();
+                    String body = "Visit this awesome user " + "\n" + url;
+
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plan");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, body);
+                    startActivity(Intent.createChooser(shareIntent, "Share with:"));
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 break;
         }
         return super.onOptionsItemSelected(item);
