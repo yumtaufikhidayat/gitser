@@ -8,7 +8,7 @@
     android:background="@android:color/white"
     tools:context=".activity.SearchActivity">
 
-    <include layout="@layout/toolbar_main"
+    <include layout="@layout/toolbar_custom"
         android:id="@+id/toolbarSearchMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

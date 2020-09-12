@@ -22,7 +22,7 @@
 
             <include
                 android:id="@+id/toolbarDetailMain"
-                layout="@layout/toolbar_detail"/>
+                layout="@layout/toolbar_custom"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

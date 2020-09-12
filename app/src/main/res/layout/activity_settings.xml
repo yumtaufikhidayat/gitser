@@ -6,7 +6,7 @@
 
     <include
         android:id="@+id/toolbarSettings"
-        layout="@layout/toolbar_main"/>
+        layout="@layout/toolbar_custom"/>
 
     <FrameLayout
         android:id="@+id/flSettings"
