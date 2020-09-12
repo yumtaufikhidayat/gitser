@@ -167,14 +167,15 @@ public class DetailMainActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_share_detail_main:
-                try {
 
-                    url = url + mainResponse.getLogin();
+                url = url + mainResponse.getLogin();
+
+                try {
 
                     String body = "Visit this awesome user " + "\n" + url;
 
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                    shareIntent.setType("text/plan");
+                    shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_TEXT, body);
                     startActivity(Intent.createChooser(shareIntent, "Share with:"));
 
