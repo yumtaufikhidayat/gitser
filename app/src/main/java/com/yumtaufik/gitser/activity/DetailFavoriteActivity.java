@@ -15,6 +15,8 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -29,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.yumtaufik.gitser.R;
+import com.yumtaufik.gitser.api.Api;
 import com.yumtaufik.gitser.database.GitserHelper;
 import com.yumtaufik.gitser.helper.Utils;
 import com.yumtaufik.gitser.model.detail.DetailProfileResponse;
@@ -130,10 +133,52 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.detail_main_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+
+        switch (item.getItemId()) {
+            case R.id.nav_share_detail_main:
+
+                String urlShare = Api.URL_GITHUB + profileResponse.getLogin();
+
+                try {
+
+                    String body = "Visit this awesome user " + "\n" + urlShare;
+
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, body);
+                    startActivity(Intent.createChooser(shareIntent, "Share with:"));
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.nav_open_browser_detail_main:
+
+                String urlWeb = Api.URL_GITHUB + profileResponse.getLogin();
+
+                try {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlWeb));
+                    startActivity(Intent.createChooser(webIntent, "Open with:"));
+                } catch (Exception e) {
+                    Toasty.warning(DetailFavoriteActivity.this, R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                    e.printStackTrace();
+                }
+
+                break;
         }
+
         return super.onOptionsItemSelected(item);
     }
     //----Ends-----
