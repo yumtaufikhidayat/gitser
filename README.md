@@ -1,5 +1,12 @@
 # gitser
-This application is made to complete Belajar Fundamental Aplikasi Android course by Dicoding
+This application is made to complete Belajar Fundamental Aplikasi Android course by Dicoding. This application using:
+- Material design
+- Java programming language
+- SQLite local database
+- MVVM architecture
+- Retrofit
+- Splash screen
+- Share and open in browser as additional feature
 
 ### Hardware
 - CPU : Intel© Core™ i3-6006U CPU @ 2.0GHz
