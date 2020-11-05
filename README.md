@@ -33,8 +33,8 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 - Android Gradle : 6.1.1
 
 #### SDK Version and SDK Tools
-- Target SDK Version : 29
-- Min SDK Version : 22
+- Target SDK Version : 30
+- Min SDK Version : 21
 - Android SDK Tools : 26.1.1
 
 #### AndroidX
@@ -44,16 +44,16 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 ##### By Default
         - implementation fileTree(dir: "libs", include: ["*.jar"])
         - implementation 'androidx.appcompat:appcompat:1.2.0'
-        - implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+        - implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
         - implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-        - testImplementation 'junit:junit:4.12'
-        - androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-        - androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+        - testImplementation 'junit:junit:4.13.1'
+        - androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+        - androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 ##### By Third Parties
 - Material design
 
-        - implementation 'com.google.android.material:material:1.2.0'
+        - implementation 'com.google.android.material:material:1.2.1'
         - implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
 - Circle image
@@ -63,6 +63,13 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 - Glide
 
         - implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+- Network
+
+        - implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+        - implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+        - implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+        - implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
 - View Model
 
