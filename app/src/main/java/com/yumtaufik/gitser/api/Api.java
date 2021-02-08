@@ -2,7 +2,8 @@ package com.yumtaufik.gitser.api;
 
 public class Api {
 
-    static final String GITHUB_TOKEN = "76bcefd11dadb523b91dd6cb4545025f0a27fccd";
+    static final String GITHUB_TOKEN = "411cd25ae8fd1a79a1e32380ac373480211f3484";
+//    static final String GITHUB_TOKEN = "9712b82879907709fa13785c7b61a53304fe31ef";
     static final String BASE_URL = "https://api.github.com/";
     static final String USERS_URL = "users";
     static final String SEARCH_USERS_URL = "search/users?";
