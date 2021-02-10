@@ -9,7 +9,8 @@
         android:id="@+id/rvDetailProfileRepos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
+        android:scrollbars="none"
+        android:overScrollMode="never"
         tools:listitem="@layout/item_repository"/>
 
     <include layout="@layout/layout_error"/>

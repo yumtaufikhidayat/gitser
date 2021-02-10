@@ -18,7 +18,7 @@ import java.util.List;
 
 public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.MyViewHolder> {
 
-    private List<RepositoryResponse> repositoryList = new ArrayList<>();
+    List<RepositoryResponse> repositoryList = new ArrayList<>();
 
     public void setDataRepository(List<RepositoryResponse> repositoryList) {
         this.repositoryList.clear();
