@@ -29,8 +29,8 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 
 #### Java Build Tools
 - Java Build Tools : Gradle
-- Android Gradle Plugin Version : 4.0.0
-- Android Gradle : 6.1.1
+- Android Gradle Plugin Version : 4.1.2
+- Android Gradle : 6.5
 
 #### SDK Version and SDK Tools
 - Target SDK Version : 30
