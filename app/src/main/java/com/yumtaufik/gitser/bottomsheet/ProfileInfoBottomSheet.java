@@ -24,7 +24,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.yumtaufik.gitser.R;
 
 import java.util.List;
-import java.util.Objects;
 
 import es.dmoral.toasty.Toasty;
 
@@ -70,14 +69,14 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
                 intent.putExtra(Intent.EXTRA_SUBJECT, "");
                 intent.putExtra(Intent.EXTRA_TEXT, "");
 
-                PackageManager packageManager = Objects.requireNonNull(getContext()).getPackageManager();
+                PackageManager packageManager = requireContext().getPackageManager();
                 List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 boolean isIntentSafe = activities.size() > 0;
 
                 if (isIntentSafe) {
                     startActivity(Intent.createChooser(intent, "Send Email"));
                 } else {
-                    Toasty.warning(getContext(), R.string.tvInstallEmailApp, Toast.LENGTH_SHORT, true).show();
+                    Toasty.warning(requireContext(), R.string.tvInstallEmailApp, Toast.LENGTH_SHORT, true).show();
                 }
             }
 
@@ -104,14 +103,14 @@ public class ProfileInfoBottomSheet extends BottomSheetDialogFragment implements
             public void onClick(@NonNull View widget) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
 
-                PackageManager packageManager = Objects.requireNonNull(getContext()).getPackageManager();
+                PackageManager packageManager = requireContext().getPackageManager();
                 List<ResolveInfo> activities = packageManager.queryIntentActivities(browserIntent, PackageManager.MATCH_DEFAULT_ONLY);
                 boolean isIntentSafe = activities.size() > 0;
 
                 if (isIntentSafe) {
                     startActivity(Intent.createChooser(browserIntent, "Open with"));
                 } else {
-                    Toasty.warning(getContext(), R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
+                    Toasty.warning(requireContext(), R.string.tvInstallBrowserApp, Toast.LENGTH_SHORT, true).show();
                 }
             }
 
