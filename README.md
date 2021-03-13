@@ -53,8 +53,12 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 ##### By Third Parties
 - Material design
 
-        - implementation 'com.google.android.material:material:1.2.1'
+        - implementation 'com.google.android.material:material:1.3.0'
         - implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+- Shared preferences
+
+        - implementation 'androidx.preference:preference:1.1.1'
 
 - Circle image
 
@@ -66,15 +70,15 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 
 - Network
 
-        - implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-        - implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-        - implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+        - implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+        - implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+        - implementation 'com.squareup.okhttp3:okhttp:3.14.9'
         - implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
 - View Model
 
         - implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-        - annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.2.0'
+        - annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.3.0'
 
 - Toasty
 
