@@ -25,7 +25,7 @@ This application is made to complete Belajar Fundamental Aplikasi Android course
 
 #### IDE (Integrated Development Environment)
 - IDE Name : Android Studio
-- Version : 4.0.1
+- Version : 4.1.2
 
 #### Java Build Tools
 - Java Build Tools : Gradle
